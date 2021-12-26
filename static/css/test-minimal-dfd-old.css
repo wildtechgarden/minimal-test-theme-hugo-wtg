@@ -1,4 +1,4 @@
-.test-warningold-min {
+.test-min-warningold {
     visibility: visible;
 }
 
@@ -8,7 +8,7 @@
 }
 
 @supports (visibility: visible) and (visibility: hidden) and (display: block) and (display: none) {
-    .test-warningold-min {
+    .test-min-warningold {
         display: none;
         visibility: hidden;
     }

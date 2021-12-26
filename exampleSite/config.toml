@@ -6,14 +6,15 @@ defaultContentLanguage = "en"
 enableGitInfo = false
 enableRobotsTXT = true
 summaryLength = 25
-theme = "github.com/danielfdickinson/minimal-test-theme-hugo-dfd"
-themesdir = "../.."
 resourceDir = ".."
+theme = "github.com/danielfdickinson/minimal-test-theme-hugo-dfd"
 
 [params]
   mainSections = ["post"]
   # Footnotes and TableOfContents don't work properly with a base href set in <head>
   useBaseURL = false
+  # A little better looking
+  testStylesInclude = true
 
 # See https://gohugo.io/content-management/multilingual/
 # and https://www.regisphilibert.com/blog/2018/08/hugo-multilingual-part-1-managing-content-translation/
