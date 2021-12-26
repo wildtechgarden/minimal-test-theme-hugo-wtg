@@ -137,3 +137,7 @@ html {
 .nav-site-page-test-min .list-item-test-min:nth-child(5) .link-test-min::after {
     content: "»";
 }
+
+.current-menu-is-test-min {
+    background-color: whitesmoke;
+}
