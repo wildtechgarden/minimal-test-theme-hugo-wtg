@@ -1,0 +1,47 @@
+{{- $ctx := . -}}
+{{- $concatSiteTitle := false -}}
+{{- /* context ($ctx) is assumed to be a page unless it is a map
+       in which case we look for two keys:
+         'concatSiteTitle' which indicates we want to add the site title to the page title
+         'curpage' which is the page context, which we make the main context ($ctx)
+    */ -}}
+{{- if reflect.IsMap $ctx -}}
+    {{- if isset $ctx "concatSiteTitle" -}}
+        {{- if $ctx.concatSiteTitle -}}
+            {{- $concatSiteTitle = true -}}
+            {{- $ctx = $ctx.curPage -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+{{- $foundTitle := i18n "untitled" -}}
+{{- $siteTitle := i18n "untitled_site" -}}
+{{- /* By using with page context we are able to use this partial inside shortcodes as well */ -}}
+{{- /* We find two titles: the site title and the page title
+       * The site title falls back to a translated "Untitled Site" if not found
+       * The page title uses the following order of preference:
+         a given page title > (if home page the site title ) > (munged) title based on base filename > (translated) 'Untitled'
+    */ -}}
+{{- with $ctx -}}
+    {{- if .Site.Title }}
+        {{- $siteTitle = .Site.Title -}}
+    {{- end -}}
+    {{- if eq .Kind "home" -}}
+        {{- $concatSiteTitle = false -}}
+    {{- end -}}
+    {{- if .Title -}}
+        {{- $foundTitle = .Title -}}
+    {{- else if eq .Kind "home" -}}
+        {{- $foundTitle = $siteTitle -}}
+    {{- else if .File -}}
+        {{- if .File.TranslationBaseName -}}
+            {{ $foundTitle = .File.TranslationBaseName | humanize | title -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+{{- /* Unless adding the site title would exceed SEO recommendations, we add the site title to page titles */ -}}
+{{- if $concatSiteTitle -}}
+    {{- if lt (add (len $foundTitle) (len $siteTitle)) 67 -}}
+      {{- $foundTitle = printf "%s | %s" $foundTitle $siteTitle -}}
+    {{- end -}}
+{{- end -}}
+{{- return $foundTitle -}}

@@ -1,0 +1,13 @@
+name = "DFD Hugo Minimal Test"
+description = "Module for DFD's Hugo Minimal Test 'Theme'"
+
+[module]
+  [module.hugoVersion]
+    min = "0.76.0"
+    extended = false
+
+[author]
+  name = "Daniel F. Dickinson"
+  homepage = "https://www.wildtechgarden.ca"
+  copyright = "© 2021 Daniel F. Dickinson"
+  email = "dfdpublic@wildtechgarden.ca"

@@ -1,0 +1,38 @@
+{{- $curPage := . -}}
+{{- if ne (.Param "hidePageHeader") true }}
+<header class="header-test-min">
+    {{- if ne (.Param "hideTopBarMenu") true }}
+    {{- /* TODO: On mobile replace menu bar 'buttons' with a hamburger menu (CSS only; no JS) */}}
+    <nav aria-label="{{ i18n "main_site_menu" }}"
+    class="bar-test-min menubar-test-min test-mainmenu-hugo">
+        {{- /* First button is 'home' (site title) link */}}
+        <ul class="list-test-min">
+            <li class="list-item-test-min{{- if eq $curPage site.Home }} current-menu-is-test-min{{- end -}}">
+                <span class="link-wrapper-test-min"><a
+                class="link-test-min" href="{{- site.Home.RelPermalink -}}">{{-
+                partial "return-helpers/title" site.Home -}}</a></span>
+            </li>
+        {{- /* Next buttons are from the main menu (if it is defined) */}}
+        {{- range site.Menus.main }}
+            <li class="list-item-test-min{{- if eq $curPage.RelPermalink .URL }} current-menu-is-test-min{{- end -}}">
+                <span class="link-wrapper-test-min"><a
+                href="{{- .URL -}}" class="link-test-min">{{-
+                .Name -}}</a></span>
+            </li>
+        {{- end -}}
+        {{- /* Final buttons are the 'mainSections' sections (introduced in Hugo 0.71) */}}
+        {{- range site.Params.mainSections -}}
+            {{- $page := site.GetPage (printf "/%s" .) -}}
+            {{- with $page }}
+            <li class="list-item-test-min{{- if eq $curPage . }} current-menu-is-test-min{{- end -}}">
+                <span class="link-wrapper-test-min"><a
+                href="{{- .RelPermalink -}}" class="link-test-min">{{-
+                partial "return-helpers/title" . -}}</a></span>
+            </li>
+            {{- end -}}
+        {{- end }}
+        </ul>
+    </nav>
+    {{- end }}
+</header>
+{{- end -}}

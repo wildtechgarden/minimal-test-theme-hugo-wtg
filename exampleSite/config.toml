@@ -1,0 +1,79 @@
+baseURL = "https://example.com/"
+copyright = "© 2021 Daniel F. Dickinson"
+homepage = "https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/"
+paginate = 3
+defaultContentLanguage = "en"
+enableGitInfo = false
+enableRobotsTXT = true
+summaryLength = 25
+theme = "github.com/danielfdickinson/minimal-test-theme-hugo-dfd"
+themesdir = "../.."
+resourceDir = ".."
+
+[params]
+  mainSections = ["post"]
+  # Footnotes and TableOfContents don't work properly with a base href set in <head>
+  useBaseURL = false
+
+# See https://gohugo.io/content-management/multilingual/
+# and https://www.regisphilibert.com/blog/2018/08/hugo-multilingual-part-1-managing-content-translation/
+[languages]
+  [languages.en]
+    languageName = ":en:"
+    languageAltTitle = "English"
+    title = "Hugo Minimal Test Theme"
+    description = "Demo site for Daniel F. Dickinson's (DFD) Hugo minimal test theme component"
+    weight = 1
+    
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "about"
+        name = "About"
+        pageref = "about"
+        weight = 10
+
+      [[languages.en.menu.main]]
+        identifier = "accessibility"
+        name = "Accessibility"
+        pageref = "accessibility"
+        weight = 20
+
+[author]
+  name = "Daniel F. Dickinson"
+  homepage = "https://www.wildtechgarden.ca/"
+  email = "dfdpublic@wildtechgarden.ca"
+
+  [[ author.authors ]]
+    name = "Daniel F. Dickinson"
+    homepage = "https://www.wildtechgarden.ca/"
+    email = "dfdpublic@wildtechgarden.ca"
+
+[taxonomies]
+  tag = "tags"
+
+[frontmatter]
+  lastmod = ["lastmod",":git",":fileModTime","date","publishDate"]
+  date = ["date","publishDate","lastmod",":git",":fileModTime"]
+  publishDate = ["publishDate","date","lastmod",":git",":fileModTime"]
+
+[markup]
+  [markup.highlight]
+    guessSyntax = true
+    noClasses = false
+
+[privacy]
+
+  [privacy.vimeo]
+    disabled = true
+
+  [privacy.twitter]
+    disabled = true
+
+  [privacy.instagram]
+    disabled = true
+
+  [privacy.youtube]
+    disabled = true
+
+[module]
+  replacements = "github.com/danielfdickinson/minimal-test-theme-hugo-dfd -> ../.."
