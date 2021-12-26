@@ -6,7 +6,8 @@
 }
 
 html {
-    font-size: 12pt;
+    font-size: 16pt;
+    line-height: 1.4;
 }
 
 .main-test-min table:not(.table-debug-hugo) {
@@ -80,4 +81,59 @@ html {
 
 .nav-site-page-test-min .list-item-label-test-min {
     padding-right: .4em;
+}
+
+.bar-test-min .list-test-min {
+    background-color: lightgray;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.bar-test-min .list-test-min .list-item-test-min {
+    list-style: none;
+}
+
+.bar-test-min .list-test-min .list-item-test-min .list-item-label-test-min {
+    display: none;
+}
+
+.nav-site-page-test-min .list-item-test-min:nth-child(1) .link-test-min::before {
+    content: "«";
+}
+
+.nav-site-page-test-min .list-item-test-min:nth-child(1) .link-test-min::after {
+    content: "«";
+}
+
+.nav-site-page-test-min .list-item-test-min:nth-child(2) .link-test-min::before {
+    content: "‹";
+}
+
+.nav-site-page-test-min .list-item-test-min:nth-child(2) .link-test-min::after {
+    content: "‹";
+}
+
+.nav-site-page-test-min .list-item-test-min:nth-child(3) .link-test-min::before {
+    content: "^";
+}
+
+.nav-site-page-test-min .list-item-test-min:nth-child(3) .link-test-min::after {
+    content: "^";
+}
+
+.nav-site-page-test-min .list-item-test-min:nth-child(4) .link-test-min::before {
+    content: "›";
+}
+
+.nav-site-page-test-min .list-item-test-min:nth-child(4) .link-test-min::after {
+    content: "›";
+}
+
+.nav-site-page-test-min .list-item-test-min:nth-child(5) .link-test-min::before {
+    content: "»";
+}
+
+.nav-site-page-test-min .list-item-test-min:nth-child(5) .link-test-min::after {
+    content: "»";
 }
