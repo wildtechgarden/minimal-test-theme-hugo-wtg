@@ -7,7 +7,6 @@ enableGitInfo = false
 enableRobotsTXT = true
 summaryLength = 25
 resourceDir = ".."
-theme = "github.com/danielfdickinson/minimal-test-theme-hugo-dfd"
 
 [params]
   mainSections = ["post"]
@@ -78,3 +77,6 @@ theme = "github.com/danielfdickinson/minimal-test-theme-hugo-dfd"
 
 [module]
   replacements = "github.com/danielfdickinson/minimal-test-theme-hugo-dfd -> ../.."
+
+  [[module.imports]]
+     path = "github.com/danielfdickinson/minimal-test-theme-hugo-dfd"

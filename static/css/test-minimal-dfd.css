@@ -5,6 +5,10 @@
     }
 }
 
+html {
+    font-size: 12pt;
+}
+
 .main-test-min table:not(.table-debug-hugo) {
     border-collapse: collapse;
     width: 100%;
