@@ -3,3 +3,4 @@ node_modules
 .env
 .disabled-env
 .hugo_build.lock
+html-validate.log

@@ -9,8 +9,7 @@
         <ul class="list-test-min">
             <li class="list-item-test-min{{- if eq $curPage site.Home }} current-menu-is-test-min{{- end -}}">
                 <span class="link-wrapper-test-min"><a
-                class="link-test-min" href="{{- site.Home.RelPermalink -}}">{{-
-                partial "return-helpers/title" site.Home -}}</a></span>
+                class="link-test-min" href="{{- site.Home.RelPermalink -}}">{{- .Title | default (site.Title) -}}</a></span>
             </li>
         {{- /* Next buttons are from the main menu (if it is defined) */}}
         {{- range site.Menus.main }}
@@ -26,8 +25,7 @@
             {{- with $page }}
             <li class="list-item-test-min{{- if eq $curPage . }} current-menu-is-test-min{{- end -}}">
                 <span class="link-wrapper-test-min"><a
-                href="{{- .RelPermalink -}}" class="link-test-min">{{-
-                partial "return-helpers/title" . -}}</a></span>
+                href="{{- .RelPermalink -}}" class="link-test-min">{{- .Title | default (site.Title) -}}</a></span>
             </li>
             {{- end -}}
         {{- end }}

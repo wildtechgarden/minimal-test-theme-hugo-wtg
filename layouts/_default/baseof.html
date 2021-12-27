@@ -9,7 +9,7 @@
 {{- end }}
 {{- partial "header" . }}
 <div class="test-scrollable-min">
-    <h1>{{ .Title | default site.Title }}</h1>
+    <h1>{{ .Title | default (site.Title) }}</h1>
     <div class="main-test-min" id="content">
 {{- block "main" . }}{{- end }}
 {{- partial "page-navigation" . }}

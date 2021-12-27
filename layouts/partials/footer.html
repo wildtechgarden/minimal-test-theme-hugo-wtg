@@ -1,14 +1,14 @@
 <footer class="footer-test-min bar-test-min">
-    <nav aria-label="Site Page Navigation" class="nav-taxonomies-test-min bar-test-min">
+    <nav aria-label="{{ i18n "taxonomies" }}" class="nav-taxonomies-test-min bar-test-min">
         <ul class="list-test-min bar-test-min linkbar-test-min">
-        {{ range $taxonomy_term, $taxonomy := .Site.Taxonomies }}
+        {{- range $taxonomy_term, $taxonomy := .Site.Taxonomies -}}
             {{- $count := len $taxonomy -}}
-            {{ with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
+            {{- with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
                 <li class="list-item-test-min"><a
                     class="link-test-min" href="{{- .Permalink -}}">{{
                     $taxonomy_term }}<span class="count-test-min"> ({{- $count -}})</span></a></li>
-            {{ end }}
-        {{ end }}
+            {{- end -}}
+        {{- end }}
         </ul>
     </nav>
     <div class="footer-infobar-test-min bar-test-min">

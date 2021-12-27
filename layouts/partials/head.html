@@ -2,11 +2,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ .Title | default site.Title }}</title>
-    {{- if ne (.Param "testStylesInclude") false -}}
-    <link rel="stylesheet" href="/css/test-minimal-dfd.css" />
-    <link rel="stylesheet" href="/css/test-minimal-dfd-old.css" />
+    {{- if ne (.Param "testStylesInclude") false }}
+    <link rel="stylesheet" href="/css/test-minimal-dfd.css">
+    <link rel="stylesheet" href="/css/test-minimal-dfd-old.css">
     {{- end }}
-    {{ hugo.Generator }}
+    {{ replace (hugo.Generator) " /" "" | safeHTML }}
     {{ if eq (.Param "useBaseUrl") true -}}{{ if $.Site.BaseURL -}}<base href="{{ $.Site.BaseURL }}" />{{- end }}{{- end }}
     {{- $description := .Description -}}
     {{- if .IsPage -}}
@@ -15,5 +15,5 @@
         {{- $description = ($description | default .Site.Params.description | default .Site.Params.summary) -}}
     {{- end -}}
     {{- $description = replaceRE " +" " " (replaceRE "(\n|\r)" " " ($description | .RenderString | plainify)) -}}
-    <meta name="description" content="{{ $description }}" />
+    <meta name="description" content="{{ $description }}">
 </head>
