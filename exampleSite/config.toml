@@ -6,7 +6,6 @@ defaultContentLanguage = "en"
 enableGitInfo = false
 enableRobotsTXT = true
 summaryLength = 25
-resourceDir = ".."
 
 [params]
   mainSections = ["post"]
