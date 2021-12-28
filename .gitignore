@@ -1,6 +1,8 @@
 public
 node_modules
+resources
 .env
 .disabled-env
 .hugo_build.lock
 html-validate.log
+check-links.log
