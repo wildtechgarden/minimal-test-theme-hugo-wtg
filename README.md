@@ -1,7 +1,12 @@
-# DFD Hugo Minimal Test Theme Component
+# DFD Hugo Minimal Test Theme
 
 ## Status
-TBD
+
+![build-and-verify](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/actions/workflows/build-and-verify.yml/badge.svg)
+
+## GitHub Repository
+
+<https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd>
 
 ## Overview
 
@@ -22,6 +27,11 @@ This minimal theme is built using assumptions that may require Hugo 0.80.0 or hi
 A simple shortcode that emits an HTML paragraph with 'Hello World!'. To use it,
 add ``{{``&lt;``  hello-world  ``&gt;``}}`` to a **content** file (not template).
 
+### page-assets shortcode
+
+Allows rendering a Hugo resource from the ``assets`` directory as Markdown. This is currently used to render this repo's README.md on a page in the exampleSite.
+
+In order to be compliant with [current HTML best practise for h1 elements, which is to have only one h1 element per page](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#multiple_h1_elements_on_one_page), any H1 elements in the asset are rewritten as H2 elements (because this theme adds the page title as an H1 element).
 
 ## Usage
 
@@ -85,10 +95,12 @@ add ``{{``&lt;``  hello-world  ``&gt;``}}`` to a **content** file (not template)
 
  Enjoy!
 
+## Page and/or Site Params Available (from this module)
+
 | Param                    | Description                                    |
 |--------------------------|------------------------------------------------|
 | showTopBar               | If false, do not show top menu bar             |
-| testStylesInclude        | If true adds old browser warning because the offending styles are also enabled (see below). |
+| testStylesInclude        | If true adds a very small amount of CSS to improve theme usability. |
 
 ## Test CSS Styling
 
@@ -102,8 +114,3 @@ In ``config.toml`` add
 [params]
      testStylesInclude = true
 ```
-### For the theme itself
-
-| Class                       | Description                                 |
-|-----------------------------|---------------------------------------------|
-| test-min-warningold         | Indicates warning about old browser         |

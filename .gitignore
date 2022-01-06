@@ -6,3 +6,4 @@ resources
 .hugo_build.lock
 html-validate.log
 check-links.log
+hugo-audit.log
