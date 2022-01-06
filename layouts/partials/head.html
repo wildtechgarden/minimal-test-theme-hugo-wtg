@@ -4,7 +4,6 @@
     <title>{{ .Title | default site.Title }}</title>
     {{- if ne (.Param "testStylesInclude") false }}
     <link rel="stylesheet" href="/css/test-minimal-dfd.css">
-    <link rel="stylesheet" href="/css/test-minimal-dfd-old.css">
     {{- end }}
     {{ replace (hugo.Generator) " /" "" | safeHTML }}
     {{ if eq (.Param "useBaseUrl") true -}}{{ if $.Site.BaseURL -}}<base href="{{ $.Site.BaseURL }}" />{{- end }}{{- end }}
