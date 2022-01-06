@@ -75,6 +75,8 @@ summaryLength = 25
     disabled = true
 
 [module]
+  # For the example site, we need the _current_ theme module from the same repo (path is relative to themes directory)
+  # See https://gohugo.io/hugo-modules/configuration/#module-config-top-level (replacements)
   replacements = "github.com/danielfdickinson/minimal-test-theme-hugo-dfd -> ../.."
 
   [[module.imports]]
