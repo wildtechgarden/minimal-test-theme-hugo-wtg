@@ -20,7 +20,8 @@ This minimal theme is built using assumptions that may require Hugo 0.80.0 or hi
 ### hello-world Shortcode
 
 A simple shortcode that emits an HTML paragraph with 'Hello World!'. To use it,
-add ``{{\< hello-world>}}`` to a **content** file (not template).
+add ``{{``&lt;``  hello-world  ``&gt;``}}`` to a **content** file (not template).
+
 
 ## Usage
 
@@ -33,7 +34,7 @@ add ``{{\< hello-world>}}`` to a **content** file (not template).
    ```
 ### Theme, Adding This Hugo Module (preferred)
 
-1. Initialize the Hugo module system: ``hugo mod init github.com/<your_user>/<your_project>`` (assuming you are using github, of course).
+1. Initialize the Hugo module system: ``hugo mod init github.com/``&lt;``your_user``&gt;``/``&lt;``your_project``&gt; (assuming you are using GitHub, of course).
 2. Import the theme in your ``config.toml``
    ```
    [module]

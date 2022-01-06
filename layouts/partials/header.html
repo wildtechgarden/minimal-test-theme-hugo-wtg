@@ -15,8 +15,7 @@
         {{- range site.Menus.main }}
             <li class="list-item-test-min{{- if eq $curPage.RelPermalink .URL }} current-menu-is-test-min{{- end -}}">
                 <span class="link-wrapper-test-min"><a
-                href="{{- .URL -}}" class="link-test-min">{{-
-                .Name -}}</a></span>
+                href="{{- .URL -}}" class="link-test-min">{{- .Name -}}</a></span>
             </li>
         {{- end -}}
         {{- /* Final buttons are the 'mainSections' sections (introduced in Hugo 0.71) */}}
