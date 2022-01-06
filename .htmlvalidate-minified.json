@@ -4,9 +4,68 @@
         "html-validate:recommended",
         "html-validate:document"
     ],
+    "elements": [
+        "html5",
+        {
+            "th": {
+                "flow": true,
+                "implicitClosed": ["td", "th"],
+                "attributes": {
+                    "align": {
+                        "deprecated": true
+                    },
+                    "axis": {
+                        "deprecated": true
+                    },
+                    "background": {
+                        "deprecated": true
+                    },
+                    "bgcolor": {
+                        "deprecated": true
+                    },
+                    "char": {
+                        "deprecated": true
+                    },
+                    "charoff": {
+                        "deprecated": true
+                    },
+                    "colspan": {
+                        "enum": ["/\\d+/"]
+                    },
+                    "height": {
+                        "deprecated": true
+                    },
+                    "nowrap": {
+                        "deprecated": true
+                    },
+                    "rowspan": {
+                        "enum": ["/\\d+/"]
+                    },
+                    "scope": {
+                        "required": false,
+                        "enum": ["row", "col", "rowgroup", "colgroup", "auto"]
+                    },
+                    "valign": {
+                        "deprecated": true
+                    },
+                    "width": {
+                        "deprecated": true
+                    }
+                },
+                "permittedContent": ["@flow"],
+                "permittedDescendants": [{ "exclude": ["header", "footer", "@sectioning", "@heading"] }]
+            }
+        }
+    ],
     "rules": {
         "require-sri": "off",
         "attr-quotes": "off",
-        "doctype-style": "off"
+        "doctype-style": "off",
+        "no-raw-characters": [
+            "error",
+            {
+                "relaxed": true
+            }
+        ]
     }
 }
