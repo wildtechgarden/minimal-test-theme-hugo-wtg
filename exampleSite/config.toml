@@ -79,5 +79,63 @@ summaryLength = 25
   # See https://gohugo.io/hugo-modules/configuration/#module-config-top-level (replacements)
   replacements = "github.com/danielfdickinson/minimal-test-theme-hugo-dfd -> ../.."
 
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+
+  [[module.mounts]]
+    source = "data"
+    target = "data"
+
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+
+  [[module.mounts]]
+    source = "i18n"
+    target = "i18n"
+
+  [[module.mounts]]
+    source = "archetypes"
+    target = "archetypes"
+
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+
   [[module.imports]]
      path = "github.com/danielfdickinson/minimal-test-theme-hugo-dfd"
+
+    [[module.imports.mounts]]
+      source = "static"
+      target = "static"
+
+    [[module.imports.mounts]]
+      source = "layouts"
+      target = "layouts"
+
+    [[module.imports.mounts]]
+      source = "data"
+      target = "data"
+
+    [[module.imports.mounts]]
+      source = "assets"
+      target = "assets"
+
+    [[module.imports.mounts]]
+      # Allows us to access the README.md and use it in page (via the ``page-assets`` shortcode in exampleSite)
+      source = "README.md"
+      target = "assets/README-minimal-test-theme.md"
+
+    [[module.imports.mounts]]
+      source = "i18n"
+      target = "i18n"
+
+    [[module.imports.mounts]]
+      source = "archetypes"
+      target = "archetypes"
+
