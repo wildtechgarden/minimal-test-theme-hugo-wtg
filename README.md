@@ -11,9 +11,9 @@ The goal is to minimize the amount of 'layout grunt work' one has to do to creat
 
 See [License](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/blob/master/LICENSE) for permissions on use.
 
-## Modern Hugo Only (as of 2021-03-17)
+## Modern Hugo Only
 
-This minimal theme is built using assumptions that may require Hugo 0.76.0 or higher, and in any event those are the only versions on which it has been tested, at present.
+This minimal theme is built using assumptions that may require Hugo 0.80.0 or higher, and in any event those are the only versions on which it has been tested, at present.
 
 ## Available Features
 

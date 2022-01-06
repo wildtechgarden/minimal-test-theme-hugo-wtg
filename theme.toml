@@ -1,16 +1,17 @@
 name = "Hugo Minimal Test Theme"
+copyright = "© 2021-2022 Daniel F. Dickinson"
 license = "MIT"
 licenselink = "https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/blob/master/LICENSE"
 description = "A minimal theme to generate reproducible test cases for Hugo and Hugo-based sites."
 homepage = "https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd"
 tags = ["test","minimal","light","minimalist","fast","demo","debug","debug tool"]
 features = ["light","fast","debugging tool","minimum test case","minimum reproducible test cases","debug"]
-min_version = "0.76.0"
+min_version = "0.80.0"
 extended = false
 summaryLength = "25"
 
 [author]
   name = "Daniel F. Dickinson"
-  homepage = "https://www.wildtechgarden.ca/"
-  copyright = "© 2021 Daniel F. Dickinson"
+  homepage = "https://www.wildtechgarden.ca/about/"
+  copyright = "© 2021-2022 Daniel F. Dickinson"
   email = "dfdpublic@wildtechgarden.ca"
