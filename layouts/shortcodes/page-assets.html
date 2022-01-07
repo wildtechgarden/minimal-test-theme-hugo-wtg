@@ -3,9 +3,9 @@
 {{- $page_asset := resources.Get $page_asset_name -}}
 {{- with $page_asset -}}
     {{- $pageHTML := $page_asset.Content | $curPage.RenderString -}}
-    {{- if gt (len (findRE "<h1.*?>(.|\n)*?</h1>" $pageHTML)) 0 -}}
-        {{ replaceRE "<h1(.*?)id=\"(.*?)\"(.*?)>((.*|\n)*?)</h1>" "<h2 $1 id=\"$2-831\"$3>$5</h2>" $pageHTML | safeHTML }}
+    {{- if gt (len (findRE "<h1.*?>(.|\n)*?</h1>" $pageHTML)) 0 }}
+        {{- replaceRE "<h1(.*?)id=\"(.*?)\"(.*?)>((.*|\n)*?)</h1>" "<h2${1}id=\"$2-831\"$3>$5</h2>" $pageHTML | safeHTML }}
     {{- else }}
-        {{ $pageHTML | safeHTML }}
-    {{ end -}}
+        {{- $pageHTML | safeHTML -}}
+    {{- end -}}
 {{- end -}}
