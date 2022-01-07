@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ ($combinedCSS | resources.Concat "/css/minimal-test-hugo-dfd.css").Permalink }}">        
     {{- end }}
     {{ replace (hugo.Generator) " /" "" | safeHTML }}
-    {{ if eq (.Param "useBaseUrl") true -}}{{ if $.Site.BaseURL -}}<base href="{{ $.Site.BaseURL }}" />{{- end }}{{- end }}
+    {{ if eq (.Param "useBaseUrl") true -}}{{ if $.Site.BaseURL -}}<base href="{{ $.Site.BaseURL }}">{{- end }}{{- end }}
     {{- $description := .Description -}}
     {{- if .IsPage -}}
         {{- $description = ($description | default .Params.description | default .Params.summary | default .Summary) -}}
