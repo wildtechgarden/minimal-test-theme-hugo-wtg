@@ -18,8 +18,7 @@ summaryLength = 25
 # and https://www.regisphilibert.com/blog/2018/08/hugo-multilingual-part-1-managing-content-translation/
 [languages]
   [languages.en]
-    languageName = ":en:"
-    languageAltTitle = "English"
+    languageName = "English"
     title = "Hugo Minimal Test Theme"
     description = "Demo site for Daniel F. Dickinson's (DFD) Hugo minimal test theme component"
     weight = 1
