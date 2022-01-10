@@ -10,7 +10,7 @@ summaryLength = 25
 [params]
   mainSections = ["post"]
   # Footnotes and TableOfContents don't work properly with a base href set in <head>
-  useBaseURL = false
+  useBaseURL = true
   # Disable if you don't want the test (bare-bones) CSS
   # testStylesInclude = false
 
