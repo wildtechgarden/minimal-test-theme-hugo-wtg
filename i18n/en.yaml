@@ -1,7 +1,4 @@
 ---
-- id: browser_too_old
-  translation: Your browser lacks features required by this site (such browsers include Internet Explorer 11).
-
 - id: untitled
   translation: Untitled
 

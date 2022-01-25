@@ -2,11 +2,6 @@
 <html lang="{{ $.Site.Language.Lang }}">
 {{ partial "head.html" . }}
 <body>
-{{- if eq (.Param "testStylesInclude") true }}
-<div class="test-min-warningold bar-test-min heading-general-test-min">
-    Your browser lacks features required by this site (such browsers include Internet Explorer 11).
-</div>
-{{- end }}
 {{- partial "header" . }}
 <div class="test-scrollable-min">
     <h1>{{ .Title | default (site.Title) }}</h1>
