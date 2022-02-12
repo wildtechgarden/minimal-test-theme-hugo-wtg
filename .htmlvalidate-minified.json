@@ -61,11 +61,6 @@
         "require-sri": "off",
         "attr-quotes": "off",
         "doctype-style": "off",
-        "no-raw-characters": [
-            "error",
-            {
-                "relaxed": true
-            }
-        ]
+        "no-raw-characters": "off"
     }
 }
