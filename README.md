@@ -33,16 +33,9 @@ Allows rendering a Hugo resource from the ``assets`` directory as Markdown. This
 
 In order to be compliant with [current HTML best practise for h1 elements, which is to have only one h1 element per page](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#multiple_h1_elements_on_one_page), any H1 elements in the asset are rewritten as H2 elements (because this theme adds the page title as an H1 element).
 
-## Usage
+## Basic Usage (as Theme)
 
-### From Scratch
-
-1. Create a test case site, or clone a site with no additional layouts, and switch to it
-   ```
-   git clone https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd.git
-   cd minimal-test-theme-hugo-dfd/exampleSite
-   ```
-### Theme, Adding This Hugo Module (preferred)
+### Hugo Module (preferred)
 
 1. Initialize the Hugo module system: ``hugo mod init github.com/``&lt;``your_user``&gt;``/``&lt;``your_project``&gt; (assuming you are using GitHub, of course).
 2. Import the theme in your ``config.toml``
@@ -94,6 +87,23 @@ In order to be compliant with [current HTML best practise for h1 elements, which
    ```
 
  Enjoy!
+
+## Use to Create a Minimal(ish) Reproducible Test Case
+
+1. To create a test case site (Linux)
+
+   ```
+   git clone https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd.git
+   cp -r minimal-test-theme-hugo-dfd/exampleSite a-minimal-reproducible-test-case
+   cd a-minimal-reproducible-test-case
+   git init
+   git remote add origin <URL-of-and-empty-repo-you-created-for-this-test-case>
+   git push origin main
+   ```
+2. Now modify the exampleSite by adding/modifying content and layouts to reproduce you issue
+3. Commit your changes and push to the repo
+4. Create a post on the [Hugo Forum](https://discourse.gohugo.io) describing your issue and provide a link to the repo you just pushed.
+5. Hopefully someone can help!
 
 ## Page and/or Site Params Available (from this module)
 
