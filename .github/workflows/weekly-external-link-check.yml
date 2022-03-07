@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run hugo-action-check-links
-        uses: danielfdickinson/link-check-action-hugo-dfd@v0.2.0-beta.1
+        uses: danielfdickinson/link-check-action-hugo-dfd@v0.2.3
         with:
           canonical-root: https://example.com/
           check-external: true
