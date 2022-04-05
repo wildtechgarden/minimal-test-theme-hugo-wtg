@@ -138,3 +138,14 @@ In `config.toml` add
 [params]
      testStylesInclude = true
 ```
+
+## Contributions Welcome
+
+If [your issues can't be found when searching both open and closed issues](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/issues?q=is%3Aissue), please add it!
+
+Please [check open issues on danielfdickinson/minimal-test-theme-hugo-dfd](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/issues)
+for enhancements and bugs that you would like resolved, write the fix, and submit a PR!
+
+Documenting this is always hand as well.
+
+Thank you, and I hope you find this repository useful.
