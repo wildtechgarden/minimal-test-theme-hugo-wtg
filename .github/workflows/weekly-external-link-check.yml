@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: "Build Site with Hugo and Audit"
-        uses: danielfdickinson/build-audit-action-hugo-dfd@main
+        uses: danielfdickinson/build-audit-action-hugo-dfd@0.2
         with:
           upload-site-as: unminified-site
           use-lfs: false
@@ -21,9 +21,9 @@ jobs:
     needs: build-unminified-site
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Run hugo-action-check-links
-        uses: danielfdickinson/link-check-action-hugo-dfd@main
+        uses: danielfdickinson/link-check-action-hugo-dfd@0.2
         with:
           canonical-root: https://example.com/
           check-external: true

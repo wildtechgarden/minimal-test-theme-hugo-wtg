@@ -7,17 +7,13 @@ on:
       - opened
       - synchronize
       - reopened
+    branches:
+      - main
+      - 'v[0-9]*'
   push:
     branches:
-      - 'feature**'
       - main
-      - 'staging**'
-    paths-ignore:
-      - 'README.md'
-      - 'LICENSE'
-      - '.gitignore'
-      - '.vscode'
-      - 'scripts'
+      - 'v[0-9]*'
 jobs:
   check-source-code-validity:
     runs-on: ubuntu-20.04
@@ -38,7 +34,7 @@ jobs:
         hugo: ["0.80.0", "0.88.1", "latest"]
     steps:
       - name: "Build Site with Hugo and Audit"
-        uses: danielfdickinson/build-audit-action-hugo-dfd@main
+        uses: danielfdickinson/build-audit-action-hugo-dfd@0.2
         with:
           hugo-version: ${{ matrix.hugo }}
           upload-site-as: unminified-site-${{ matrix.hugo }}
@@ -53,7 +49,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: "Validate exampleSite HTML"
-        uses: danielfdickinson/validate-html-action-hugo-dfd@main
+        uses: danielfdickinson/validate-html-action-hugo-dfd@0.2
         with:
           download-site-as: unminified-site-${{ matrix.hugo }}
   check-links:
@@ -62,7 +58,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: "Check internal links"
-        uses: danielfdickinson/link-check-action-hugo-dfd@main
+        uses: danielfdickinson/link-check-action-hugo-dfd@0.2
         with:
           canonical-root: https://example.com/
           download-site-as: unminified-site-latest
