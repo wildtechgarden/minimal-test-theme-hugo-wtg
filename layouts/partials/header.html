@@ -2,7 +2,6 @@
 {{- if ne (.Param "hidePageHeader") true }}
 <header class="header-test-min">
     {{- if ne (.Param "hideTopBarMenu") true }}
-    {{- /* TODO: On mobile replace menu bar 'buttons' with a hamburger menu (CSS only; no JS) */}}
     <nav aria-label="{{ i18n "main_site_menu" }}"
     class="bar-test-min menubar-test-min test-mainmenu-hugo">
         {{- /* First button is 'home' (site title) link */}}
