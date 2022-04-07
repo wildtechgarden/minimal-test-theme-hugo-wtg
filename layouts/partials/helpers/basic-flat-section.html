@@ -1,4 +1,4 @@
-
+{{- $curPage := .Page -}}
 {{- if .Content }}
     {{- partial "helpers/basic-content" .Content -}}
 {{- end }}
@@ -6,7 +6,7 @@
 {{- if .Data.Terms -}}
     {{- /* For taxonomy and term pages, show the count beside the taxonomy or term, avoids need for specific taxonomy/term layouts  */ -}}
     {{- range $key, $value := .Data.Terms }}
-        <li class="list-item-test-min"><a class="link-test-min" href="{{ .Page.RelPermalink }}">{{ partial "page-title" $key }}</a> ({{- .Count -}})</li>
+        <li class="list-item-test-min"><a class="link-test-min" href="{{ .Page.RelPermalink }}">{{ $key | default (partial "page-title" $curPage) }}</a> ({{- .Count -}})</li>
     {{- end -}}
 {{- else -}}
     {{- range .Pages }}
