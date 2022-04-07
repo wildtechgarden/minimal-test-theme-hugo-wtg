@@ -7,7 +7,7 @@
         {{- /* First button is 'home' (site title) link */}}
         <ul class="list-test-min">
             <li class="list-item-test-min{{- if eq $curPage site.Home }} current-menu-is-test-min{{- end -}}">
-                <a class="link-test-min" href="{{- site.Home.RelPermalink -}}">{{- site.Home.Title | default (site.Title) -}}</a>
+                <a class="link-test-min" href="{{- site.Home.RelPermalink -}}">{{- partial "page-title.html" site.Home -}}</a>
             </li>
         {{- /* Next buttons are from the main menu (if it is defined) */}}
         {{- range site.Menus.main }}
@@ -15,7 +15,7 @@
                 <a href="{{- .URL -}}" class="link-test-min">{{- .Name -}}</a>
             </li>
         {{- end -}}
-        {{- /* Final buttons are the 'mainSections' sections (introduced in Hugo 0.71) */}}
+        {{- /* Final buttons are the 'mainSections' sections (re-worked in Hugo 0.71) */}}
         {{- range site.Params.mainSections -}}
             {{- $page := site.GetPage (printf "/%s" .) -}}
             {{- with $page }}
