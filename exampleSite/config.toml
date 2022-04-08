@@ -3,14 +3,15 @@ copyright = "© 2021-2022 Daniel F. Dickinson"
 homepage = "https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/"
 paginate = 3
 defaultContentLanguage = "en"
-enableGitInfo = false
-enableRobotsTXT = true
+enableGitInfo = true
+enableRobotsTXT = false
 summaryLength = 25
+disableKinds = ["RSS","sitemap"]
 
 [params]
   mainSections = ["post"]
   # Footnotes and TableOfContents don't work properly with a base href set in <head>
-  useBaseURL = true
+  useBaseURL = false
   # Disable if you don't want the test (bare-bones) CSS
   # testStylesInclude = false
 
@@ -137,4 +138,3 @@ summaryLength = 25
     [[module.imports.mounts]]
       source = "archetypes"
       target = "archetypes"
-
