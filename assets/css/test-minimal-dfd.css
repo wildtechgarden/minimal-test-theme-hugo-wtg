@@ -93,6 +93,31 @@ html {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    padding-left: .8em;
+    padding-right: .8em;
+}
+
+.bar-test-min .list-test-min .list-item-test-min {
+    display: flex;
+    flex: 1 1 auto;
+    list-style: none;
+    margin-bottom: .2em;
+    margin-left: .4em;
+    margin-right: .4em;
+    margin-top: .2em;
+    padding-bottom: .2em;
+    padding-left: .2em;
+    padding-right: .2em;
+    padding-top: .2em;
+}
+
+.bar-test-min .list-test-min .list-item-test-min .link-test-min {
+    align-items: center;
+    display: flex;
+    flex: 1 1 100%;
+    justify-content: center;
+    min-height: 48px;
+    min-width: 48px;
 }
 
 .bar-test-min .list-test-min a:link {
@@ -143,10 +168,6 @@ html {
 
 .bar-test-min .list-test-min .list-item-test-min:hover a:visited {
     color: #520e52;
-}
-
-.bar-test-min .list-test-min .list-item-test-min {
-    list-style: none;
 }
 
 .bar-test-min .list-test-min .list-item-test-min .list-item-label-test-min {
@@ -263,4 +284,11 @@ html {
 .bar-test-min .list-item-test-min.current-menu-is-test-min:active a:visited {
     background-color: #191919;
     color: #ff89ff;
+}
+
+.section-list-test-min .list-item-test-min {
+    padding-left: .4em;
+    padding-right: .4em;
+    padding-bottom: .3em;
+    padding-top: .3em;
 }
