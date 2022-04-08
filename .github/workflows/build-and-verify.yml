@@ -62,5 +62,6 @@ jobs:
         with:
           canonical-root: https://example.com/
           download-site-as: unminified-site-latest
+          entry-point: index.html
           upload-logs-as: check-links-failure
           upload-logs-retention: 3

@@ -28,5 +28,6 @@ jobs:
           canonical-root: https://example.com/
           check-external: true
           check-external-strict: true
+          entry-point: index.html
           upload-logs-as: weekly-external-check-failure
           upload-logs-retention: 4
