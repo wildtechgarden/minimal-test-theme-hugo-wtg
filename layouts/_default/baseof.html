@@ -4,7 +4,7 @@
 <body>
 {{- partial "header" . }}
 <div class="test-scrollable-min">
-    <h1>{{- partial "page-title.html" . }}</h1>
+    <h1>{{- partial "helpers/page-title.html" . }}</h1>
     <div class="main-test-min" id="content">
 {{- block "main" . }}{{- end }}
 {{- partial "page-navigation" . }}
