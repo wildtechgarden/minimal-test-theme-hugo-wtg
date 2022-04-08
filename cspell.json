@@ -2,5 +2,10 @@
     "version": "0.2",
     "ignorePaths": [],
     "words": [],
-    "ignoreWords": []
+    "ignoreWords": [
+        "Uncategorized",
+        "mkdir",
+        "plainify",
+        "robotstxt"
+    ]
 }
