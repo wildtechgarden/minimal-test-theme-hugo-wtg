@@ -67,8 +67,7 @@ jobs:
           upload-logs-retention: 3
   build-minified-site:
     needs:
-      - validate-unminified-html
-      - check-links
+      - check-source-code-validity
     runs-on: ubuntu-20.04
     if: ${{ github.event_name == 'push' && github.ref_name == 'main' }}
     steps:
@@ -81,6 +80,8 @@ jobs:
   deploy-minified-site:
     needs:
       - build-minified-site
+      - validate-unminified-html
+      - check-links
     environment: minimal-test-production
     runs-on: ubuntu-20.04
     if: ${{ github.event_name == 'push' && github.ref_name == 'main' }}
