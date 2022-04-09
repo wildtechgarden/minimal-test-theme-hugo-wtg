@@ -1,5 +1,5 @@
 ---
-title: "README for DFD Hugo Minimal Test Theme"
+title: "README for DFD Hugo minimal test theme"
 date: 2022-01-06T07:06:23Z
 publishDate: 2022-01-06T07:06:23Z
 author: Daniel F. Dickinson

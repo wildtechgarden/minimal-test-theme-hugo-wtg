@@ -1,4 +1,4 @@
-# DFD Hugo Minimal Test Theme
+# DFD Hugo minimal test theme
 
 ## Status
 
@@ -22,13 +22,13 @@ The goal is to minimize the amount of 'layout grunt work' one has to do to creat
 
 See [License](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/blob/master/LICENSE) for permissions on use.
 
-## Modern Hugo Only
+## Modern hugo only
 
 This minimal theme is built using assumptions that may require Hugo 0.80.0 or higher, and in any event those are the only versions on which it has been tested, at present.
 
-## Available Features
+## Available features
 
-### hello-world Shortcode
+### hello-world shortcode
 
 A simple shortcode that emits an HTML paragraph with 'Hello World!'. To use it,
 add `{{`&lt; `hello-world` &gt;`}}` to a **content** file (not template).
@@ -39,11 +39,11 @@ Allows rendering a Hugo resource from the `assets` directory as Markdown. This i
 
 In order to be compliant with [current HTML best practise for h1 elements, which is to have only one h1 element per page](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#multiple_h1_elements_on_one_page), any H1 elements in the asset are rewritten as H2 elements (because this theme adds the page title as an H1 element).
 
-## Basic Usage (as Theme)
+## Basic usage (as theme)
 
-### Hugo Module (preferred)
+### Hugo module (preferred)
 
-1. Initialize the Hugo module system: `hugo mod init github.com/`&lt;`your_user`&gt;`/`&lt;`your_project`&gt; (assuming you are using GitHub, of course).
+1. Initialize the Hugo module system: `hugo mod init github.com/<your_user>/<your_project>`; (assuming you are using GitHub, of course).
 2. Import the theme in your `config.toml`
 
    ```ini
@@ -65,7 +65,9 @@ In order to be compliant with [current HTML best practise for h1 elements, which
    hugo server -b http://localhost:1313/
    ```
 
-### Using downloaded copy of the theme component (e.g. Zip from Git repo)
+### Using downloaded copy of the theme component
+
+E.g. ZIP from git repo
 
 1. Make a themes directory and switch to it
 
@@ -107,7 +109,7 @@ In order to be compliant with [current HTML best practise for h1 elements, which
 
  Enjoy!
 
-## Use to Create a Minimal(ish) Reproducible Test Case
+## Use to create a minimal(ish) reproducible test case
 
 1. To create a test case site (Linux)
 
@@ -125,14 +127,16 @@ In order to be compliant with [current HTML best practise for h1 elements, which
 4. Create a post on the [Hugo Forum](https://discourse.gohugo.io) describing your issue and provide a link to the repo you just pushed.
 5. Hopefully someone can help!
 
-## Page and/or Site Params Available (from this module)
+## Page and/or site params available
+
+In/via this module
 
 | Param                    | Description                                    |
 |--------------------------|------------------------------------------------|
 | showTopBar               | If false, do not show top menu bar             |
 | testStylesInclude        | If true adds a very small amount of CSS to improve theme usability. |
 
-## Test CSS Styling
+## Test CSS styling
 
 This makes the 'theme' more usable
 
@@ -145,7 +149,7 @@ In `config.toml` add
      testStylesInclude = true
 ```
 
-## Contributions Welcome
+## Contributions welcome
 
 If [your issues can't be found when searching both open and closed issues](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/issues?q=is%3Aissue), please add it!
 
