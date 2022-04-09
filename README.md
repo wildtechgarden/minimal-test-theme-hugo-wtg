@@ -65,27 +65,7 @@ In order to be compliant with [current HTML best practise for h1 elements, which
    hugo server -b http://localhost:1313/
    ```
 
-### Using downloaded copy of the theme component
-
-E.g. ZIP from git repo
-
-1. Make a themes directory and switch to it
-
-   ```sh
-   mkdir themes
-   cd themes
-   ```
-
-2. Obtain a copy of the theme e.g. ([a theme Zip file from the Git repo](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/archive/refs/heads/main.zip))
-3. Copy/extract the theme into minimal-test-theme-hugo-dfd in the themes directory
-4. Change back to the site directory
-5. To test the result, run the local Hugo server
-
-   ```sh
-   hugo server -t minimal-test-theme-hugo -b http://localhost:1313/
-   ```
-
-### Using git submodules (deprecated)
+### Using git submodules (unsupported by theme author)
 
 1. Make a themes directory and switch to it.
 
