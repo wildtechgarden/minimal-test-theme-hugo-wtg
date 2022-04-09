@@ -296,3 +296,22 @@ html {
     padding-bottom: .3em;
     padding-top: .3em;
 }
+
+#status + p {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+#status + p a {
+    display: inline-flex;
+    align-items: center;
+    margin: .4em;
+    min-height: 48px;
+    min-width: 48px;
+}
+
+#status ~ p a img {
+    height: auto;
+    max-width: 100%;
+    width: auto;
+}
