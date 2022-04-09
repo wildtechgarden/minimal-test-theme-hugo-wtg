@@ -1,4 +1,3 @@
-
 @media screen {
     * {
         box-sizing: border-box;
@@ -66,17 +65,17 @@ html {
     padding: .4em;
 }
 
-.main-test-min .highlight > pre {
+.main-test-min .highlight>pre {
     min-width: max-content;
     overflow: visible;
 }
 
-.main-test-min pre > code {
+.main-test-min pre>code {
     min-width: max-content;
     overflow: visible;
 }
 
-.main-test-min .highlight > pre > code {
+.main-test-min .highlight>pre>code {
     margin: 0;
     min-width: max-content;
     overflow: visible;
@@ -121,53 +120,53 @@ html {
 }
 
 .bar-test-min .list-test-min a:link {
-    color: #99a7ff;
+    color: #bdf;
 }
 
 .bar-test-min .list-test-min a:visited {
-    color: #d763d7;
+    color: #d766d7;
 }
 
 .bar-test-min .list-test-min .list-item-test-min:active {
     background-color: #d0d0d0;
-    color: #520e52;
+    color: #303;
 }
 
 .bar-test-min .list-test-min .list-item-test-min:hover {
     background-color: #d0d0d0;
-    color: #520e52;
+    color: #303;
 }
 
 .bar-test-min .list-test-min .list-item-test-min:active a:active {
-    color: #520e52;
+    color: #303;
 }
 
 .bar-test-min .list-test-min .list-item-test-min:hover a:active {
-    color: #520e52;
+    color: #303;
 }
 
 .bar-test-min .list-test-min .list-item-test-min:active a:hover {
-    color: #520e52;
+    color: #303;
 }
 
 .bar-test-min .list-test-min .list-item-test-min:hover a:hover {
-    color: #520e52;
+    color: #303;
 }
 
 .bar-test-min .list-test-min .list-item-test-min:active a:link {
-    color: #520e52;
+    color: #303;
 }
 
 .bar-test-min .list-test-min .list-item-test-min:hover a:link {
-    color: #520e52;
+    color: #303;
 }
 
 .bar-test-min .list-test-min .list-item-test-min:active a:visited {
-    color: #520e52;
+    color: #303;
 }
 
 .bar-test-min .list-test-min .list-item-test-min:hover a:visited {
-    color: #520e52;
+    color: #303;
 }
 
 .bar-test-min .list-test-min .list-item-test-min .list-item-label-test-min {
@@ -223,67 +222,72 @@ html {
     color: blue;
 }
 
-.bar-test-min .current-menu-is-test-min a:visited {
-    color: #520e52;
+.bar-test-min .current-menu-is-test-min a:link {
+    color: blue;
 }
+
+.bar-test-min .current-menu-is-test-min a:visited {
+    color: #303;
+}
+
 .bar-test-min .list-item-test-min.current-menu-is-test-min:active {
     background-color: #191919;
-    color: #ff89ff;
+    color: #f8f;
 }
 
 .bar-test-min .list-item-test-min.current-menu-is-test-min:hover {
     background-color: #191919;
-    color: #ff89ff;
+    color: #f8f;
 }
 
 .bar-test-min .list-item-test-min.current-menu-is-test-min:active a:active {
     background-color: #191919;
-    color: #ff89ff;
+    color: #f8f;
 }
 
 .bar-test-min .list-item-test-min.current-menu-is-test-min:hover a:active {
     background-color: #191919;
-    color: #ff89ff;
+    color: #f8f;
 }
 
 .bar-test-min .list-item-test-min.current-menu-is-test-min:active a:hover {
     background-color: #191919;
-    color: #ff89ff;
+    color: #f8f;
 }
 
 .bar-test-min .list-item-test-min:hover.current-menu-is-test-min:hover a:hover {
     background-color: #191919;
-    color: #ff89ff;
+    color: #f8f;
 }
 
 .bar-test-min .list-item-test-min.current-menu-is-test-min:active a:hover {
     background-color: #191919;
-    color: #ff89ff;
+    color: #f8f;
 }
 
 .bar-test-min .list-item-test-min:hover.current-menu-is-test-min a:hover {
     background-color: #191919;
-    color: #ff89ff;
+    color: #f8f;
 }
 
 .bar-test-min .list-item-test-min.current-menu-is-test-min:hover a:link {
     background-color: #191919;
-    color: #ff89ff;
+    color: #f8f;
 }
 
 .bar-test-min .list-item-test-min.current-menu-is-test-min:active a:link {
     background-color: #191919;
-    color: #ff89ff;
+    color: #f8f;
 }
 
 .bar-test-min .list-item-test-min:hover.current-menu-is-test-min:hover a:visited {
     background-color: #191919;
-    color: #ff89ff;
+    color: #f8f;
 }
 
 .bar-test-min .list-item-test-min.current-menu-is-test-min:active a:visited {
     background-color: #191919;
-    color: #ff89ff;
+    color: #f8f;
 }
 
 .section-list-test-min .list-item-test-min {
