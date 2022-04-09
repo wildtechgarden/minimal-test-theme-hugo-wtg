@@ -25,7 +25,7 @@ jobs:
       - name: Run hugo-action-check-links
         uses: danielfdickinson/link-check-action-hugo-dfd@v0.2
         with:
-          canonical-root: https://example.com/
+          canonical-root: https://minimal-test-theme.wildtechgaren.ca/
           check-external: true
           check-external-strict: true
           entry-point: index.html

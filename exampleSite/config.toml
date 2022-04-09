@@ -1,6 +1,6 @@
-baseURL = "https://example.com/"
+baseURL = "https://minimal-test-theme.wildtechgarden.ca/"
 copyright = "© 2021-2022 Daniel F. Dickinson"
-homepage = "https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/"
+homepage = "https://minimal-test-theme.wildtechgarden.ca/"
 paginate = 3
 defaultContentLanguage = "en"
 enableGitInfo = true

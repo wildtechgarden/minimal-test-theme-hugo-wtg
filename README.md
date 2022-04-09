@@ -4,7 +4,11 @@
 
 [![build-and-verify](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/actions/workflows/build-and-verify.yml/badge.svg)](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/actions/workflows/build-and-verify.yml) [![weekly-external-link-check](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/actions/workflows/weekly-external-link-check.yml/badge.svg)](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/actions/workflows/weekly-external-link-check.yml)
 
-## GitHub Repository
+## Demo website
+
+<https://minimal-test-theme.wildtechgarden.ca/>
+
+## GitHub repository
 
 <https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd>
 
