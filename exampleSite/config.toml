@@ -28,13 +28,13 @@ disableKinds = ["RSS","sitemap"]
       [[languages.en.menu.main]]
         identifier = "about"
         name = "About"
-        url = "/about"
+        url = "/about/" # We can't use pageref because we support 0.80.0
         weight = 10
 
       [[languages.en.menu.main]]
         identifier = "accessibility"
         name = "Accessibility"
-        url = "/accessibility"
+        url = "/accessibility/" # We can't use pageref because we support 0.80.0
         weight = 20
 
 [author]
