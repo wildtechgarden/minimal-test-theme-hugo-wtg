@@ -7,7 +7,7 @@ publishDate: 2021-10-15T05:57:11Z
 
 ## Statement
 
-[Daniel F. Dickinson](https://www.wildtechgarden.ca/about/) makes his best effort to keep this site accessible and inclusive. If you find something that does not meet that goal, please use the [contact form on his main site](https://www.wildtechgarden.ca/contact/) to let him know.
+[Daniel F. Dickinson](https://wildtechgarden.ca/about/) makes his best effort to keep this site accessible and inclusive. If you find something that does not meet that goal, please use the [contact form on his main site](https://wildtechgarden.ca/contact/) to let him know.
 
 ## Goals
 
@@ -19,4 +19,4 @@ A more difficult challenge is to use language that is less complex, while saying
 
 ## Navigation notes
 
-[We never open links in new tabs, use "Open link in new tab" in your browser if you want that](https://www.wildtechgarden.ca/blog/accessible-design-no-blank/). ([#dontbreakthebackbutton](https://www.linkedin.com/feed/hashtag/?keywords=dontbreakthebackbutton))
+[We never open links in new tabs, use "Open link in new tab" in your browser if you want that](https://wildtechgarden.ca/blog/accessible-design-no-blank/). ([#dontbreakthebackbutton](https://www.linkedin.com/feed/hashtag/?keywords=dontbreakthebackbutton))
