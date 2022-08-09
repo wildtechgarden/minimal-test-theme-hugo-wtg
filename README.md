@@ -14,13 +14,13 @@
 
 ## Overview
 
-[Daniel F. Dickinson](https://github.com/danielfdickinson), uses this theme for demo/test sites for the modules on which he works. For a repository for creating minimal reproducible test cases see either [The v0.3 branch of this repository](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/tree/v0.3) or [hugo-testing by jmooring from the Hugo forums](https://github.com/jmooring/hugo-testing), which was previously a goal of this repository.
+[Daniel F. Dickinson](https://github.com/danielfdickinson), uses this theme for demo/test sites for the modules on which he works. For a repository for creating minimal reproducible test cases see either [The v0.3 branch of this repository](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/tree/v0.3) or [hugo-testing by jmooring from the Hugo forums](https://github.com/jmooring/hugo-testing). That use case was previously a goal of this repository, but such is no longer the case.
 
-See [License](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/blob/master/LICENSE) for permissions on use.
+See [License](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/blob/main/LICENSE) for permissions on use.
 
 ## Modern hugo only
 
-This minimal theme is built using assumptions that may require Hugo 0.80.0 or higher, and in any event those are the only versions on which it has been tested, at present.
+This minimal theme is built using assumptions that may require Hugo 0.80.0 or higher, and in any event those are the only versions on which it has been tested.
 
 ## Available features
 
