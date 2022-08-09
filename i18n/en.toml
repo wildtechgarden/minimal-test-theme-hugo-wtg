@@ -1,0 +1,41 @@
+[untitled]
+other = "Untitled"
+
+[untitled_site]
+other = "Untitled Site"
+
+[powered_by]
+other = "Powered by"
+
+[dfd_demo_site_theme]
+other = "DFD demo site theme"
+
+[older]
+other = "Older"
+
+[older_this_section]
+other = "Older (this section)"
+
+[newer]
+other = "Newer"
+
+[newer_this_section]
+other = "Newer (this section)"
+
+[up_a_level]
+other = "Up a level"
+
+[at_top]
+other = "At top"
+
+[site]
+other = "Site"
+
+[taxonomies]
+other = "Taxonomies"
+
+[main_site_menu]
+other = "Main site menu"
+
+[site_page_navigation]
+other = "Site page navigation"
