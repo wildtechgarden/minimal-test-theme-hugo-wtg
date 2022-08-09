@@ -1,8 +1,16 @@
+/* Plain CSS only; no SCSS / SASS (to avoid requiring Hugo extended when
+   making changes to e.g. colour scheme)
+ */
+
 @media screen {
-    * {
+    .border-box, a, article, aside, blockquote, body, code, dd, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, html, input[type=email], input[type=number], input[type=password], input[type=tel], input[type=text], input[type=url], legend, li, main, nav, object, ol, p, pre, section, table, td, textarea, th, tr, ul {
         box-sizing: border-box;
     }
-}
+
+   *, .content-box, hr {
+        box-sizing: content-box;
+    }
+ }
 
 html {
     background-color: #f8f8f8;
