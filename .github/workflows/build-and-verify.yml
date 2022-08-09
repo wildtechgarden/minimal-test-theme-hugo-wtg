@@ -69,6 +69,7 @@ jobs:
       - name: "Build Site with Hugo and Audit"
         uses: danielfdickinson/build-audit-action-hugo-dfd@v0.2
         with:
+          base-url: https://deploy-test.thewildtechgarden.ca/
           do-minify: true
           hugo-env: deploytest
           upload-site-as: minified-site
