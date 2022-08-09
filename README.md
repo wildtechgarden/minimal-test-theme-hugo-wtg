@@ -14,11 +14,7 @@
 
 ## Overview
 
-This theme is mostly not intended to be used as a normal theme. It is intended as a framework for creating minimal reproducible test cases. As such, one does not simply drop it in a site, but rather creates a repository specifically designed to isolate and demonstrate the issue one is facing.
-
-The goal is to minimize the amount of 'layout grunt work' one has to do to create the test case.
-
-[Daniel F. Dickinson](https://github.com/danielfdickinson), however does use this for demo sites for the modules on which he works.
+[Daniel F. Dickinson](https://github.com/danielfdickinson), uses this theme for demo/test sites for the modules on which he works. For a repository for creating minimal reproducible test cases see either [The v0.3 branch of this repository](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/tree/v0.3) or [hugo-testing by jmooring from the Hugo forums](https://github.com/jmooring/hugo-testing), which was previously a goal of this repository.
 
 See [License](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/blob/master/LICENSE) for permissions on use.
 
@@ -88,24 +84,6 @@ In order to be compliant with [current HTML best practise for h1 elements, which
    ```
 
  Enjoy!
-
-## Use to create a minimal(ish) reproducible test case
-
-1. To create a test case site (Linux)
-
-   ```sh
-   git clone https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd.git
-   cp -r minimal-test-theme-hugo-dfd/exampleSite a-minimal-reproducible-test-case
-   cd a-minimal-reproducible-test-case
-   git init
-   git remote add origin <URL-of-and-empty-repo-you-created-for-this-test-case>
-   git push origin main
-   ```
-
-2. Now modify the exampleSite by adding/modifying content and layouts to reproduce you issue
-3. Commit your changes and push to the repo
-4. Create a post on the [Hugo Forum](https://discourse.gohugo.io) describing your issue and provide a link to the repo you just pushed.
-5. Hopefully someone can help!
 
 ## Page and/or site params available
 
