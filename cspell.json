@@ -1,12 +1,12 @@
 {
-    "version": "0.2",
-    "ignorePaths": [],
-    "words": [],
-    "ignoreWords": [
-        "Uncategorized",
-        "mkdir",
-        "plainify",
-        "robotstxt",
-        "wlixcc"
-    ]
+	"version": "0.2",
+	"ignorePaths": [],
+	"words": [],
+	"ignoreWords": [
+		"Uncategorized",
+		"mkdir",
+		"plainify",
+		"robotstxt",
+		"wlixcc"
+	]
 }

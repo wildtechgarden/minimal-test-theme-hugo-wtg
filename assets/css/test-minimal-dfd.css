@@ -2,324 +2,333 @@
    making changes to e.g. colour scheme)
  */
 
-@media screen {
-    .border-box, a, article, aside, blockquote, body, code, dd, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, html, input[type=email], input[type=number], input[type=password], input[type=tel], input[type=text], input[type=url], legend, li, main, nav, object, ol, p, pre, section, table, td, textarea, th, tr, ul {
-        box-sizing: border-box;
-    }
+/* We're using tabs instead of spaces for accessibility reasons;
+   See https://www.brycewray.com/posts/2022/06/accessibility-argument-tabs-spaces/
+*/
 
-   *, .content-box, hr {
-        box-sizing: content-box;
-    }
+@media screen {
+	.border-box, a, article, aside, blockquote, body, code, dd, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, html, input[type=email], input[type=number], input[type=password], input[type=tel], input[type=text], input[type=url], legend, li, main, nav, object, ol, p, pre, section, table, td, textarea, th, tr, ul {
+		box-sizing: border-box;
+	}
+
+	*, .content-box, hr {
+		box-sizing: content-box;
+	}
  }
 
 html {
-    background-color: #f8f8f8;
-    color: #282828;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 15pt;
-    line-height: 1.5;
+	background-color: #f8f8f8;
+	color: #282828;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-size: 15pt;
+	line-height: 1.5;
+}
+
+code,
+pre {
+	tab-size: 3;
 }
 
 .main-test-min table:not(.table-debug-hugo) {
-    border-collapse: collapse;
-    width: 100%;
+	border-collapse: collapse;
+	width: 100%;
 }
 
 .main-test-min table:not(.table-debug-hugo) tr th {
-    background-color: lightgray;
-    border-bottom: 4px ridge;
-    border-left: 4px ridge;
-    border-top: 4px ridge;
-    text-align: left;
-    width: max-content;
+	background-color: lightgray;
+	border-bottom: 4px ridge;
+	border-left: 4px ridge;
+	border-top: 4px ridge;
+	text-align: left;
+	width: max-content;
 }
 
 @supports (text-align: start) {
-    .main-test-min table:not(.table-debug-hugo) tr th {
-        text-align: start;
-    }
+	.main-test-min table:not(.table-debug-hugo) tr th {
+		text-align: start;
+	}
 }
 
 .main-test-min table:not(.table-debug-hugo) tr th:last-of-type {
-    border-right: 4px ridge;
+	border-right: 4px ridge;
 }
 
 .main-test-min table:not(.table-debug-hugo) tr td {
-    border-bottom: 2px solid;
-    border-left: 2px solid;
-    width: max-content;
+	border-bottom: 2px solid;
+	border-left: 2px solid;
+	width: max-content;
 }
 
 .main-test-min table:not(.table-debug-hugo) tr td:last-of-type {
-    border-right: 2px solid;
-    min-width: 45vw;
+	border-right: 2px solid;
+	min-width: 45vw;
 }
 
 .main-test-min table:not(.table-debug-hugo) tbody tr:nth-of-type(even) {
-    color: #191919;
-    background-color: #d0d0d0;
+	color: #191919;
+	background-color: #d0d0d0;
 }
 
 .main-test-min .highlight {
-    min-width: max-content;
-    overflow: visible;
+	min-width: max-content;
+	overflow: visible;
 }
 
 .main-test-min pre {
-    background-color: #dfdfdf;
-    color: #191919;
-    min-width: max-content;
-    overflow: visible;
-    padding: .4em;
+	background-color: #dfdfdf;
+	color: #191919;
+	min-width: max-content;
+	overflow: visible;
+	padding: .4em;
 }
 
 .main-test-min .highlight>pre {
-    min-width: max-content;
-    overflow: visible;
+	min-width: max-content;
+	overflow: visible;
 }
 
 .main-test-min pre>code {
-    min-width: max-content;
-    overflow: visible;
+	min-width: max-content;
+	overflow: visible;
 }
 
 .main-test-min .highlight>pre>code {
-    margin: 0;
-    min-width: max-content;
-    overflow: visible;
-    padding: 0;
+	margin: 0;
+	min-width: max-content;
+	overflow: visible;
+	padding: 0;
 }
 
 .nav-site-page-test-min .list-item-label-test-min {
-    padding-right: .4em;
+	padding-right: .4em;
 }
 
 .bar-test-min .list-test-min {
-    background-color: #191919;
-    color: #dfdfdf;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    padding-left: .8em;
-    padding-right: .8em;
+	background-color: #191919;
+	color: #dfdfdf;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	padding-left: .8em;
+	padding-right: .8em;
 }
 
 .bar-test-min .list-test-min .list-item-test-min {
-    display: flex;
-    flex: 1 1 auto;
-    list-style: none;
-    margin-bottom: .2em;
-    margin-left: .4em;
-    margin-right: .4em;
-    margin-top: .2em;
-    padding-bottom: .2em;
-    padding-left: .2em;
-    padding-right: .2em;
-    padding-top: .2em;
+	display: flex;
+	flex: 1 1 auto;
+	list-style: none;
+	margin-bottom: .2em;
+	margin-left: .4em;
+	margin-right: .4em;
+	margin-top: .2em;
+	padding-bottom: .2em;
+	padding-left: .2em;
+	padding-right: .2em;
+	padding-top: .2em;
 }
 
 .bar-test-min .list-test-min .list-item-test-min .link-test-min {
-    align-items: center;
-    display: flex;
-    flex: 1 1 100%;
-    justify-content: center;
-    min-height: 48px;
-    min-width: 48px;
+	align-items: center;
+	display: flex;
+	flex: 1 1 100%;
+	justify-content: center;
+	min-height: 48px;
+	min-width: 48px;
 }
 
 .bar-test-min .list-test-min a:link {
-    color: #bdf;
+	color: #bdf;
 }
 
 .bar-test-min .list-test-min a:visited {
-    color: #d766d7;
+	color: #d766d7;
 }
 
 .bar-test-min .list-test-min .list-item-test-min:active {
-    background-color: #d0d0d0;
-    color: #303;
+	background-color: #d0d0d0;
+	color: #303;
 }
 
 .bar-test-min .list-test-min .list-item-test-min:hover {
-    background-color: #d0d0d0;
-    color: #303;
+	background-color: #d0d0d0;
+	color: #303;
 }
 
 .bar-test-min .list-test-min .list-item-test-min:active a:active {
-    color: #303;
+	color: #303;
 }
 
 .bar-test-min .list-test-min .list-item-test-min:hover a:active {
-    color: #303;
+	color: #303;
 }
 
 .bar-test-min .list-test-min .list-item-test-min:active a:hover {
-    color: #303;
+	color: #303;
 }
 
 .bar-test-min .list-test-min .list-item-test-min:hover a:hover {
-    color: #303;
+	color: #303;
 }
 
 .bar-test-min .list-test-min .list-item-test-min:active a:link {
-    color: #303;
+	color: #303;
 }
 
 .bar-test-min .list-test-min .list-item-test-min:hover a:link {
-    color: #303;
+	color: #303;
 }
 
 .bar-test-min .list-test-min .list-item-test-min:active a:visited {
-    color: #303;
+	color: #303;
 }
 
 .bar-test-min .list-test-min .list-item-test-min:hover a:visited {
-    color: #303;
+	color: #303;
 }
 
 .bar-test-min .list-test-min .list-item-test-min .list-item-label-test-min {
-    display: none;
+	display: none;
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(1) .link-test-min::before {
-    content: "«";
+	content: "«";
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(1) .link-test-min::after {
-    content: "«";
+	content: "«";
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(2) .link-test-min::before {
-    content: "‹";
+	content: "‹";
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(2) .link-test-min::after {
-    content: "‹";
+	content: "‹";
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(3) .link-test-min::before {
-    content: "^";
+	content: "^";
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(3) .link-test-min::after {
-    content: "^";
+	content: "^";
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(4) .link-test-min::before {
-    content: "›";
+	content: "›";
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(4) .link-test-min::after {
-    content: "›";
+	content: "›";
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(5) .link-test-min::before {
-    content: "»";
+	content: "»";
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(5) .link-test-min::after {
-    content: "»";
+	content: "»";
 }
 
 .current-menu-is-test-min {
-    background-color: #d0d0d0;
-    color: #101010;
+	background-color: #d0d0d0;
+	color: #101010;
 }
 
 .current-menu-is-test-min a:link {
-    color: blue;
+	color: blue;
 }
 
 .bar-test-min .current-menu-is-test-min a:link {
-    color: blue;
+	color: blue;
 }
 
 .bar-test-min .current-menu-is-test-min a:visited {
-    color: #303;
+	color: #303;
 }
 
 .bar-test-min .list-item-test-min.current-menu-is-test-min:active {
-    background-color: #191919;
-    color: #f8f;
+	background-color: #191919;
+	color: #f8f;
 }
 
 .bar-test-min .list-item-test-min.current-menu-is-test-min:hover {
-    background-color: #191919;
-    color: #f8f;
+	background-color: #191919;
+	color: #f8f;
 }
 
 .bar-test-min .list-item-test-min.current-menu-is-test-min:active a:active {
-    background-color: #191919;
-    color: #f8f;
+	background-color: #191919;
+	color: #f8f;
 }
 
 .bar-test-min .list-item-test-min.current-menu-is-test-min:hover a:active {
-    background-color: #191919;
-    color: #f8f;
+	background-color: #191919;
+	color: #f8f;
 }
 
 .bar-test-min .list-item-test-min.current-menu-is-test-min:active a:hover {
-    background-color: #191919;
-    color: #f8f;
+	background-color: #191919;
+	color: #f8f;
 }
 
 .bar-test-min .list-item-test-min:hover.current-menu-is-test-min:hover a:hover {
-    background-color: #191919;
-    color: #f8f;
+	background-color: #191919;
+	color: #f8f;
 }
 
 .bar-test-min .list-item-test-min.current-menu-is-test-min:active a:hover {
-    background-color: #191919;
-    color: #f8f;
+	background-color: #191919;
+	color: #f8f;
 }
 
 .bar-test-min .list-item-test-min:hover.current-menu-is-test-min a:hover {
-    background-color: #191919;
-    color: #f8f;
+	background-color: #191919;
+	color: #f8f;
 }
 
 .bar-test-min .list-item-test-min.current-menu-is-test-min:hover a:link {
-    background-color: #191919;
-    color: #f8f;
+	background-color: #191919;
+	color: #f8f;
 }
 
 .bar-test-min .list-item-test-min.current-menu-is-test-min:active a:link {
-    background-color: #191919;
-    color: #f8f;
+	background-color: #191919;
+	color: #f8f;
 }
 
 .bar-test-min .list-item-test-min:hover.current-menu-is-test-min:hover a:visited {
-    background-color: #191919;
-    color: #f8f;
+	background-color: #191919;
+	color: #f8f;
 }
 
 .bar-test-min .list-item-test-min.current-menu-is-test-min:active a:visited {
-    background-color: #191919;
-    color: #f8f;
+	background-color: #191919;
+	color: #f8f;
 }
 
 .section-list-test-min .list-item-test-min {
-    padding-left: .4em;
-    padding-right: .4em;
-    padding-bottom: .3em;
-    padding-top: .3em;
+	padding-left: .4em;
+	padding-right: .4em;
+	padding-bottom: .3em;
+	padding-top: .3em;
 }
 
 #status + p {
-    margin-bottom: 0;
-    margin-top: 0;
+	margin-bottom: 0;
+	margin-top: 0;
 }
 
 #status + p a {
-    display: inline-flex;
-    align-items: center;
-    margin: .4em;
-    min-height: 48px;
-    min-width: 48px;
+	display: inline-flex;
+	align-items: center;
+	margin: .4em;
+	min-height: 48px;
+	min-width: 48px;
 }
 
 #status ~ p a img {
-    height: auto;
-    max-width: 100%;
-    width: auto;
+	height: auto;
+	max-width: 100%;
+	width: auto;
 }

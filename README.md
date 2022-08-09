@@ -44,8 +44,8 @@ In order to be compliant with [current HTML best practise for h1 elements, which
 
    ```ini
    [module]
-     [[module.imports]]
-        path = "github.com/danielfdickinson/minimal-test-theme-hugo-dfd"
+   [[module.imports]]
+   path = "github.com/danielfdickinson/minimal-test-theme-hugo-dfd"
    ```
 
 3. Change back to the site directory
@@ -104,7 +104,7 @@ In `config.toml` add
 
 ```toml
 [params]
-     testStylesInclude = true
+	testStylesInclude = true
 ```
 
 ## Contributions welcome
@@ -115,6 +115,22 @@ Please [check open issues on danielfdickinson/minimal-test-theme-hugo-dfd](https
 for enhancements and bugs that you would like resolved, write the fix, and submit a PR!
 
 Adding and improving documention is always handy as well.
+
+### For accessibility, source code uses tabs
+
+Until recently I was 'spaces over tabs' developer, but I recently read
+[a blog post by Bruce Wray about the accessibility argument for tabs over spaces](https://www.brycewray.com/posts/2022/06/accessibility-argument-tabs-spaces/) and followed the links he gave, and the ability of tabs to be handled by braille or screen reader devices (or users who need to zoom their displays) is more than just 'taste' but can in fact be a huge win for 'getting stuff done'. That major sites don't handle tabs well in code blocks is a reflection on poor site design, and should not be excused or catered to.
+
+All it takes is (for example)
+
+``` css
+code,
+pre {
+	tab-size: 3;
+}
+```
+
+And of course, you can use CSS selectors to override when needed.
 
 ## Support and general questions
 

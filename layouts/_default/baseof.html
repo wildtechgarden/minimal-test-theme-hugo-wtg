@@ -4,12 +4,12 @@
 <body>
 {{- partial "header" . }}
 <div class="test-scrollable-min">
-    <h1>{{- partial "helpers/page-title.html" . }}</h1>
-    <div class="main-test-min" id="content">
+	<h1>{{- partial "helpers/page-title.html" . }}</h1>
+	<div class="main-test-min" id="content">
 {{- block "main" . }}
 {{- end -}}
 {{- partial "page-navigation" . }}
-    </div>
+	</div>
 {{- partial "footer" . }}
 </div>
 </body>
