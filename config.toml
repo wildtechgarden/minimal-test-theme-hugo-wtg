@@ -3,12 +3,13 @@ copyright = "© 2021-2022 Daniel F. Dickinson"
 description = "Module for DFD's Hugo Minimal Test 'Theme'"
 
 [module]
-  [module.hugoVersion]
-    min = "0.80.0"
-    extended = false
+[module.hugoVersion]
+min = "0.80.0"
+extended = false
 
+# Note that this is no longer used.
 [author]
-  name = "Daniel F. Dickinson"
-  homepage = "https://www.wildtechgarden.ca/about/"
-  copyright = "© 2021-2022 Daniel F. Dickinson"
-  email = "dfdpublic@wildtechgarden.ca"
+name = "Daniel F. Dickinson"
+homepage = "https://wildtechgarden.ca/about/"
+copyright = "© 2021-2022 Daniel F. Dickinson"
+email = "dfdpublic@wildtechgarden.ca"
