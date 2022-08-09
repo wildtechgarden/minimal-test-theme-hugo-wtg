@@ -6,3 +6,4 @@ config:
         code_block_line_length: 10000000
         code_blocks: false
         tables: false
+    MD010: false
