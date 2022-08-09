@@ -2,7 +2,8 @@ baseURL = "https://minimal-test-theme.wildtechgarden.ca/"
 copyright = "© 2021-2022 Daniel F. Dickinson"
 homepage = "https://minimal-test-theme.wildtechgarden.ca/"
 paginate = 3
-defaultContentLanguage = "en"
+languageCode = "en"
+DefaultContentLanguage = "en"
 enableGitInfo = true
 enableRobotsTXT = false
 summaryLength = 25
@@ -19,11 +20,30 @@ useBaseURL = false
 # and https://www.regisphilibert.com/blog/2018/08/hugo-multilingual-part-1-managing-content-translation/
 
 [languages]
+[languages.fr]
+title = "Hugo thème du teste minimale"
+description = "Demo site au Hugo thème du teste minimal du Daniel F. Dickinson (DFD)"
+weight = 10
+contentDir = "content/fr"
+
+[languages.fr.menu]
+[[languages.fr.menu.main]]
+identifier = "about"
+name = "About"
+url = "/fr/about/" # We can't use pageref because we support 0.80.0
+weight = 10
+
+[[languages.fr.menu.main]]
+identifier = "l'accessibilité"
+name = "L'accessibilité"
+url = "/fr/accessibility/" # We can't use pageref because we support 0.80.0
+weight = 20
+
 [languages.en]
-languageName = "English"
-title = "Hugo Minimal Test Theme"
+title = "Hugo minimal test theme"
 description = "Demo site for Daniel F. Dickinson's (DFD) Hugo minimal test theme"
 weight = 1
+contentDir = "content/en"
 
 [languages.en.menu]
 [[languages.en.menu.main]]
@@ -101,8 +121,14 @@ source = "archetypes"
 target = "archetypes"
 
 [[module.mounts]]
-source = "content"
+source = "content/en"
 target = "content"
+lang = "en"
+
+[[module.mounts]]
+source = "content/fr"
+target = "content"
+lang = "fr"
 
 [[module.imports]]
 path = "github.com/danielfdickinson/minimal-test-theme-hugo-dfd"

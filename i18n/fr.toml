@@ -1,0 +1,41 @@
+[untitled]
+other = "Sans nom"
+
+[untitled_site]
+other = "Site sans nom"
+
+[powered_by]
+other = "Utiliser thème"
+
+[dfd_demo_site_theme]
+other = "DFD exemple thème du site"
+
+[older]
+other = "Aîné"
+
+[older_this_section]
+other = "Aîné (cette section)"
+
+[newer]
+other = "Nouveaux"
+
+[newer_this_section]
+other = "Nouveaux (cette section)"
+
+[up_a_level]
+other = "Monter"
+
+[at_top]
+other = "En haute"
+
+[site]
+other = "Site"
+
+[taxonomies]
+other = "Taxonomies"
+
+[main_site_menu]
+other = "Menu principal du site"
+
+[site_page_navigation]
+other = "Navigation entre les pages du site"
