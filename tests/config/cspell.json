@@ -1,0 +1,33 @@
+{
+	"$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+	"allowCompoundWords": true,
+	"dictionaries": [
+		"dfd-words",
+		"tech-words",
+		"project-words"
+	],
+	"dictionaryDefinitions": [
+		{
+			"addWords": true,
+			"name": "project-words",
+			"path": "./words-project.txt"
+		},
+		{
+			"addWords": true,
+			"name": "tech-words",
+			"path": "./dfd-wordlists/words-tech.txt"
+		},
+		{
+			"addWords": true,
+			"name": "dfd-words",
+			"path": "./dfd-wordlists/words-dfd.txt"
+		}
+	],
+	"ignorePaths": [
+		"node_modules",
+		"tests/config/words-*.txt",
+		"tests-config/dfd-wordlsts"
+	],
+	"ignoreWords": [],
+	"version": "0.2"
+}

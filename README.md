@@ -119,7 +119,7 @@ Adding and improving documention is always handy as well.
 ### For accessibility, source code uses tabs
 
 Until recently I was 'spaces over tabs' developer, but I recently read
-[a blog post by Bruce Wray about the accessibility argument for tabs over spaces](https://www.brycewray.com/posts/2022/06/accessibility-argument-tabs-spaces/) and followed the links he gave, and the ability of tabs to be handled by braille or screen reader devices (or users who need to zoom their displays) is more than just 'taste' but can in fact be a huge win for 'getting stuff done'. That major sites don't handle tabs well in code blocks is a reflection on poor site design, and should not be excused or catered to.
+[a blog post by Bryce Wray about the accessibility argument for tabs over spaces](https://www.brycewray.com/posts/2022/06/accessibility-argument-tabs-spaces/) and followed the links he gave. That and the fact of the ability of tabs to be handled better by braille or screen reader devices (or users who need to zoom their displays) being more than just 'taste' but can in fact be a huge win for 'getting stuff done', convinced me. I also believe fact that some major sites don't handle tabs well in code blocks is a reflection of poor site design, and should not be excused or catered to.
 
 All it takes is (for example)
 

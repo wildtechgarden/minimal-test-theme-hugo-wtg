@@ -1,0 +1,6 @@
+OUTPUTDIR
+TODOS
+bgcolor
+color
+unminified
+valign

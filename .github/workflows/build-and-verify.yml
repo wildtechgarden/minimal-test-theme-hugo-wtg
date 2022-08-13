@@ -11,19 +11,7 @@ on:
       - main
       - 'v[0-9]*'
 jobs:
-  check-source-code-validity:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v3
-      - name: "Verify content formatting validity (Markdown lint)"
-        uses: DavidAnson/markdownlint-cli2-action@v5
-        with:
-          globs: |
-            README.md
-            exampleSite/content/*.md
-            exampleSite/content/**/*.md
   build-unminified-site:
-    needs: check-source-code-validity
     runs-on: ubuntu-20.04
     strategy:
       matrix:
@@ -62,8 +50,6 @@ jobs:
           upload-logs-as: check-links-failure
           upload-logs-retention: 3
   build-minified-site:
-    needs:
-      - check-source-code-validity
     runs-on: ubuntu-20.04
     steps:
       - name: "Build Site with Hugo and Audit"
