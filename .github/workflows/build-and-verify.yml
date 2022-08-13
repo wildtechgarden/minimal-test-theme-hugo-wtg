@@ -11,72 +11,50 @@ on: # yamllint disable-line
       - main
       - "v[0-9]*"
 jobs:
-  build-unminified-site:
+  build-verify-site:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
         hugo: ["0.80.0", "0.88.1", "0.96.0", "latest"]
     steps:
-      - name: "Build Site with Hugo and Audit"
-        uses: danielfdickinson/build-audit-action-hugo-dfd@v0.2
+      - uses: actions/checkout@v3
+      - name: "Build site with Hugo and audit"
+        uses: danielfdickinson/build-audit-action-hugo-dfd@main
         with:
+          build-for-downstream: "true"
           hugo-version: ${{ matrix.hugo }}
-          upload-site-as: unminified-site-${{ matrix.hugo }}
+          output-directory: public-${{ matrix.hugo }}
           use-lfs: false
           source-directory: exampleSite
-  validate-unminified-html:
-    needs: build-unminified-site
-    runs-on: ubuntu-20.04
-    strategy:
-      matrix:
-        hugo: ["0.80.0", "0.88.1", "0.96.0", "latest"]
-    steps:
-      - uses: actions/checkout@v3
       - name: "Validate exampleSite HTML"
-        uses: danielfdickinson/validate-html-action-hugo-dfd@v0.2
+        uses: danielfdickinson/validate-html-action-hugo-dfd@main
         with:
-          download-site-as: unminified-site-${{ matrix.hugo }}
-  check-links:
-    needs: build-unminified-site
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v3
+          output-directory: public-${{ matrix.hugo }}
+          use-existing-workspace: "true"
       - name: "Check internal links"
-        uses: danielfdickinson/link-check-action-hugo-dfd@v0.2
+        uses: danielfdickinson/link-check-action-hugo-dfd@main
         with:
           canonical-root: "https://minimal-test-theme.wildtechgarden.ca/"
-          download-site-as: unminified-site-latest
+          output-directory: public-${{ matrix.hugo }}
           entry-point: index.html
           upload-logs-as: check-links-failure
           upload-logs-retention: 3
-  build-minified-site:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: "Build Site with Hugo and Audit"
-        uses: danielfdickinson/build-audit-action-hugo-dfd@v0.2
-        with:
-          base-url: "https://deploy-test.thewildtechgarden.ca/"
-          do-minify: true
-          hugo-env: deploytest
-          upload-site-as: minified-site
-          use-lfs: false
-          source-directory: exampleSite
-  deploy-minified-site:
+          use-existing-workspace: "true"
+  build-deploy-site:
     needs:
-      - build-minified-site
-      - validate-unminified-html
-      - check-links
+      - build-verify-site
     environment: deploytest
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/download-artifact@v3
+      - name: "Build minified site with Hugo and audit"
+        uses: danielfdickinson/build-audit-action-hugo-dfd@main
         with:
-          name: minified-site
-      - name: "Extract site and configs"
-        shell: bash
-        env:
-          DOWNLOAD_SITE_FILENAME: hugo-site.tar
-        run: tar -xf "${DOWNLOAD_SITE_FILENAME}"
+          base-url: "https://deploy-test.thewildtechgarden.ca/"
+          build-for-downstream: "true"
+          do-minify-bundle: "true"
+          hugo-env: deploytest
+          use-lfs: false
+          source-directory: exampleSite
       - name: "Install Rclone"
         run: |
           sudo apt-get update
