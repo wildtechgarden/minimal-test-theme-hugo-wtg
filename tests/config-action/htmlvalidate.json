@@ -82,6 +82,11 @@
 	],
 	"root": true,
 	"rules": {
-		"require-sri": "off"
+		"require-sri": "off",
+		"valid-id": {
+			"error": {
+				"relaxed": true
+			}
+		}
 	}
 }
