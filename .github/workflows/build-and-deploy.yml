@@ -1,37 +1,25 @@
 ---
 name: build-and-deploy
 # Assumes status checks have passed on a *required* pull request
-# If you don't use that configuration you will have not CI as this
+# If you don't use that configuration you will have no CI as this
 # workflow does not test (since the tests should already have passed).)
 on: # yamllint disable-line
   push:
     branches:
       - main
 jobs:
-  build-minified-site:
+  build-deploy-site:
     runs-on: ubuntu-20.04
-    steps:
-      - name: "Build Site with Hugo and Audit"
-        uses: danielfdickinson/build-audit-action-hugo-dfd@v0.2
-        with:
-          do-minify: true
-          upload-site-as: minified-site
-          use-lfs: false
-          source-directory: exampleSite
-  deploy-minified-site:
-    needs: build-minified-site
     environment: production
-    runs-on: ubuntu-20.04
     if: ${{ github.event_name == 'push' && github.ref_name == 'main' }}
     steps:
-      - uses: actions/download-artifact@v3
+      - name: "Build Site with Hugo and Audit"
+        uses: danielfdickinson/build-audit-action-hugo-dfd@main
         with:
-          name: minified-site
-      - name: "Extract site and configs"
-        shell: bash
-        env:
-          DOWNLOAD_SITE_FILENAME: hugo-site.tar
-        run: tar -xf "${DOWNLOAD_SITE_FILENAME}"
+          build-for-downstream: "true"
+          do-minify-bundle: "true"
+          use-lfs: false
+          source-directory: exampleSite
       - name: "Install Rclone"
         run: |
           sudo apt-get update
