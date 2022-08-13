@@ -3,6 +3,8 @@
 ## Status
 
 [![build-and-verify](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/actions/workflows/build-and-verify.yml/badge.svg)](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/actions/workflows/build-and-verify.yml)
+[![pre-commit.ci
+status](https://results.pre-commit.ci/badge/github/danielfdickinson/minimal-test-theme-hugo-dfd/main.svg)](https://results.pre-commit.ci/latest/github/danielfdickinson/minimal-test-theme-hugo-dfd/main)
 
 ## Demo website
 
