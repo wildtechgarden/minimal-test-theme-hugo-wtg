@@ -1,4 +1,5 @@
 {
+	"$schema": "https://html-validate.org/schemas/config.json",
 	"elements": [
 		"html5",
 		{
@@ -83,10 +84,11 @@
 	"root": true,
 	"rules": {
 		"require-sri": "off",
-		"valid-id": {
-			"error": {
+		"valid-id": [
+			"error",
+			{
 				"relaxed": true
 			}
-		}
+		]
 	}
 }
