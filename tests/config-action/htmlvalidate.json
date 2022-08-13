@@ -1,15 +1,8 @@
 {
-	"root": true,
-	"extends": [
-		"html-validate:recommended",
-		"html-validate:document"
-	],
 	"elements": [
 		"html5",
 		{
 			"th": {
-				"flow": true,
-				"implicitClosed": ["td", "th"],
 				"attributes": {
 					"align": {
 						"deprecated": true
@@ -30,7 +23,9 @@
 						"deprecated": true
 					},
 					"colspan": {
-						"enum": ["/\\d+/"]
+						"enum": [
+							"/\\d+/"
+						]
 					},
 					"height": {
 						"deprecated": true
@@ -39,11 +34,19 @@
 						"deprecated": true
 					},
 					"rowspan": {
-						"enum": ["/\\d+/"]
+						"enum": [
+							"/\\d+/"
+						]
 					},
 					"scope": {
-						"required": false,
-						"enum": ["row", "col", "rowgroup", "colgroup", "auto"]
+						"enum": [
+							"row",
+							"col",
+							"rowgroup",
+							"colgroup",
+							"auto"
+						],
+						"required": false
 					},
 					"valign": {
 						"deprecated": true
@@ -52,11 +55,32 @@
 						"deprecated": true
 					}
 				},
-				"permittedContent": ["@flow"],
-				"permittedDescendants": [{ "exclude": ["header", "footer", "@sectioning", "@heading"] }]
+				"flow": true,
+				"implicitClosed": [
+					"td",
+					"th"
+				],
+				"permittedContent": [
+					"@flow"
+				],
+				"permittedDescendants": [
+					{
+						"exclude": [
+							"header",
+							"footer",
+							"@sectioning",
+							"@heading"
+						]
+					}
+				]
 			}
 		}
 	],
+	"extends": [
+		"html-validate:recommended",
+		"html-validate:document"
+	],
+	"root": true,
 	"rules": {
 		"require-sri": "off"
 	}

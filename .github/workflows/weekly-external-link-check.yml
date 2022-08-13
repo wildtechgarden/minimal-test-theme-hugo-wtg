@@ -1,7 +1,8 @@
 name: weekly-external-link-check
-on:
+on: # yamllint disable-line
   # schedule:
-  #  # At 1:40 AM -0500 on each Thursday strictly check all external links (301 Moved is a failure not just a warning)
+  #  # At 1:40 AM -0500 on each Thursday strictly check all external links
+  #  (301 Moved is a failure not just a warning)
   #  - cron: '40 6 * * 4'
 
   # Allows you to run this workflow manually from the Actions tab
@@ -25,7 +26,7 @@ jobs:
       - name: Run hugo-action-check-links
         uses: danielfdickinson/link-check-action-hugo-dfd@v0.2
         with:
-          canonical-root: https://minimal-test-theme.wildtechgaren.ca/
+          canonical-root: "https://minimal-test-theme.wildtechgaren.ca/"
           check-external: true
           check-external-strict: true
           entry-point: index.html

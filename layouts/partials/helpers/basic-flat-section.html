@@ -1,17 +1,17 @@
 {{- $curPage := .Page -}}
 {{- if .Content }}
-    {{- partial "helpers/basic-content" .Content -}}
+	{{- partial "helpers/basic-content" .Content -}}
 {{- end }}
-    <ul class="section-list-test-min">
+	<ul class="section-list-test-min">
 {{- if .Data.Terms -}}
-    {{- /* For taxonomy and term pages, show the count beside the taxonomy or term, avoids need for specific taxonomy/term layouts  */ -}}
-    {{- range $key, $value := .Data.Terms }}
-        <li class="list-item-test-min"><a class="link-test-min" href="{{ .Page.RelPermalink }}">{{ $key | default (partial "helpers/page-title" $curPage) }}</a> ({{- .Count -}})</li>
-    {{- end -}}
+	{{- /* For taxonomy and term pages, show the count beside the taxonomy or term, avoids need for specific taxonomy/term layouts  */ -}}
+	{{- range $key, $value := .Data.Terms }}
+		<li class="list-item-test-min"><a class="link-test-min" href="{{ .Page.RelPermalink }}">{{ $key | default (partial "helpers/page-title" $curPage) }}</a> ({{- .Count -}})</li>
+	{{- end -}}
 {{- else -}}
-    {{- range .Pages }}
-        <li class="list-item-test-min"><a class="link-test-min" href="{{ .RelPermalink }}">{{ partial "helpers/page-title" . }}</a></li>
-    {{- end -}}
+	{{- range .Pages }}
+		<li class="list-item-test-min"><a class="link-test-min" href="{{ .RelPermalink }}">{{ partial "helpers/page-title" . }}</a></li>
+	{{- end -}}
 {{- end }}
-    </ul>
+	</ul>
 {{- /* Remove trailing newlines */ -}}

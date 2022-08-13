@@ -1,9 +1,9 @@
 /* Plain CSS only; no SCSS / SASS (to avoid requiring Hugo extended when
-   making changes to e.g. colour scheme)
+	making changes to e.g. colour scheme)
  */
 
 /* We're using tabs instead of spaces for accessibility reasons;
-   See https://www.brycewray.com/posts/2022/06/accessibility-argument-tabs-spaces/
+	See https://www.brycewray.com/posts/2022/06/accessibility-argument-tabs-spaces/
 */
 
 @media screen {
@@ -14,7 +14,7 @@
 	*, .content-box, hr {
 		box-sizing: content-box;
 	}
- }
+}
 
 html {
 	background-color: #f8f8f8;

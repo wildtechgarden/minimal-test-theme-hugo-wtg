@@ -1,6 +1,6 @@
 ---
 name: build-and-verify
-on:
+on: # yamllint disable-line
   pull_request:
     types:
       - assigned
@@ -9,7 +9,7 @@ on:
       - reopened
     branches:
       - main
-      - 'v[0-9]*'
+      - "v[0-9]*"
 jobs:
   build-unminified-site:
     runs-on: ubuntu-20.04
@@ -44,7 +44,7 @@ jobs:
       - name: "Check internal links"
         uses: danielfdickinson/link-check-action-hugo-dfd@v0.2
         with:
-          canonical-root: https://minimal-test-theme.wildtechgarden.ca/
+          canonical-root: "https://minimal-test-theme.wildtechgarden.ca/"
           download-site-as: unminified-site-latest
           entry-point: index.html
           upload-logs-as: check-links-failure
@@ -55,7 +55,7 @@ jobs:
       - name: "Build Site with Hugo and Audit"
         uses: danielfdickinson/build-audit-action-hugo-dfd@v0.2
         with:
-          base-url: https://deploy-test.thewildtechgarden.ca/
+          base-url: "https://deploy-test.thewildtechgarden.ca/"
           do-minify: true
           hugo-env: deploytest
           upload-site-as: minified-site
@@ -93,6 +93,7 @@ jobs:
           SFTP_KEY_PEM: "${{ secrets.DEPLOY_SFTP_PRIVATE_KEY }}"
           REMOTE_PATH: "${{ secrets.DEPLOY_SFTP_REMOTE_PATH }}"
           RCLONE_SFTP_USER: ${{ secrets.DEPLOY_SFTP_USERNAME }}
+          # yamllint disable rule:line-length
         run: |
           eval "$(ssh-agent)"
           umask 177
@@ -101,3 +102,4 @@ jobs:
           export RCLONE_SFTP_KEY_FILE=~/sftp-key-file
           export RCLONE_ONE_FILE_SYSTEM RCLONE_ERROR_ON_NO_TRANSFER RCLONE_SFTP_SKIP_LINKS RCLONE_SFTP_KEY_FILE_PASS RCLONE_SFTP_PORT RCLONE_SFTP_HOST REMOTE_PATH RCLONE_SFTP_USER
           rclone sync public/ :sftp:${REMOTE_PATH}
+        # yamllint enable

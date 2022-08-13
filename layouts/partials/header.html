@@ -9,7 +9,7 @@
 			<li class="list-item-test-min{{- if eq $curPage site.Home }} current-menu-is-test-min{{- end -}}">
 				<a class="link-test-min" href="{{- site.Home.RelPermalink -}}">{{- partial "helpers/page-title.html" site.Home -}}</a>
 			</li>
-		{{- /* Next buttons are for translation for mutilanguage sites */}}
+		{{- /* Next buttons are for translation for multi-language sites */}}
 		{{- if .IsTranslated }}
 			{{- range .Translations }}
 			<li class="lang-item list-item-test-min">

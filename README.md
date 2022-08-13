@@ -14,13 +14,23 @@
 
 ## Overview
 
-[Daniel F. Dickinson](https://github.com/danielfdickinson), uses this theme for demo/test sites for the modules on which he works. For a repository for creating minimal reproducible test cases see either [the v0.3 branch of this repository](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/tree/v0.3) or [hugo-testing by jmooring from the Hugo forums](https://github.com/jmooring/hugo-testing). That use case was previously a goal of this repository, but such is no longer the case.
+[Daniel F. Dickinson](https://github.com/danielfdickinson), uses this theme for
+demo/test sites for the modules on which he works. For a repository for creating
+minimal reproducible test cases see either [the v0.3 branch of this
+repository](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/tree/v0.3)
+or [hugo-testing by jmooring from the Hugo
+forums](https://github.com/jmooring/hugo-testing). That use case was previously
+a goal of this repository, but such is no longer the case.
 
-See [License](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/blob/main/LICENSE) for permissions on use.
+See
+[License](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/blob/main/LICENSE)
+for permissions on use.
 
 ## Modern hugo only
 
-This minimal theme is built using assumptions that may require Hugo 0.80.0 or higher, and in any event those are the only versions on which it has been tested.
+This minimal theme is built using assumptions that may require Hugo 0.80.0 or
+higher, and in any event those are the only versions on which it has been
+tested.
 
 ## Available features
 
@@ -31,15 +41,22 @@ add `{{`&lt; `hello-world` &gt;`}}` to a **content** file (not template).
 
 ### page-assets shortcode
 
-Allows rendering a Hugo resource from the `assets` directory as Markdown. This is currently used to render this repo's README.md on a page in the exampleSite.
+Allows rendering a Hugo resource from the `assets` directory as Markdown. This
+is currently used to render this repo's README.md on a page in the exampleSite.
 
-In order to be compliant with [current HTML best practise for h1 elements, which is to have only one h1 element per page](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#multiple_h1_elements_on_one_page), any H1 elements in the asset are rewritten as H2 elements (because this theme adds the page title as an H1 element).
+In order to be compliant with [current HTML best practise for h1 elements, which
+is to have only one h1 element per
+page](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#multiple_h1_elements_on_one_page),
+any H1 elements in the asset are rewritten as H2 elements (because this theme
+adds the page title as an H1 element).
 
 ## Basic usage (as theme)
 
 ### Hugo module (preferred)
 
-1. Initialize the Hugo module system: `hugo mod init github.com/<your_user>/<your_project>`; (assuming you are using GitHub, of course).
+1. Initialize the Hugo module system: `hugo mod init
+	github.com/<your_user>/<your_project>`; (assuming you are using GitHub,
+	of course).
 2. Import the theme in your `config.toml`
 
    ```ini
@@ -109,17 +126,28 @@ In `config.toml` add
 
 ## Contributions welcome
 
-If [your issues can't be found when searching both open and closed issues](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/issues?q=is%3Aissue), please add it!
+If [your issues can't be found when searching both open and closed
+issues](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/issues?q=is%3Aissue),
+please add it!
 
-Please [check open issues on danielfdickinson/minimal-test-theme-hugo-dfd](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/issues)
-for enhancements and bugs that you would like resolved, write the fix, and submit a PR!
+Please [check open issues on
+danielfdickinson/minimal-test-theme-hugo-dfd](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/issues)
+for enhancements and bugs that you would like resolved, write the fix, and
+submit a PR!
 
 Adding and improving documention is always handy as well.
 
 ### For accessibility, source code uses tabs
 
 Until recently I was 'spaces over tabs' developer, but I recently read
-[a blog post by Bryce Wray about the accessibility argument for tabs over spaces](https://www.brycewray.com/posts/2022/06/accessibility-argument-tabs-spaces/) and followed the links he gave. That and the fact of the ability of tabs to be handled better by braille or screen reader devices (or users who need to zoom their displays) being more than just 'taste' but can in fact be a huge win for 'getting stuff done', convinced me. I also believe fact that some major sites don't handle tabs well in code blocks is a reflection of poor site design, and should not be excused or catered to.
+[a blog post by Bryce Wray about the accessibility argument for tabs over
+spaces](https://www.brycewray.com/posts/2022/06/accessibility-argument-tabs-spaces/)
+and followed the links he gave. That and the fact of the ability of tabs to be
+handled better by braille or screen reader devices (or users who need to zoom
+their displays) being more than just 'taste' but can in fact be a huge win for
+'getting stuff done', convinced me. I also believe fact that some major sites
+don't handle tabs well in code blocks is a reflection of poor site design, and
+should not be excused or catered to.
 
 All it takes is (for example)
 
@@ -134,4 +162,6 @@ And of course, you can use CSS selectors to override when needed.
 
 ## Support and general questions
 
-Please use [GitHub Discussions](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/discussions) for support and general questions.
+Please use [GitHub
+Discussions](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/discussions)
+for support and general questions.

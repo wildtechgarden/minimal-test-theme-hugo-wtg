@@ -4,13 +4,20 @@
 	"dictionaries": [
 		"dfd-words",
 		"tech-words",
-		"project-words"
+		"project-words",
+		"!project-fr-words"
 	],
 	"dictionaryDefinitions": [
 		{
 			"addWords": true,
 			"name": "project-words",
 			"path": "./words-project.txt"
+		},
+		{
+			"addWords": true,
+			"locale": "fr_CA",
+			"name": "project-words-fr",
+			"path": "./words-fr-project.txt"
 		},
 		{
 			"addWords": true,
@@ -25,9 +32,28 @@
 	],
 	"ignorePaths": [
 		"node_modules",
-		"tests/config/words-*.txt",
-		"tests-config/dfd-wordlsts"
+		"**/tests/config/words-*.txt",
+		"**/tests/config/dfd-wordlists/**"
 	],
 	"ignoreWords": [],
+	"overrides": [
+		{
+			"dictionaries": [
+				"!dfd-words",
+				"!tech-words",
+				"!project-words",
+				"!!project-words-fr"
+			],
+			"filename": "**/exampleSite/**/fr/**/*.md",
+			"language": "fr_CA"
+		},
+		{
+			"dictionaries": [
+				"!!project-words-fr"
+			],
+			"filename": "**/{i18n/fr.toml,exampleSite/config.toml}",
+			"language": "*"
+		}
+	],
 	"version": "0.2"
 }

@@ -2,8 +2,8 @@
 name: build-and-deploy
 # Assumes status checks have passed on a *required* pull request
 # If you don't use that configuration you will have not CI as this
-# workflow does not test (since the tests should already have pased).)
-on:
+# workflow does not test (since the tests should already have passed).)
+on: # yamllint disable-line
   push:
     branches:
       - main
@@ -48,6 +48,7 @@ jobs:
           SFTP_KEY_PEM: "${{ secrets.DEPLOY_SFTP_PRIVATE_KEY }}"
           REMOTE_PATH: "${{ secrets.DEPLOY_SFTP_REMOTE_PATH }}"
           RCLONE_SFTP_USER: ${{ secrets.DEPLOY_SFTP_USERNAME }}
+          # yamllint disable rule:line-length
         run: |
           eval "$(ssh-agent)"
           umask 177
@@ -56,3 +57,4 @@ jobs:
           export RCLONE_SFTP_KEY_FILE=~/sftp-key-file
           export RCLONE_ONE_FILE_SYSTEM RCLONE_ERROR_ON_NO_TRANSFER RCLONE_SFTP_SKIP_LINKS RCLONE_SFTP_KEY_FILE_PASS RCLONE_SFTP_PORT RCLONE_SFTP_HOST REMOTE_PATH RCLONE_SFTP_USER
           rclone sync public/ :sftp:${REMOTE_PATH}
+        # yamllint enable
