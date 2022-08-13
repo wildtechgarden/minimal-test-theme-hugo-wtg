@@ -29,6 +29,7 @@ jobs:
       - name: "Validate exampleSite HTML"
         uses: danielfdickinson/validate-html-action-hugo-dfd@main
         with:
+          action-workspace: ${{ github.workspace }}
           output-directory: public-${{ matrix.hugo }}
           use-existing-workspace: "true"
       - name: "Check internal links"
