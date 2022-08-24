@@ -23,21 +23,22 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: "Build site with Hugo and audit"
-        uses: danielfdickinson/build-audit-action-hugo-dfd@main
+        uses: danielfdickinson/build-audit-action-hugo-dfd@v0.3
         with:
           build-for-downstream: "true"
+          config-file: exampleSite/config.toml
           hugo-version: ${{ matrix.hugo }}
           output-directory: public-${{ matrix.hugo }}
           use-lfs: false
           source-directory: exampleSite
       - name: "Validate exampleSite HTML"
-        uses: danielfdickinson/validate-html-action-hugo-dfd@main
+        uses: danielfdickinson/validate-html-action-hugo-dfd@v0.3
         with:
           action-workspace: ${{ github.workspace }}
           output-directory: public-${{ matrix.hugo }}
           use-existing-workspace: "true"
       - name: "Check internal links"
-        uses: danielfdickinson/link-check-action-hugo-dfd@main
+        uses: danielfdickinson/link-check-action-hugo-dfd@v0.3
         with:
           canonical-root: "https://minimal-test-theme.wildtechgarden.ca/"
           output-directory: public-${{ matrix.hugo }}
@@ -52,10 +53,11 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: "Build minified site with Hugo and audit"
-        uses: danielfdickinson/build-audit-action-hugo-dfd@main
+        uses: danielfdickinson/build-audit-action-hugo-dfd@v0.3
         with:
           base-url: "https://deploy-test.thewildtechgarden.ca/"
           build-for-downstream: "true"
+          config-file: exampleSite/config.toml
           do-minify-bundle: "true"
           hugo-env: deploytest
           use-lfs: false
