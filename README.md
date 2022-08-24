@@ -137,7 +137,7 @@ danielfdickinson/minimal-test-theme-hugo-dfd](https://github.com/danielfdickinso
 for enhancements and bugs that you would like resolved, write the fix, and
 submit a PR!
 
-Adding and improving documention is always handy as well.
+As well, adding and improving documentation is always welcomed.
 
 ### For accessibility, source code uses tabs
 

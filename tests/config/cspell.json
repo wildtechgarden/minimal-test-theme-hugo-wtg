@@ -17,6 +17,12 @@
 		{
 			"addWords": true,
 			"locale": "en,en-ca",
+			"name": "hugo-words",
+			"path": "./dfd-wordlists/words-hugo.txt"
+		},
+		{
+			"addWords": true,
+			"locale": "en,en-ca",
 			"name": "tech-words",
 			"path": "./dfd-wordlists/words-tech.txt"
 		},
@@ -66,7 +72,8 @@
 				"css",
 				"html",
 				"project-words",
-				"tech-words"
+				"tech-words",
+				"hugo-words"
 			],
 			"filename": [
 				"./tests/config-action/htmlvalidate*.json"
@@ -77,7 +84,8 @@
 				"companies",
 				"dfd-words",
 				"project-words",
-				"tech-words"
+				"tech-words",
+				"hugo-words"
 			],
 			"filename": [
 				"./config.toml",
@@ -93,7 +101,8 @@
 			"dictionaries": [
 				"dfd-words",
 				"project-words",
-				"tech-words"
+				"tech-words",
+				"hugo-words"
 			],
 			"filename": [
 				"./archetypes/*",
