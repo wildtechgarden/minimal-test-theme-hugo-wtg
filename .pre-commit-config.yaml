@@ -114,14 +114,15 @@ repos:
         exclude: ^(LICENSE$|README.md$|package(-lock)?.json$)
 
   - repo: "https://github.com/streetsidesoftware/cspell-cli"
-    rev: v6.5.0
+    rev: v6.8.0
     hooks:
       - id: cspell
+        additional_dependencies:
+          - "@cspell/dict-fr-fr"
+          - "@cspell/dict-fr-reforme"
         args:
           - "--config"
           - "tests/config/cspell.json"
-          - "--locale"
-          - "en-GB"
           - "--gitignore"
           - "--gitignore-root"
           - "--no-cache"

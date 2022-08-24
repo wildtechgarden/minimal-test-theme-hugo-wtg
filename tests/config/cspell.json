@@ -1,58 +1,126 @@
 {
 	"$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
-	"allowCompoundWords": true,
-	"dictionaries": [
-		"dfd-words",
-		"tech-words",
-		"project-words",
-		"!project-fr-words"
-	],
+	"allowCompoundWords": false,
 	"dictionaryDefinitions": [
 		{
 			"addWords": true,
+			"locale": "en,en-ca",
 			"name": "project-words",
 			"path": "./words-project.txt"
 		},
 		{
 			"addWords": true,
-			"locale": "fr_CA",
+			"locale": "fr,fr-ca",
 			"name": "project-words-fr",
 			"path": "./words-fr-project.txt"
 		},
 		{
 			"addWords": true,
+			"locale": "en,en-ca",
 			"name": "tech-words",
 			"path": "./dfd-wordlists/words-tech.txt"
 		},
 		{
 			"addWords": true,
+			"locale": "en,en-ca",
 			"name": "dfd-words",
 			"path": "./dfd-wordlists/words-dfd.txt"
 		}
 	],
+	"globRoot": "../..",
 	"ignorePaths": [
-		"node_modules",
-		"**/tests/config/words-*.txt",
-		"**/tests/config/dfd-wordlists/**"
+		"./go.{mod,sum}",
+		"./exampleSite/go.*",
+		"./tests/config/cspell.json",
+		"./tests/config/words-*.txt",
+		"./tests/config/dfd-wordlists/**"
 	],
+	"ignoreRegExpList": [],
 	"ignoreWords": [],
+	"import": [
+		"@cspell/dict-fr-fr/cspell-ext.json",
+		"@cspell/dict-fr-reforme/cspell-ext.json"
+	],
+	"language": "en,en-gb,en-us",
 	"overrides": [
 		{
-			"dictionaries": [
-				"!dfd-words",
-				"!tech-words",
-				"!project-words",
-				"!!project-words-fr"
+			"filename": [
+				"./exampleSite/**/fr/**/*.md"
 			],
-			"filename": "**/exampleSite/**/fr/**/*.md",
-			"language": "fr_CA"
+			"ignoreRegExpList": [
+				"frontMatter"
+			],
+			"language": "fr"
+		},
+		{
+			"filename": [
+				"./exampleSite/**/fr/**/*.md"
+			],
+			"includeRegExpList": [
+				"frontMatter"
+			],
+			"language": "en,fr"
 		},
 		{
 			"dictionaries": [
-				"!!project-words-fr"
+				"css",
+				"html",
+				"project-words",
+				"tech-words"
 			],
-			"filename": "**/{i18n/fr.toml,exampleSite/config.toml}",
-			"language": "*"
+			"filename": [
+				"./tests/config-action/htmlvalidate*.json"
+			]
+		},
+		{
+			"dictionaries": [
+				"companies",
+				"dfd-words",
+				"project-words",
+				"tech-words"
+			],
+			"filename": [
+				"./config.toml",
+				"./theme.toml",
+				"./i18n/fr.toml",
+				"./exampleSite/config.toml",
+				"./.github/**/*.yml",
+				"./.pre-commit-config.yaml"
+			],
+			"language": "en,en-gb,fr,fr-90"
+		},
+		{
+			"dictionaries": [
+				"dfd-words",
+				"project-words",
+				"tech-words"
+			],
+			"filename": [
+				"./archetypes/*",
+				"./layouts/**/*.html",
+				"./README.md",
+				"./docs/*.md"
+			]
+		},
+		{
+			"dictionaries": [
+				"dfd-words",
+				"project-words",
+				"tech-words"
+			],
+			"filename": [
+				"./content/en/**/*.md",
+				"./content/en/**/*.html"
+			],
+			"includeRegExpList": [
+				"frontMatter"
+			]
+		}
+	],
+	"patterns": [
+		{
+			"name": "frontMatter",
+			"pattern": "/^(-{3}|[+]{3})$(\\s|\\S)*?^\\1$/gm"
 		}
 	],
 	"version": "0.2"
