@@ -1,6 +1,8 @@
+.git
 /public/
 /resources/
 exampleSite/resources/
+exampleSite/public/
 node_modules
 *.log
 *.lock
