@@ -1,6 +1,13 @@
 {
 	"$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
 	"allowCompoundWords": false,
+	"dictionaries": [
+		"dfd-words",
+		"project-words",
+		"project-words-fr",
+		"tech-words",
+		"hugo-words"
+	],
 	"dictionaryDefinitions": [
 		{
 			"addWords": true,
@@ -70,10 +77,7 @@
 		{
 			"dictionaries": [
 				"css",
-				"html",
-				"project-words",
-				"tech-words",
-				"hugo-words"
+				"html"
 			],
 			"filename": [
 				"./tests/config-action/htmlvalidate*.json"
@@ -81,11 +85,7 @@
 		},
 		{
 			"dictionaries": [
-				"companies",
-				"dfd-words",
-				"project-words",
-				"tech-words",
-				"hugo-words"
+				"companies"
 			],
 			"filename": [
 				"./config.toml",
@@ -96,34 +96,6 @@
 				"./.pre-commit-config.yaml"
 			],
 			"language": "en,en-gb,fr,fr-90"
-		},
-		{
-			"dictionaries": [
-				"dfd-words",
-				"project-words",
-				"tech-words",
-				"hugo-words"
-			],
-			"filename": [
-				"./archetypes/*",
-				"./layouts/**/*.html",
-				"./README.md",
-				"./docs/*.md"
-			]
-		},
-		{
-			"dictionaries": [
-				"dfd-words",
-				"project-words",
-				"tech-words"
-			],
-			"filename": [
-				"./content/en/**/*.md",
-				"./content/en/**/*.html"
-			],
-			"includeRegExpList": [
-				"frontMatter"
-			]
 		}
 	],
 	"patterns": [
