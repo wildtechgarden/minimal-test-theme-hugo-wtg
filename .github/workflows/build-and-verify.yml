@@ -1,15 +1,16 @@
 ---
+# yamllint disable rule:key-ordering
 name: build-and-verify
 on: # yamllint disable-line
   pull_request:
     types:
-      - assigned
-      - opened
-      - synchronize
-      - reopened
+    - assigned
+    - opened
+    - synchronize
+    - reopened
     branches:
-      - main
-      - "v[0-9]*"
+    - main
+    - v[0-9].[0-9]*
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -19,78 +20,78 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        hugo: ["0.80.0", "0.88.1", "0.96.0", "latest"]
+        hugo: [0.80.0, 0.88.1, 0.96.0, latest]
     steps:
-      - uses: actions/checkout@v3
-      - name: "Build site with Hugo and audit"
-        uses: danielfdickinson/build-audit-action-hugo-dfd@v0.3
-        with:
-          build-for-downstream: "true"
-          config-file: exampleSite/config.toml
-          hugo-version: ${{ matrix.hugo }}
-          output-directory: public-${{ matrix.hugo }}
-          use-lfs: false
-          source-directory: exampleSite
-      - name: "Validate exampleSite HTML"
-        uses: danielfdickinson/validate-html-action-hugo-dfd@v0.3
-        with:
-          action-workspace: ${{ github.workspace }}
-          output-directory: public-${{ matrix.hugo }}
-          use-existing-workspace: "true"
-      - name: "Check internal links"
-        uses: danielfdickinson/link-check-action-hugo-dfd@v0.3
-        with:
-          canonical-root: "https://minimal-test-theme.wildtechgarden.ca/"
-          output-directory: public-${{ matrix.hugo }}
-          entry-point: index.html
-          upload-logs-as: check-links-failure
-          upload-logs-retention: 3
-          use-existing-workspace: "true"
+    - uses: actions/checkout@v3
+    - name: Build site with Hugo and audit
+      uses: danielfdickinson/build-audit-action-hugo-dfd@v0.3
+      with:
+        build-for-downstream: "true"
+        config-file: exampleSite/config.toml
+        hugo-version: ${{ matrix.hugo }}
+        output-directory: public-${{ matrix.hugo }}
+        use-lfs: false
+        source-directory: exampleSite
+    - name: Validate exampleSite HTML
+      uses: danielfdickinson/validate-html-action-hugo-dfd@v0.3
+      with:
+        action-workspace: ${{ github.workspace }}
+        output-directory: public-${{ matrix.hugo }}
+        use-existing-workspace: "true"
+    - name: Check internal links
+      uses: danielfdickinson/link-check-action-hugo-dfd@v0.3
+      with:
+        canonical-root: "https://minimal-test-theme.wildtechgarden.ca/"
+        output-directory: public-${{ matrix.hugo }}
+        entry-point: index.html
+        upload-logs-as: check-links-failure
+        upload-logs-retention: 3
+        use-existing-workspace: "true"
   build-deploy-site:
     needs:
-      - build-verify-site
+    - build-verify-site
     environment: deploytest-self
     runs-on: ubuntu-20.04
     steps:
-      - name: "Build minified site with Hugo and audit"
-        uses: danielfdickinson/build-audit-action-hugo-dfd@v0.3
-        with:
-          base-url: "https://deploy-test.wildtechgarden.ca/minimal-test-theme/"
-          build-for-downstream: "true"
-          config-file: exampleSite/config.toml
-          do-minify-bundle: "true"
-          hugo-env: deploytest
-          use-lfs: false
-          source-directory: exampleSite
-      - name: Deploy sub-sites (rsync through bastion)
-        shell: bash
-        env:
-          RSYNC_BASTION_KEY: ${{ secrets.DEPLOY_BASTION_PRIVATE_KEY }}
-          RSYNC_BASTION_PORT: ${{ secrets.DEPLOY_BASTION_PORT }}
-          RSYNC_BASTION_USER_HOST: ${{ secrets.DEPLOY_BASTION_USER_HOST }}
-          RSYNC_REMOTE_KEY: ${{ secrets.DEPLOY_REMOTE_PRIVATE_KEY }}
-          RSYNC_REMOTE_HOST_MODULE: ${{ secrets.DEPLOY_REMOTE_HOST_MODULE }}
-          RSYNC_REMOTE_USER: ${{ secrets.DEPLOY_REMOTE_USER }}
-        # yamllint disable rule:line-length
-        run: |
-          mkdir -p ~/.ssh
-          chmod 0700 ~/.ssh
-          touch ~/.ssh/rsync_remote_key
-          chmod 0600 ~/.ssh/rsync_remote_key
-          echo "$RSYNC_REMOTE_KEY" >~/.ssh/rsync_remote_key
-          touch ~/.ssh/rsync_bastion_key
-          chmod 0600 ~/.ssh/rsync_bastion_key
-          echo "$RSYNC_BASTION_KEY" >~/.ssh/rsync_bastion_key
-          touch ~/.ssh/config
-          chmod 0600 ~/.ssh/config
-          echo "StrictHostKeyChecking accept-new
-          Host *
-          IdentityFile ~/.ssh/rsync_remote_key
-          IdentityFile ~/.ssh/rsync_bastion_key" >>~/.ssh/config
-          eval $(ssh-agent)
-          ssh-add -t 900s ~/.ssh/rsync_remote_key
-          rsync -rcltx --delete -e "ssh -qi ~/.ssh/rsync_bastion_key -p ${RSYNC_BASTION_PORT} -o 'ForwardAgent yes' ${RSYNC_BASTION_USER_HOST} 'ssh -ql ${RSYNC_REMOTE_USER}'" public/ ${RSYNC_REMOTE_USER}@${RSYNC_REMOTE_HOST_MODULE}/ # cspell:disable-line
-          ssh-add -D
-          shred -u ~/.ssh/rsync_*_key
-        # yamllint enable rule:line-length
+    - name: Build minified site with Hugo and audit
+      uses: danielfdickinson/build-audit-action-hugo-dfd@v0.3
+      with:
+        base-url: "https://deploy-test.wildtechgarden.ca/minimal-test-theme/"
+        build-for-downstream: "true"
+        config-file: exampleSite/config.toml
+        do-minify-bundle: "true"
+        hugo-env: deploytest
+        use-lfs: false
+        source-directory: exampleSite
+    - name: Deploy sub-sites (rsync through bastion)
+      shell: bash
+      env:
+        RSYNC_BASTION_KEY: ${{ secrets.DEPLOY_BASTION_PRIVATE_KEY }}
+        RSYNC_BASTION_PORT: ${{ secrets.DEPLOY_BASTION_PORT }}
+        RSYNC_BASTION_USER_HOST: ${{ secrets.DEPLOY_BASTION_USER_HOST }}
+        RSYNC_REMOTE_KEY: ${{ secrets.DEPLOY_REMOTE_PRIVATE_KEY }}
+        RSYNC_REMOTE_HOST_MODULE: ${{ secrets.DEPLOY_REMOTE_HOST_MODULE }}
+        RSYNC_REMOTE_USER: ${{ secrets.DEPLOY_REMOTE_USER }}
+      # yamllint disable rule:line-length
+      run: |
+        mkdir -p ~/.ssh
+        chmod 0700 ~/.ssh
+        touch ~/.ssh/rsync_remote_key
+        chmod 0600 ~/.ssh/rsync_remote_key
+        echo "$RSYNC_REMOTE_KEY" >~/.ssh/rsync_remote_key
+        touch ~/.ssh/rsync_bastion_key
+        chmod 0600 ~/.ssh/rsync_bastion_key
+        echo "$RSYNC_BASTION_KEY" >~/.ssh/rsync_bastion_key
+        touch ~/.ssh/config
+        chmod 0600 ~/.ssh/config
+        echo "StrictHostKeyChecking accept-new
+        Host *
+        IdentityFile ~/.ssh/rsync_remote_key
+        IdentityFile ~/.ssh/rsync_bastion_key" >>~/.ssh/config
+        eval $(ssh-agent)
+        ssh-add -t 900s ~/.ssh/rsync_remote_key
+        rsync -rcltx --delete -e "ssh -qi ~/.ssh/rsync_bastion_key -p ${RSYNC_BASTION_PORT} -o 'ForwardAgent yes' ${RSYNC_BASTION_USER_HOST} 'ssh -ql ${RSYNC_REMOTE_USER}'" public/ ${RSYNC_REMOTE_USER}@${RSYNC_REMOTE_HOST_MODULE}/ # cspell:disable-line
+        ssh-add -D
+        shred -u ~/.ssh/rsync_*_key
+      # yamllint enable rule:line-length
 ...
