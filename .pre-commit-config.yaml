@@ -114,7 +114,7 @@ repos:
         exclude: ^(LICENSE$|README.md$|package(-lock)?.json$)
 
   - repo: "https://github.com/streetsidesoftware/cspell-cli"
-    rev: v6.8.0
+    rev: v6.8.1
     hooks:
       - id: cspell
         additional_dependencies:
