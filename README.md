@@ -116,7 +116,7 @@ In/via this module
 
 ## Test CSS styling
 
-This makes the 'theme' more usable
+This makes the theme more usable
 
 To enable the styles:
 
@@ -127,44 +127,16 @@ In `config.toml` add
 	testStylesInclude = true
 ```
 
-## Contributions welcome
+## Getting help, discussing, and/or modifying
 
-If [your issues can't be found when searching both open and closed
-issues](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/issues?q=is%3Aissue),
-please add it!
+* [Support and general questions](docs/SUPPORT.md)
+* [Bugs and feature requests](docs/SUPPORT.md)
+* [Contributing modifications to the repository](docs/CONTRIBUTING.md)
 
-Please [check open issues on
-danielfdickinson/minimal-test-theme-hugo-dfd](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/issues)
-for enhancements and bugs that you would like resolved, write the fix, and
-submit a PR!
+-------
 
-As well, adding and improving documentation is always welcomed.
+## Colophon
 
-### For accessibility, source code uses tabs
-
-Until recently I was 'spaces over tabs' developer, but I recently read
-[a blog post by Bryce Wray about the accessibility argument for tabs over
-spaces](https://www.brycewray.com/posts/2022/06/accessibility-argument-tabs-spaces/)
-and followed the links he gave. That and the fact of the ability of tabs to be
-handled better by braille or screen reader devices (or users who need to zoom
-their displays) being more than just 'taste' but can in fact be a huge win for
-'getting stuff done', convinced me. I also believe fact that some major sites
-don't handle tabs well in code blocks is a reflection of poor site design, and
-should not be excused or catered to.
-
-All it takes is (for example)
-
-``` css
-code,
-pre {
-	tab-size: 3;
-}
-```
-
-And of course, you can use CSS selectors to override when needed.
-
-## Support and general questions
-
-Please use [GitHub
-Discussions](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/discussions)
-for support and general questions.
+* [Copyright and licensing](LICENSE)
+* [Inspirations, information, and source material](docs/ACKNOWLEDGEMENTS.md)
+* [Notes](docs/README-NOTES.md)

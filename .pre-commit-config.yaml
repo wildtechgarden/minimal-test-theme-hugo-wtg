@@ -106,7 +106,7 @@ repos:
   hooks:
   - id: editorconfig-checker
     alias: ec
-    exclude: ^(LICENSE$|README.md$|package*.json$)
+    exclude: ^(LICENSE$|README.md$|package*.json$|_vendor)
 
 - repo: "https://github.com/streetsidesoftware/cspell-cli"
   rev: v6.8.1
@@ -125,6 +125,6 @@ repos:
     - --show-context
     - --show-suggestions
     - --validate-directives
-    exclude: ^(LICENSE$|tests/config/cspell.json) # yamllint disable-line
+    exclude: ^(LICENSE$|tests/config/cspell.json|_vendor) # yamllint disable-line
 # yamllint enable rule:key-ordering
 ...

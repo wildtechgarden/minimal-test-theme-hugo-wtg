@@ -165,3 +165,11 @@ target = "i18n"
 [[module.imports.mounts]]
 source = "archetypes"
 target = "archetypes"
+
+[[module.imports.mounts]]
+source = "README.md"
+target = "content/post/README.md"
+
+[[module.imports.mounts]]
+source = "docs"
+target = "content/post/docs"

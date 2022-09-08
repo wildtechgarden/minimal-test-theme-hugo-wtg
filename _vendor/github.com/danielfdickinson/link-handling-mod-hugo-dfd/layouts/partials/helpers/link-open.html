@@ -1,0 +1,64 @@
+{{- $ctx := . -}}
+{{- $inPage := .page -}}
+{{- $inDestination := .destination -}}
+{{- $inTitle := .title -}}
+{{- $inText := .text -}}
+{{- $inLinkElement := .linkElement -}}
+{{- $inClose := .close -}}
+{{- $inClass := .class -}}
+{{- $inTarget := .target -}}{{- /* For external links, do NOT use target="_blank" by default, but you can set your own default */ -}}
+{{- $inRel := .rel -}}
+{{- $inDestinationNoFind := .destinationNoFind -}}
+{{- $linkElement := $inLinkElement | default "a" -}}
+{{- $class := $inClass -}}
+{{- $doClose := $inClose | default true -}}
+{{- if eq $linkElement "link" -}}
+    {{ $doClose = $inClose | default false -}}
+{{- end -}}
+{{- $rel := $inRel | default $inPage.Params.linkDefaultRel | default $inPage.Site.Params.linkDefaultRel | default "noopener" -}}{{- /* ensure "noopener"(default on modern browsers so not strictly necessary). */ -}}
+{{- if eq $linkElement "link" -}}
+    {{- $rel = $inRel | default $inPage.Params.linkLinkDefaultRel | default $inPage.Site.Params.linkLinkDefaultRel -}}{{- /* noopener not applicable as a default for 'link' elements */ -}}
+{{- end -}}
+{{- $destination := "" -}}
+{{- if ne $inDestinationNoFind true -}}
+    {{- with $inDestination -}}
+        {{- $destination = partial "helpers/lib/link-handling/find-destination" (dict "page" $inPage "destination" .) -}}
+    {{- end -}}
+{{- else -}}
+    {{- $destination = $inDestination -}}
+{{- end -}}
+
+{{- if .destination -}}
+    {{- /* dict all on one line as we support Hugo 0.80.0 and multi-line support requires 0.81.0 or higher */ -}}
+    {{- if eq $linkElement "link" -}}
+       {{- $self_close := eq ( $inPage.Params.emptyElementStyle | default $inPage.Site.arams.emptyElementStyle ) "self-close" -}}
+    <link{{ (partial "helpers/libexec/link-handling/link-attrs" (dict "page" $inPage "destination" $destination "title" $inTitle "class" $inClass "target" $inTarget "rel" $rel)) | safeHTMLAttr -}}{{ if $self_close }} /{{ end}}>
+    {{- else if eq $linkElement "a" -}}
+       {{- $defaultExternalTarget := $inPage.Params.linkDefaultExternalTarget | default $inPage.Site.Params.linkDefaultExternalTarget | default "" -}}
+       {{- $external := (partial "helpers/lib/link-handling/is-external.html" $destination).external -}}
+       {{- $target := $inTarget -}}
+       {{- if and $external (not $target) -}}
+           {{- $target = $defaultExternalTarget -}}
+       {{- end -}}
+    <a{{ (partial "helpers/libexec/link-handling/link-attrs" (dict "page" $inPage "destination" $destination "title" $inTitle "class" $inClass "target" $target "rel" $rel)) | safeHTMLAttr -}}>
+    {{- end -}}
+    {{- if $doClose -}}
+        {{- if $inText -}}
+            {{- if findRE "<a [^>]*>.*</a>" $inText -}}
+                {{- replaceRE "<a [^>]*>(.*)</a>" "$1" $inText | safeHTML  -}}
+            {{- else -}}
+               {{- $inText | safeHTML -}}
+            {{- end -}}
+        {{- else -}}
+            {{- $destination | safeHTML -}}
+        {{- end -}}
+        {{- if eq $linkElement "link" -}}
+    </link>
+        {{- else if eq $linkElement "a" -}}
+    </a>
+        {{- end -}}
+    {{- end -}}
+{{- else -}}
+    {{- if $inText -}}{{- $inText | safeHTML -}}{{- end -}}
+{{- end -}}
+{{- /* Drop trailing newlines */ -}}

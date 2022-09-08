@@ -6,7 +6,8 @@ author: Daniel F. Dickinson
 tags:
 - docs
 description: "Daniel F. Dickinson uses this theme for demo/test sites for the modules on which he works."
-toCanonical: https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/blob/main/README.md
+pageCanonical: true
+layout: single
 ---
 
 {{< page-assets "README-minimal-test-theme.md" >}}
