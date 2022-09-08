@@ -155,6 +155,10 @@ source = "README.md"
 target = "assets/README-minimal-test-theme.md"
 
 [[module.imports.mounts]]
+source = "LICENSE"
+target = "assets/LICENSE"
+
+[[module.imports.mounts]]
 source = "i18n"
 target = "i18n"
 
