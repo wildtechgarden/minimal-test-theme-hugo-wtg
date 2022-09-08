@@ -62,7 +62,7 @@ jobs:
           hugo-env: deploytest
           use-lfs: false
           source-directory: exampleSite
-      - name: Deploy sub-site (rsync through bastion)
+      - name: Deploy sub-sites (rsync through bastion)
         shell: bash
         env:
           RSYNC_BASTION_KEY: ${{ secrets.DEPLOY_BASTION_PRIVATE_KEY }}
