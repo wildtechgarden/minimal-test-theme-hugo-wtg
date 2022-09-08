@@ -23,7 +23,7 @@ minimal reproducible test cases see either [the v0.3 branch of this
 repository](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/tree/v0.3)
 or [hugo-testing by jmooring from the Hugo
 forums](https://github.com/jmooring/hugo-testing). That use case was previously
-a goal of this repository, but such is no longer the case.
+a goal of this repository, but such is no longer true.
 
 See
 [License](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/blob/main/LICENSE)
