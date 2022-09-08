@@ -10,10 +10,10 @@ on: # yamllint disable-line
 jobs:
   build-deploy-site:
     runs-on: ubuntu-20.04
-    environment: umbrella-tsi
+    environment: production
     if: ${{ github.event_name == 'push' && github.ref_name == 'main' }}
     steps:
-      - name: "Build Site with Hugo and Audit"
+      - name: "Build Site with Hugo and audit"
         uses: danielfdickinson/build-audit-action-hugo-dfd@v0.3
         with:
           base-url: "https://test-umbrella.wildtechgarden.ca/minimal-test-theme/"
@@ -22,22 +22,35 @@ jobs:
           do-minify-bundle: "true"
           source-directory: exampleSite
           use-lfs: false
-      - name: Install Rclone
-        run: |
-          sudo apt-get update
-          sudo apt-get install rclone
-      - name: Deploy sub-site (rclone sync)
+      - name: Deploy sub-site (rsync through bastion)
         shell: bash
         env:
-          RCLONE_ONE_FILE_SYSTEM: "true"
-          RCLONE_ERROR_ON_NO_TRANSFER: "true"
-          RCLONE_FTP_EXPLICIT_TLS: "true"
-          RCLONE_FTP_PASS: ${{ secrets.DEPLOY_FTP_PASS }}
-          RCLONE_FTP_PORT: ${{ secrets.DEPLOY_FTP_PORT }}
-          RCLONE_FTP_HOST: ${{ secrets.DEPLOY_FTP_HOSTNAME }}
-          REMOTE_PATH: ${{ secrets.DEPLOY_FTP_REMOTE_PATH }}
-          RCLONE_FTP_USER: ${{ secrets.DEPLOY_FTP_USERNAME }}
+          RSYNC_BASTION_KEY: ${{ secrets.DEPLOY_BASTION_PRIVATE_KEY }}
+          RSYNC_BASTION_PORT: ${{ secrets.DEPLOY_BASTION_PORT }}
+          RSYNC_BASTION_USER_HOST: ${{ secrets.DEPLOY_BASTION_USER_HOST }}
+          RSYNC_REMOTE_KEY: ${{ secrets.DEPLOY_REMOTE_PRIVATE_KEY }}
+          RSYNC_REMOTE_HOST_MODULE: ${{ secrets.DEPLOY_REMOTE_HOST_MODULE }}
+          RSYNC_REMOTE_USER: ${{ secrets.DEPLOY_REMOTE_USER }}
+        # yamllint disable rule:line-length
         run: |
-          export RCLONE_ONE_FILE_SYSTEM RCLONE_ERROR_ON_NO_TRANSFER RCLONE_FTP_PASS RCLONE_FTP_PORT RCLONE_FTP_HOST REMOTE_PATH RCLONE_FTP_USER
-          rclone sync public/ :ftp:${REMOTE_PATH}
+          mkdir -p ~/.ssh
+          chmod 0700 ~/.ssh
+          touch ~/.ssh/rsync_remote_key
+          chmod 0600 ~/.ssh/rsync_remote_key
+          echo "$RSYNC_REMOTE_KEY" >~/.ssh/rsync_remote_key
+          touch ~/.ssh/rsync_bastion_key
+          chmod 0600 ~/.ssh/rsync_bastion_key
+          echo "$RSYNC_BASTION_KEY" >~/.ssh/rsync_bastion_key
+          touch ~/.ssh/config
+          chmod 0600 ~/.ssh/config
+          echo "StrictHostKeyChecking accept-new
+          Host *
+          IdentityFile ~/.ssh/rsync_remote_key
+          IdentityFile ~/.ssh/rsync_bastion_key" >>~/.ssh/config
+          eval $(ssh-agent)
+          ssh-add -t 900s ~/.ssh/rsync_remote_key
+          rsync -rcltx --delete -e "ssh -qi ~/.ssh/rsync_bastion_key -p ${RSYNC_BASTION_PORT} -o 'ForwardAgent yes' ${RSYNC_BASTION_USER_HOST} 'ssh -ql ${RSYNC_REMOTE_USER}'" public/ ${RSYNC_REMOTE_USER}@${RSYNC_REMOTE_HOST_MODULE}/ # cspell:disable-line
+          ssh-add -D
+          shred -u ~/.ssh/rsync_*_key
+        # yamllint enable rule:line-length
 ...
