@@ -10,4 +10,4 @@ pageCanonical: true
 layout: single
 ---
 
-Voir [le version Anglaise](/post/readme/)
+Voir [le version Anglaise](/minimal-test-theme/post/)

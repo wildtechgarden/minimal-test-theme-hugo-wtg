@@ -1,6 +1,6 @@
-baseURL = "https://minimal-test-theme.wildtechgarden.ca/"
+baseURL = "https://test-umbrella.wildtechgarden.ca/minimal-test-theme/"
 copyright = "© 2021-2022 Daniel F. Dickinson"
-homepage = "https://minimal-test-theme.wildtechgarden.ca/"
+homepage = "https://test-umbrella.wildtechgarden.ca/minimal-test-theme/"
 paginate = 3
 languageCode = "en"
 DefaultContentLanguage = "en"
