@@ -2,4 +2,5 @@ Uncategorized
 deploytest
 dontbreakthebackbutton
 github
+infobar
 licenselink
