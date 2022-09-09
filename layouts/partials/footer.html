@@ -2,6 +2,9 @@
 	<footer class="footer-test-min bar-test-min">
 		<nav aria-label="{{ i18n "taxonomies" }}" class="nav-taxonomies-test-min bar-test-min">
 			<ul class="list-test-min bar-test-min linkbar-test-min">
+				<li class="footer-infobar-test-min list-item-test-min">
+					<a class="link-test-min copyright-info-test-min" href="{{ site.Home.RelPermalink }}">Site <span>{{ .Site.Copyright }}</span></a>
+				</li>
 		{{- range $taxonomy_term, $taxonomy := .Site.Taxonomies -}}
 			{{- $count := len $taxonomy -}}
 			{{- with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
@@ -11,8 +14,5 @@
 		{{- end }}
 			</ul>
 		</nav>
-		<div class="footer-infobar-test-min bar-test-min">
-			<div class="copyright-info-test-min">Site <span>{{ .Site.Copyright }}</span></div>
-		</div>
 	</footer>
 {{- /* Remove trailing newlines and spaces */ -}}
