@@ -26,6 +26,7 @@ jobs:
     - name: Build site with Hugo and audit
       uses: danielfdickinson/build-audit-action-hugo-dfd@v0.3
       with:
+        base-url: "https://test-umbrella.wildtechgarden.ca/minimal-test-theme/"
         build-for-downstream: "true"
         config-file: exampleSite/config.toml
         hugo-version: ${{ matrix.hugo }}
@@ -41,7 +42,7 @@ jobs:
     - name: Check internal links
       uses: danielfdickinson/link-check-action-hugo-dfd@v0.3
       with:
-        canonical-root: "https://minimal-test-theme.wildtechgarden.ca/"
+        canonical-root: "https://test-umbrella.wildtechgarden.ca/minimal-test-theme/" # yamllint disable-line
         output-directory: public-${{ matrix.hugo }}
         entry-point: index.html
         upload-logs-as: check-links-failure
