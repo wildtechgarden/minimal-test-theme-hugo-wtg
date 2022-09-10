@@ -148,15 +148,6 @@ source = "assets"
 target = "assets"
 
 [[module.imports.mounts]]
-# Allows us to access the README.md and use it in page (via the ``page-assets`` shortcode in exampleSite)
-source = "README.md"
-target = "assets/README-minimal-test-theme.md"
-
-[[module.imports.mounts]]
-source = "LICENSE"
-target = "assets/LICENSE"
-
-[[module.imports.mounts]]
 source = "i18n"
 target = "i18n"
 
@@ -166,8 +157,12 @@ target = "archetypes"
 
 [[module.imports.mounts]]
 source = "README.md"
-target = "content/post/README.md"
+target = "content/readme/README.md"
 
 [[module.imports.mounts]]
 source = "docs"
-target = "content/post/docs"
+target = "content/readme/docs"
+
+[[module.imports.mounts]]
+source = "LICENSE"
+target = "content/readme/readme/LICENSE"
