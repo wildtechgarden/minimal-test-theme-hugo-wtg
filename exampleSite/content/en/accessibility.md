@@ -1,16 +1,18 @@
----
-title: "Accessibility"
-author: Daniel F. Dickinson
-date: 2021-10-15T05:57:11Z
-publishDate: 2021-10-15T05:57:11Z
----
++++
+title = "Accessibility"
+author = "Daniel F. Dickinson"
+date = "2021-10-15T05:57:11Z"
+publishDate = "2021-10-15T05:57:11Z"
+pageCanonical = false
+toCanonical = "https://www.wildtechgarden.ca/about/accessibility/"
++++
 
 ## Statement
 
-[Daniel F. Dickinson](https://wildtechgarden.ca/about/) makes his best effort to
-keep this site accessible and inclusive. If you find something that does not
-meet that goal, please use the [contact form on his main
-site](https://wildtechgarden.ca/about/contact/) to let him know.
+[Daniel F. Dickinson](https://www.wildtechgarden.ca/about/) makes his best
+effort to keep this site accessible and inclusive. If you find something that
+does not meet that goal, please use the [contact form on his main
+site](https://www.wildtechgarden.ca/about/contact/) to let him know.
 
 ## Goals
 
@@ -25,10 +27,11 @@ a better experience for all compared to 'alt' tags.
 Obviously there is a lot of work to do on this site, in that respect.
 
 A more difficult challenge is to use language that is less complex, while saying
-everything I want to say. That is a longer term project.
+everything relevant that there is to say. That is a longer term project.
 
 ## Navigation notes
 
-[We never open links in new tabs, use "Open link in new tab" in your browser if
-you want that](https://wildtechgarden.ca/blog/accessible-design-no-blank/).
+[We never open links in new tabs, use the "Open link in new tab" function of
+your browser if you want
+that](https://www.wildtechgarden.ca/blog/accessible-design-no-blank/).
 ([#dontbreakthebackbutton](https://www.linkedin.com/feed/hashtag/?keywords=dontbreakthebackbutton))
