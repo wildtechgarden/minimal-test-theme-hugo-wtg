@@ -68,9 +68,7 @@ email = "dfdpublic@wildtechgarden.ca"
 tag = "tags"
 
 [frontmatter]
-lastmod = ["lastmod",":git",":fileModTime","date","publishDate"]
-date = ["date","publishDate","lastmod",":git",":fileModTime"]
-publishDate = ["publishDate","date","lastmod",":git",":fileModTime"]
+lastmod = [":git", "lastmod", ":fileModTime", "date", "publishDate"]
 
 [markup]
 [markup.highlight]
