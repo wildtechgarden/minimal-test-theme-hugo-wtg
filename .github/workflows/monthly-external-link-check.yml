@@ -16,11 +16,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build site with Hugo and audit
-      uses: danielfdickinson/build-audit-action-hugo-dfd@v0.3
+      uses: danielfdickinson/build-audit-action-hugo-dfd@v0.4
       with:
         base-url: "https://test-umbrella.wildtechgarden.ca/minimal-test-theme/"
         build-for-downstream: "true"
-        config-file: exampleSite/config.toml
+        config-file: ../exampleSite/config.toml
         use-lfs: false
         source-directory: exampleSite
     - name: Validate exampleSite HTML

@@ -24,11 +24,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build site with Hugo and audit
-      uses: danielfdickinson/build-audit-action-hugo-dfd@v0.3
+      uses: danielfdickinson/build-audit-action-hugo-dfd@v0.4
       with:
         base-url: "https://test-umbrella.wildtechgarden.ca/minimal-test-theme/"
         build-for-downstream: "true"
-        config-file: exampleSite/config.toml
+        config-file: ../exampleSite/config.toml
         hugo-version: ${{ matrix.hugo }}
         output-directory: public-${{ matrix.hugo }}
         use-lfs: false
@@ -55,11 +55,11 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - name: Build minified site with Hugo and audit
-      uses: danielfdickinson/build-audit-action-hugo-dfd@v0.3
+      uses: danielfdickinson/build-audit-action-hugo-dfd@v0.4
       with:
         base-url: "https://deploy-test.wildtechgarden.ca/minimal-test-theme/"
         build-for-downstream: "true"
-        config-file: exampleSite/config.toml
+        config-file: ../exampleSite/config.toml
         do-minify-bundle: "true"
         hugo-env: deploytest
         use-lfs: false
