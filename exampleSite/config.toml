@@ -160,9 +160,9 @@ source = "README.md"
 target = "content/readme/README.md"
 
 [[module.imports.mounts]]
-source = "docs"
-target = "content/readme/docs"
-
-[[module.imports.mounts]]
 source = "LICENSE"
 target = "content/readme/readme/LICENSE"
+
+[[module.imports.mounts]]
+source = "docs"
+target = "content/readme/docs"
