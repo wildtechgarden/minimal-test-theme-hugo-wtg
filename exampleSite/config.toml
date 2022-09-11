@@ -30,7 +30,7 @@ contentDir = "content/fr"
 [[languages.fr.menu.main]]
 identifier = "about"
 name = "About"
-url = "/fr/about/" # We can't use pageref because we support 0.80.0
+url = "/readme/readme/" # We can't use pageref because we support 0.80.0
 weight = 10
 
 [[languages.fr.menu.main]]
@@ -49,7 +49,7 @@ contentDir = "content/en"
 [[languages.en.menu.main]]
 identifier = "about"
 name = "About"
-url = "/about/" # We can't use pageref because we support 0.80.0
+url = "/readme/readme/" # We can't use pageref because we support 0.80.0
 weight = 10
 
 [[languages.en.menu.main]]
