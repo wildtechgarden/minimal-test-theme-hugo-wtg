@@ -43,6 +43,16 @@
 			{{- errorf "/css/test-minimal-dfd.css is missing" -}}
 		{{- end -}}
 		{{- $combinedCSS = $combinedCSS | append $mainCSS -}}
+		{{- $chromaCSS := resources.Get "/css/test-minimal-dfd-chroma.css" -}}
+		{{- if not $chromaCSS -}}
+			{{- errorf "/css/test-minimal-dfd-chroma.css is missing" -}}
+		{{- end -}}
+		{{- $combinedCSS = $combinedCSS | append $chromaCSS -}}
+		{{- $postChromaCSS := resources.Get "/css/test-minimal-dfd-post-chroma.css" -}}
+		{{- if not $postChromaCSS -}}
+			{{- errorf "/css/test-minimal-dfd-post-chroma.css is missing" -}}
+		{{- end -}}
+		{{- $combinedCSS = $combinedCSS | append $postChromaCSS -}}
 	{{- end -}}
 	{{- $customCSS := resources.Match "/css/custom/*.css" -}}
 	{{- if $customCSS -}}
@@ -50,10 +60,8 @@
 	{{- end -}}
 	{{- if gt (len $combinedCSS) 0 -}}
 		{{- $combinedCSS = $combinedCSS | resources.Concat "/css/minimal-test-hugo-dfd.css" -}}
-		{{- if or hugo.IsProduction (eq hugo.Environment "deploytest") }}
+		{{- if hugo.IsProduction }}
 			{{- $combinedCSS = $combinedCSS | resources.Minify -}}
-		{{- end -}}
-		{{- if hugo.IsProduction -}}
 			{{- $combinedCSS = $combinedCSS | resources.Fingerprint -}}
 		{{- end }}
 	<link rel="stylesheet" href="{{ $combinedCSS.Permalink }}">

@@ -24,7 +24,7 @@
 				<a class="link-test-min" href="{{ .Parent.RelPermalink }}"><span class="list-item-label-test-min">{{ i18n "up_a_level" }}</span>
 			{{- partial "helpers/page-title.html" .Parent -}}</a>
 		{{- else -}}
-			<span class="link-test-min"><span class="list-item-label-test-min">{{ i18n "at_top" }}</span>&equiv;</span>
+			<span class="link-test-min link-test-at-top"><span class="list-item-label-test-min">{{ i18n "at_top" }}</span>&squarf;</span>
 		{{- end -}}
 			</li>
 			<li class="list-item-test-min{{- if not .NextInSection }} none-test-min{{- end -}}">

@@ -1,6 +1,6 @@
 name = "DFD Hugo Minimal Test"
 copyright = "© 2021-2022 Daniel F. Dickinson"
-description = "Module for DFD's Hugo Minimal Test 'Theme'"
+description = "Module for DFD's Hugo minimal test theme"
 
 [module]
 [module.hugoVersion]

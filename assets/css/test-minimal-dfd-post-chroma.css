@@ -1,0 +1,26 @@
+
+.main-test-min pre .language-plaintext {
+	background-color: #cbdff6;
+	color: #191919;
+}
+
+.main-test-min pre {
+	background-color: revert;
+	min-width: min-content;
+	padding: 0;
+}
+
+.main-test-min pre > code {
+	background-color: #000;
+	padding: .4em;
+}
+
+.main-test-min p > code {
+	background-color: #cbdff6;
+	color: #191919;
+}
+
+.main-test-min li > code {
+	background-color: #000;
+	color: #f8f8f2
+}

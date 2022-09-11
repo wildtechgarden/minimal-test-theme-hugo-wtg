@@ -24,6 +24,10 @@ html {
 	line-height: 1.5;
 }
 
+li {
+	line-height: 1.75;
+}
+
 code,
 pre {
 	tab-size: 3;
@@ -71,7 +75,6 @@ code {
 }
 
 .chroma .line {
-	border: 1px dashed #0a0a0a;
 	display: block;
 }
 
@@ -151,27 +154,6 @@ a:hover {
 	min-width: min-content;
 }
 
-.main-test-min pre {
-	background-color: #cbdff6;
-	color: #191919;
-	min-width: min-content;
-	padding: .4em;
-}
-
-.main-test-min .highlight>pre {
-	min-width: min-content;
-}
-
-.main-test-min pre>code {
-	min-width: min-content;
-}
-
-.main-test-min .highlight>pre>code {
-	margin: 0;
-	min-width: min-content;
-	padding: 0;
-}
-
 .nav-site-page-test-min .list-item-label-test-min {
 	padding-right: .4em;
 }
@@ -236,11 +218,6 @@ a:hover {
 	.bar-test-min .list-test-min {
 		flex-flow: row nowrap;
 	}
-
-/*	.bar-test-min .list-test-min .list-item-test-min {
-		flex-flow: row nowrap;
-	}
-*/
 }
 
 .footer-test-min .bar-test-min .list-test-min {
@@ -291,14 +268,34 @@ a:hover {
 	color: lightblue;
 }
 
-.bar-test-min .list-test-min .list-item-test-min.none-test-min:active {
-	background-color: lightblue;
-	color: blue;
+.bar-test-min .list-test-min .list-item-test-min:active a:link {
+	background-color: blue;
+	color: lightblue;
 }
 
-.bar-test-min .list-test-min .list-item-test-min:hover {
+.bar-test-min .list-test-min .list-item-test-min:active a:visited {
+	background-color: blue;
+	color: lightblue;
+}
+
+.bar-test-min .list-test-min .list-item-test-min:hover a:link {
+	background-color: blue;
+	color: lightblue;
+}
+
+.bar-test-min .list-test-min .list-item-test-min:hover a:visited {
+	background-color: blue;
+	color: lightblue;
+}
+
+.bar-test-min .list-test-min .list-item-test-min.none-test-min:active {
 	background-color: lightblue;
-	color: blue;
+	color: #282828;
+}
+
+.bar-test-min .list-test-min .list-item-test-min.none-test-min:hover {
+	background-color: lightblue;
+	color: #282828;
 }
 
 .bar-test-min .list-test-min .list-item-test-min:active a:active {
@@ -356,6 +353,18 @@ a:hover {
 
 .nav-site-page-test-min .list-item-test-min:nth-child(2) .link-test-min::after {
 	content: "‹";
+}
+
+.nav-site-page-test-min .list-item-test-min:nth-child(3) .link-test-min.link-test-at-top::before {
+	content: "▫";
+}
+
+.nav-site-page-test-min .list-item-test-min:nth-child(3) .link-test-min::after {
+	content: "^";
+}
+
+.nav-site-page-test-min .list-item-test-min:nth-child(3) .link-test-min.link-test-at-top::after {
+	content: "▫";
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(3) .link-test-min::before {

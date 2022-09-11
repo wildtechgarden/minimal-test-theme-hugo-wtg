@@ -27,7 +27,7 @@ forums](https://github.com/jmooring/hugo-testing). That use case was previously
 a goal of this repository, but such is no longer true.
 
 See
-[License](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/blob/main/LICENSE)
+[LICENSE](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/blob/main/LICENSE)
 for permissions on use.
 
 ## Modern hugo only
@@ -41,7 +41,7 @@ tested.
 ### hello-world shortcode
 
 A simple shortcode that emits an HTML paragraph with 'Hello World!'. To use it,
-add `{{`&lt; `hello-world` &gt;`}}` to a **content** file (not template).
+add `{{</* hello-world */>}}` to a **content** file (not template).
 
 ### page-assets shortcode
 
