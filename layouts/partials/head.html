@@ -14,7 +14,7 @@
 	<link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $rssTitle }}">
 		{{- end -}}
 	{{- end }}
-	<title>{{ .Title | default site.Title }}</title>
+	<title>{{ partial "helpers/gather-title-page.html" . }}</title>
 	{{- /* NOTE: For Production make sure you add `HUGO_ENV="production"` before your build command */ -}}
 	{{- $pageCanonical := .Page.Params.pageCanonical | default true -}}
 	{{- $taxCanonical := .Page.Params.taxCanonical | default .Page.Site.Params.taxCanonical | default false -}}

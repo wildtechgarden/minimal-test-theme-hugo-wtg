@@ -1,0 +1,13 @@
+{{- $foundTitle := "" -}}
+{{- if .Site.Title -}}
+	{{- $foundTitle = .Site.Title -}}
+{{- else if .Site.Params.Title -}}
+	{{- $foundTitle = .Site.Params.Title -}}
+{{- else -}}
+	{{- $foundTitleDict := partial "helpers/find-page-title-base.html" .Site.Home.Page -}}
+	{{- $foundTitle = $foundTitleDict.foundTitle | title -}}
+{{- end -}}
+{{- if not $foundTitle -}}
+	{{- $foundTitle = i18n "untitledSite" -}}
+{{- end -}}
+{{- return $foundTitle -}}

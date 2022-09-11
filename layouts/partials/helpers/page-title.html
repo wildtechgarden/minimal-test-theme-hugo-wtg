@@ -1,2 +1,11 @@
-{{- .Title | default (site.Title) -}}
+{{- $page_title := partial "helpers/gather-title-page.html" .Page -}}
+{{- if $page_title }}
+	{{- $page_title -}}
+{{- else -}}
+	{{- if .File -}}
+		{{- warnf (printf "Unable to find title-page on page %s" .File.Path) -}}
+	{{- else -}}
+		{{- warnf (printf "Unable to find title-page on page %s" .Title) -}}
+	{{- end -}}
+{{- end -}}
 {{- /* Remove trailing newlines */ -}}
