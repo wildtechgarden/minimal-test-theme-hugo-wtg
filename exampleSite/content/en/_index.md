@@ -3,14 +3,25 @@ title = "Hugo minimal test theme"
 date = "2022-04-07T23:53:03Z"
 publishDate = "2022-04-07T23:53:03Z"
 author = "Daniel F. Dickinson"
-categories = [
-	"Uncategorized"
-]
 tags = [
-	"Untagged"
+	"homepage"
 ]
-[cascade]
+description = """\
+Demo site for Daniel F. Dickinson's (DFD) Hugo minimal test theme\
+"""
+layout = "single"
+[[cascade]]
+pageCanonical = true
+tags = ["docs"]
+[cascade._target]
+path = "/readme/README.md"
+kind = "page"
+[[cascade]]
 pageCanonical = false
+tags = ["docs"]
+[cascade._target]
+path = "/readme/**"
+kind = "page"
 +++
 
 [Daniel F. Dickinson](https://github.com/danielfdickinson) uses this theme for

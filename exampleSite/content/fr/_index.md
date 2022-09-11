@@ -3,11 +3,22 @@ title = "Hugo thème du teste minimale"
 date = "2022-04-07T23:53:03Z"
 publishDate = "2022-04-07T23:53:03Z"
 author ="Daniel F. Dickinson"
-tags = [
-	"Sans tague"
-]
-[cascade]
+description = """\
+Demo site au Hugo thème du teste minimal du Daniel F. Dickinson (DFD)\
+"""
+layout = "single"
+[[cascade]]
+pageCanonical = true
+tags = ["docs"]
+[cascade._target]
+path = "/readme/README.md"
+kind = "page"
+[[cascade]]
 pageCanonical = false
+tags = ["docs"]
+[cascade._target]
+path = "/readme/**"
+kind = "page"
 +++
 
 [Daniel F. Dickinson](https://github.com/danielfdickinson) utilise ce thème pour
