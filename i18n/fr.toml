@@ -39,3 +39,12 @@ other = "Menu principal du site"
 
 [site_page_navigation]
 other = "Navigation entre les pages du site"
+
+[taxonomy-list-description]
+other = "Pages qui utilise la terme taxonomique '{{ . }}'"
+
+[taxonomy-term-description]
+other = "Les termes aux '{{ . }}' taxonomie"
+
+[taxonomyTitle]
+other = "Taxonomie"
