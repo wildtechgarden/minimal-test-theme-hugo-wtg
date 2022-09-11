@@ -30,5 +30,5 @@ ou [hugo-testing par jmooring à partir des forums
 Hugo](https://github.com/jmooring/hugo-testing). Ce cas d'utilisation était
 auparavant un objectif de ce référentiel, mais ce n'est plus le cas.
 
-Voir [README](/readme/README.md) aux plusier d'information, et
+Voir [README](../readme/readme/) aux plusier d'information, et
 [LICENSE](../readme/readme/LICENSE) aux autorisations d'utilisation.
