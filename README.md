@@ -1,5 +1,9 @@
 # DFD Hugo minimal test theme
 
+## ARCHIVED
+
+This module is no longer maintained (archived for historical purposes), and will not receive updates, even security updates.
+
 ## Status
 
 [![build-and-verify](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/actions/workflows/build-and-verify.yml/badge.svg)](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/actions/workflows/build-and-verify.yml)
