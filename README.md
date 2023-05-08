@@ -2,7 +2,8 @@
 
 ## Status
 
-TBD
+[![Netlify
+Status](https://api.netlify.com/api/v1/badges/6be917c6-f8af-441e-8dc1-a5caf7110dcc/deploy-status)](https://app.netlify.com/sites/minimal-test-theme/deploys)
 
 ## Demo/sample website
 
