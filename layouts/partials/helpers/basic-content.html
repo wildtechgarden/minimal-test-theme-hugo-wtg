@@ -1,7 +1,11 @@
 {{- /* If there are H1 elements in content rendered from content file, replace H1 with H2 */ -}}
-{{- if . -}}
-	{{- if gt (len (findRE "<h1.*?>(.|\n)*?</h1>" .)) 0 -}}
-		{{- replaceRE "<h1(.*?)id=\"(.*?)\"(.*?)>((.*|\n)*?)</h1>" "<h2 $1 id=\"$2-831\"$3>$5</h2>" . | safeHTML -}}
+{{- $ctx := .Page -}}
+{{- with .Content -}}
+	{{- $curTitle := findRE `(?s)<h1.*?>.*?</h1>` . -}}
+	{{- if gt (len $curTitle) 0 -}}
+		{{- if ne $curTitle (partial "helpers/gather-title-page.html" page ) -}}
+			{{- replaceRE `(?s)<h1(.*?)id="(.*?)"(.*?)>(.*?)</h1>` `<h2 $1 id="$2-831"$3>$5</h2>` . | safeHTML -}}
+		{{- end -}}
 	{{- else -}}
 		{{- . | safeHTML -}}
 	{{- end -}}

@@ -1,0 +1,21 @@
+{{- $ctx := . -}}
+{{- $destination := .Destination -}}
+{{- $path := "" -}}
+{{- $fragment := "" -}}
+{{- $external := false -}}}
+{{- $inUrl := urls.Parse $destination -}}
+{{- $invalid := false -}}
+{{- with $inUrl -}}
+{{- /* We treat absolute URLs (that include http/https and host or mailto/etc and opaque target) */ -}}
+{{- /* as external as well as links beginning with ('//') */ -}}
+{{- if or (and .Scheme .Host) (and .Scheme .Opaque) .Host -}}
+{{- $external = true -}}
+{{- else if and (not (and .Scheme .Host)) (not (and .Scheme .Opaque)) (not .Host) .Scheme -}}
+{{- $invalid = true -}}
+{{- $external = true -}}
+{{- end -}}
+{{- else -}}
+{{- $invalid = true -}}
+{{- end -}}
+{{- return (dict "isExternal" $external "invalid" $invalid) -}}
+{{- /* Remove trailing newlines */ -}}

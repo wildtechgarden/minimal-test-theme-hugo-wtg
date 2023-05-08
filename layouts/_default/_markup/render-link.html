@@ -1,0 +1,22 @@
+{{- $ctx := . -}}
+{{- $destination := .Destination -}}
+{{- $page := .Page -}}
+{{- $plainText := .PlainText -}}
+{{- $text := .Text -}}
+{{- $title := .Title -}}
+{{- $absLink := site.Params.absLink | default $page.Params.absLink | default false -}}
+{{- $staticFallback := site.Params.staticFallback | default $page.Params.staticFallback | default false -}}
+
+{{- $destMap := partial "helpers/get-link-destination.html" (dict
+	"Destination" $destination
+	"Page" $page "getRemote"
+	false "absLink" $absLink
+	"remoteFallback" false
+	"staticFallback" $staticFallback)
+-}}
+
+{{- with $destMap -}}
+<a href="{{ .Destination | safeURL }}"{{ with $title}} title="{{ . }}"{{ end }}>{{ $text | safeHTML }}</a>
+{{- else -}}
+	{{- errorf "Unable to find destination '%s'" $destination -}}
+{{- end -}}

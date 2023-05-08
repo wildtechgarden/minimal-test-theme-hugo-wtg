@@ -6,9 +6,9 @@
 		{{- $foundTitle = .Title -}}
 	{{- else -}}
 		{{- /* Use contents of the first H1 element as the title */ -}}
-		{{- if ge (len (findRE "<h1.*?>(.|\n)*?</h1>" .Content)) 1 -}}
-			{{- range (findRE "<h1.*?>(.|\n)*?</h1>" .Content 1) -}}
-				{{- $foundTitle = replaceRE "<h1.*?>((.|\n)*)?</h1>" "$1" . -}}
+		{{- if ge (len (findRE `(?s)<h1.*?>.*?</h1>` .Content)) 1 -}}
+			{{- range (findRE `(?s)<h1.*?>.*?</h1>` .Content 1) -}}
+				{{- $foundTitle = replaceRE `(?s)<h1.*?>(.+?)</h1>` "$1" . -}}
 				{{- $titleFromContent = true -}}
 			{{- end -}}
 		{{- end -}}

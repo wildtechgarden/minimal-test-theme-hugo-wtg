@@ -1,0 +1,13 @@
+{{- $ctx := . -}}
+{{- $destination := .destination -}}
+{{- $path := "" -}}
+{{- $tmpScratch := newScratch -}}
+{{- $fragment := $tmpScratch.Get "nil-value" -}}
+{{- $inUrl := urls.Parse $destination -}}
+{{- with $inUrl -}}
+{{- if .Fragment -}}
+{{- $fragment = .Fragment -}}
+{{- end -}}
+{{- end -}}
+{{- return $fragment -}}
+{{- /* Remove trailing newlines */ -}}

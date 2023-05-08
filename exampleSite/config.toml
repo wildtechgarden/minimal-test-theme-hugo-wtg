@@ -1,6 +1,6 @@
-baseURL = "https://test-umbrella.wildtechgarden.ca/minimal-test-theme/"
+baseURL = "https://minimal-test-theme.demo.wildtechgarden.ca/"
 copyright = "© 2021-2022 Daniel F. Dickinson"
-homepage = "https://test-umbrella.wildtechgarden.ca/minimal-test-theme/"
+homepage = "https://minimal-test-theme.demo.wildtechgarden.ca/"
 paginate = 3
 languageCode = "en"
 DefaultContentLanguage = "en"
@@ -15,6 +15,7 @@ mainSections = ["post"]
 useBaseURL = false
 # Disable if you don't want the test (bare-bones) CSS
 # testStylesInclude = false
+pageCanonical = false
 
 # See https://gohugo.io/content-management/multilingual/
 # and https://www.regisphilibert.com/blog/2018/08/hugo-multilingual-part-1-managing-content-translation/
@@ -30,7 +31,7 @@ contentDir = "content/fr"
 [[languages.fr.menu.main]]
 identifier = "about"
 name = "About"
-url = "/readme/readme/" # We can't use pageref because we support 0.80.0
+url = "/readme/" # We can't use pageref because we support 0.80.0
 weight = 10
 
 [[languages.fr.menu.main]]
@@ -49,7 +50,7 @@ contentDir = "content/en"
 [[languages.en.menu.main]]
 identifier = "about"
 name = "About"
-url = "/readme/readme/" # We can't use pageref because we support 0.80.0
+url = "/readme/" # We can't use pageref because we support 0.80.0
 weight = 10
 
 [[languages.en.menu.main]]
@@ -61,7 +62,7 @@ weight = 20
 # site.Author(s) is deprecated so this is not longer used
 [[ author.authors ]]
 name = "Daniel F. Dickinson"
-homepage = "https://www.wildtechgarden.ca/about/"
+homepage = "https://www.danielfdickinson.ca/"
 email = "dfdpublic@wildtechgarden.ca"
 
 [taxonomies]
@@ -157,12 +158,29 @@ target = "archetypes"
 
 [[module.imports.mounts]]
 source = "README.md"
-target = "content/readme/README.md"
+target = "content/README.md"
+lang = "en"
 
 [[module.imports.mounts]]
-source = "LICENSE"
-target = "content/readme/readme/LICENSE"
+source = "README.md"
+target = "content/README.md"
+lang = "fr"
 
 [[module.imports.mounts]]
 source = "docs"
-target = "content/readme/docs"
+target = "content/docs"
+lang = "en"
+
+[[module.imports.mounts]]
+source = "docs"
+target = "content/docs"
+lang = "fr"
+
+[[module.imports.mounts]]
+source = "LICENSE"
+target = "content/docs/LICENSE"
+
+
+[[module.imports.mounts]]
+source = "LICENSE"
+target = "content/LICENSE"

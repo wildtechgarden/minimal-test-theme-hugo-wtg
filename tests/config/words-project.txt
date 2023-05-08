@@ -3,11 +3,17 @@ Hashbang
 Preproc
 Traceback
 Uncategorized
+danielfdickinson
 deploytest
 dontbreakthebackbutton
+errorf
 github
+htmlvalidate
 infobar
 isset
+jmooring
 licenselink
 lntable
 lntd
+shortcode
+warnf

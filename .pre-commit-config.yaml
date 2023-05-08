@@ -15,7 +15,7 @@ minimum_pre_commit_version: 2.18.1
 # yamllint disable rule:key-ordering
 repos:
 - repo: "https://github.com/pre-commit/pre-commit-hooks"
-  rev: v4.3.0
+  rev: v4.4.0
   hooks:
   - id: check-added-large-files
   # - Prevent giant files from being committed.
@@ -23,19 +23,19 @@ repos:
   # - checks for files that would conflict in
   #   case-insensitive filesystems.
   - id: check-json
-    # - checks json files for parseable syntax.
+    # - checks json files for parsable syntax.
     exclude: ^(layouts/|.vscode/|_vendor)
   - id: check-merge-conflict
   # - checks for files that contain merge conflict strings.
   - id: check-symlinks
   # - checks for symlinks which do not point to anything.
   - id: check-toml
-  # - checks toml files for parseable syntax.
+  # - checks toml files for parsable syntax.
   - id: check-vcs-permalinks
   # - ensures that links to vcs websites are permalinks.
   - id: check-yaml
-  # - checks yaml files for parseable syntax.
-  - id: destroyed-symlinks
+  # - checks yaml files for parsable syntax.
+  # - id: destroyed-symlinks
   # - detects symlinks which are changed to regular
   # files with a content of a path which that symlink was pointing to.
   - id: detect-private-key
@@ -73,58 +73,56 @@ repos:
   - id: scss-lint
 
 - repo: "https://github.com/igorshubovych/markdownlint-cli"
-  rev: v0.32.1
+  rev: v0.34.0
   hooks:
   - id: markdownlint
-    args: [--config, tests/config/markdownlint.json]
+    args: [--config, .markdownlint.json]
     files: .+\.(md|markdown)$
 
 - repo: "https://github.com/PrincetonUniversity/blocklint"
-  rev: v0.2.3
+  rev: v0.2.4
   hooks:
   - id: blocklint
 
 - repo: "https://github.com/adrienverge/yamllint"
-  rev: v1.26.3
+  rev: v1.31.0
   hooks:
   - id: yamllint
-    args: [-c=./tests/config/yamllint.yaml]
+    args: [-c=./.yamllint.yaml]
     exclude: ^(_vendor)
 
 - repo: "https://github.com/zricethezav/gitleaks"
-  rev: v8.8.4
+  rev: v8.16.3
   hooks:
   - id: gitleaks
 
 - repo: "https://github.com/jorisroovers/gitlint"
-  rev: v0.17.0
+  rev: v0.19.1
   hooks:
   - id: gitlint
 
 - repo: "https://github.com/editorconfig-checker/editorconfig-checker.python"
-  rev: 2.4.0
+  rev: 2.7.1
   hooks:
   - id: editorconfig-checker
     alias: ec
     exclude: ^(LICENSE$|README.md$|package*.json$|_vendor)
 
-- repo: "https://github.com/streetsidesoftware/cspell-cli"
-  rev: v6.8.1
-  hooks:
-  - id: cspell
-    additional_dependencies:
-    - "@cspell/dict-fr-fr"
-    - "@cspell/dict-fr-reforme"
-    args:
-    - --config
-    - tests/config/cspell.json
-    - --gitignore
-    - --gitignore-root
-    - --no-cache
-    - --no-must-find-files
-    - --show-context
-    - --show-suggestions
-    - --validate-directives
-    exclude: ^(LICENSE$|tests/config/cspell.json|_vendor) # yamllint disable-line
+# - repo: "https://github.com/streetsidesoftware/cspell-cli"
+#   rev: v6.31.0
+#   hooks:
+#   - id: cspell
+#     additional_dependencies:
+#     - "@cspell/dict-fr-fr"
+#     - "@cspell/dict-fr-reforme"
+#     args:
+#     - --gitignore
+#     - --gitignore-root
+#     - --no-cache
+#     - --no-must-find-files
+#     - --show-context
+#     - --show-suggestions
+#     - --validate-directives
+#     exclude: ^(LICENSE$|cspell.json|_vendor) # yamllint disable-line
 # yamllint enable rule:key-ordering
 ...

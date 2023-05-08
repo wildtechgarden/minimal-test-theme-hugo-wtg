@@ -24,10 +24,10 @@
 	{{- $multipleH1 := false -}}
 	{{- if not $titleFromContent -}}
 		{{- /* Only allowed one h1 per page and we will be adding one via layouts */ -}}
-		{{- $multipleH1 = gt (len (findRE "<h1.*?>(.|\n)*?</h1>" .Content)) 0 -}}
+		{{- $multipleH1 = gt (len (findRE `(?s)<h1.*?>.*?</h1>` .Content)) 0 -}}
 	{{- else -}}
 		{{- /* Only allowed one h1 per page and it comes from .Content */ -}}
-		{{- $multipleH1 = gt (len (findRE "<h1.*?>(.|\n)*?</h1>" .Content)) 1 -}}
+		{{- $multipleH1 = gt (len (findRE `(?s)<h1.*?>.*?</h1>` .Content)) 1 -}}
 	{{- end -}}
 	{{- /* We don't actually do the fixup, we just want to know if a fixup will be done */ -}}
 	{{- if eq (.Params.multipleH1ErrorFix | default .Site.Params.multipleH1ErrorFix) false -}}
@@ -47,6 +47,6 @@
 		{{- end -}}
 	{{- end -}}
 {{- end -}}
-{{- return $foundTitle -}}
+{{- return ($foundTitle | safeHTML) -}}
 {{- /* Remove trailing newlines */ -}}
 

@@ -1,0 +1,93 @@
+{{- $ctx := . -}}
+{{- $destination := .Destination -}}
+{{- $page := .Page -}}
+{{- $getRemote := .getRemote -}}
+{{- $absLink := .absLink -}}
+{{- $remoteFallback := .remoteFallback -}}
+{{- $staticFallback := .staticFallback -}}
+{{- $finalDestination := $page.Scratch.Get "nil-value" -}}
+{{- $finalResource := $page.Scratch.Get "nil-value" -}}
+{{- $isPage := false -}}
+
+{{- $externalResult := (partial "helpers/is-external-destination.html" (dict "Destination" $destination)) -}}
+{{- if $externalResult.isExternal -}}
+	{{- if not $getRemote -}}
+		{{- /* If the link is external and we are not pulling remote resources, just use the link verbatim */}}
+		{{- $finalDestination = $destination -}}
+	{{- else if not $externalResult.invalid -}}
+		{{- if ge hugo.Version "0.91.0" -}}
+			{{- $linkResource := resources.GetRemote $destination -}}
+			{{- if $linkResource -}}
+				{{- if $linkResource.Err -}}
+					{{- if $remoteFallback -}}
+						{{- warnf "%s getting %s; falling back to non-resource link" .Err $destination -}}
+							{{- $finalDestination = $destination -}}
+					{{- else -}}
+						{{- errorf "%s getting %s" .Err $destination -}}
+					{{- end -}}
+				{{- else -}}
+					{{- $finalResource = $linkResource -}}
+					{{- $finalDestination = $linkResource.Permalink -}}
+				{{- end -}}
+			{{- else -}}
+			{{- end -}}
+		{{- else if $remoteFallback -}}
+			{{- warnf "Falling back to non-resource link for remote '%s' due to Hugo < 0.91.0 (page %s)" $destination $page.TranslationKey -}}
+			{{- $finalDestination = $destination -}}
+		{{- else -}}
+			{{- errorf "Pulling remote resource '%d' on page '%s' in this link render-hook not supported with Hugo < 0.91.0 and remoteFallback = false." $destination $page.TranslationKey -}}
+		{{- end -}}
+	{{- end -}}
+{{- else -}}
+	{{- /* Determine if the link is for a page or some other resource */ -}}
+	{{- $fragment := partial "helpers/get-fragment.html" (dict "destination" $destination) -}}
+	{{- $pageResource := $page.GetPage $destination -}}
+	{{- if $fragment -}}
+		{{- $pageResource = $page.GetPage (strings.TrimSuffix (printf "#%s" $fragment) $destination) -}}
+	{{- end -}}
+	{{- if $pageResource -}}
+		{{- $finalResource = $pageResource -}}
+		{{- $isPage = true -}}
+		{{- if $fragment -}}
+			{{- if eq $pageResource.RelPermalink "/" -}}
+				{{- $finalDestination = printf "#%s" $fragment -}}
+			{{- else if not $absLink -}}
+				{{- $finalDestination = printf "%s#%s" $pageResource.RelPermalink $fragment -}}
+			{{- else -}}
+				{{- $finalDestination = printf "%s#%s" $pageResource.Permalink $fragment -}}
+			{{- end -}}
+		{{- else -}}
+			{{- $finalDestination = $pageResource.RelPermalink -}}
+			{{- if $absLink -}}
+				{{- $finalDestination = $pageResource.Permalink -}}
+			{{- end -}}
+		{{- end -}}
+	{{- else if hasPrefix $destination "#" -}}
+		{{- $finalResource = $page -}}
+		{{- $finalDestination = printf "%s%s" $page.RelPermalink $destination -}}
+	{{- else -}}
+		{{- $linkResource := $page.Scratch.Get "nil-value" -}}
+		{{- if ge hugo.Version "0.97.0" -}}
+			{{- $linkResource = $page.CurrentSection.Resources.Get $destination -}}
+		{{- else -}}
+			{{- $linkResource = $page.CurrentSection.Resources.GetMatch $destination -}}
+		{{- end -}}
+		{{- if not $linkResource -}}
+			{{- $destinationPath := strings.TrimLeft "/" $destination -}}
+			{{- $linkResource = resources.GetMatch (printf "%s%s%s" "*" $destinationPath "*") -}}
+		{{- end -}}
+		{{- if $linkResource -}}
+			{{- $finalDestination = $linkResource.RelPermalink -}}
+			{{- if $absLink -}}
+				{{- $finalDestination = $linkResource.Permalink -}}
+			{{- end -}}
+			{{- $finalResource = $linkResource -}}
+		{{- else if $staticFallback -}}
+			{{- $finalDestination = $destination -}}
+			{{- warnf "%s is not a page or page resource in page %s's section, using fallback to static link" $destination $page.TranslationKey -}}
+		{{- else -}}
+			{{- errorf "%s is not a page or page resource in page %s's section (%s) and static link fallback is not enabled" $destination $page.TranslationKey $page.CurrentSection.TranslationKey -}}
+		{{- end -}}
+	{{- end -}}
+{{- end -}}
+{{- return (dict "Destination" $finalDestination "Resource" $finalResource "IsPage" $isPage) -}}

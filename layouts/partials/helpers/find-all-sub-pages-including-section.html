@@ -1,0 +1,8 @@
+{{- $pctx := . -}}
+{{- $outPages := (slice) }}
+{{- $outPages = $outPages | append $pctx.RegularPages -}}
+{{- range $pctx.Sections -}}
+	{{- $outPages = $outPages | append (partial "helpers/find-all-sub-pages-including-section.html" .Page) -}}
+	{{- $outPages = $outPages | append .Page -}}
+{{- end -}}
+{{- return $outPages -}}

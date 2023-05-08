@@ -1,6 +1,6 @@
 {{- $curPage := .Page -}}
 {{- if .Content }}
-	{{- partial "helpers/basic-content" .Content -}}
+	{{- partial "helpers/basic-content" .Page -}}
 {{- end }}
 	<ul class="section-list-test-min">
 {{- if .Data.Terms -}}

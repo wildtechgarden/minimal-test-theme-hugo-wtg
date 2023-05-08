@@ -7,18 +7,6 @@ description = """\
 Demo site au Hugo thème du teste minimal du Daniel F. Dickinson (DFD)\
 """
 layout = "single"
-[[cascade]]
-pageCanonical = true
-tags = ["docs"]
-[cascade._target]
-path = "/readme/README.md"
-kind = "page"
-[[cascade]]
-pageCanonical = false
-tags = ["docs"]
-[cascade._target]
-path = "/readme/**"
-kind = "page"
 +++
 
 [Daniel F. Dickinson](https://github.com/danielfdickinson) utilise ce thème pour
@@ -30,5 +18,5 @@ ou [hugo-testing par jmooring à partir des forums
 Hugo](https://github.com/jmooring/hugo-testing). Ce cas d'utilisation était
 auparavant un objectif de ce référentiel, mais ce n'est plus le cas.
 
-Voir [README](../readme/readme/) aux plusier d'information, et
-[LICENSE](../readme/readme/LICENSE) aux autorisations d'utilisation.
+Voir [README](README) aux plusier d'information, et
+[LICENSE](LICENSE) aux autorisations d'utilisation.
