@@ -4,6 +4,8 @@
 
 [![Netlify
 Status](https://api.netlify.com/api/v1/badges/6be917c6-f8af-441e-8dc1-a5caf7110dcc/deploy-status)](https://app.netlify.com/sites/minimal-test-theme/deploys)
+[![pre-commit.ci
+status](https://results.pre-commit.ci/badge/github/danielfdickinson/minimal-test-theme-hugo-dfd/main.svg)](https://results.pre-commit.ci/latest/github/danielfdickinson/minimal-test-theme-hugo-dfd/main)
 
 ## Demo/sample website
 
