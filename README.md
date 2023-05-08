@@ -9,7 +9,7 @@ status](https://results.pre-commit.ci/badge/github/danielfdickinson/minimal-test
 
 ## Demo/sample website
 
-<https://minimal-test-theme.demo.wildtechgarden.ca/minimal-test-theme/>
+<https://minimal-test-theme.demo.wildtechgarden.ca/>
 
 ## Repository URL
 
