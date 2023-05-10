@@ -1,5 +1,5 @@
 baseURL = "https://minimal-test-theme.demo.wildtechgarden.ca/"
-copyright = "© 2021-2022 Daniel F. Dickinson"
+copyright = "© 2021-2023 Daniel F. Dickinson"
 homepage = "https://minimal-test-theme.demo.wildtechgarden.ca/"
 paginate = 3
 languageCode = "en"
@@ -12,10 +12,28 @@ disableKinds = ["RSS","sitemap"]
 [params]
 mainSections = ["post"]
 # Footnotes and TableOfContents don't work properly with a base href set in <head>
+pageCanonical = false
+redirectsDomains = [
+	"http://minimal-test-theme.netlify.app/* https://minimal-test-theme.demo.wildtechgarden.ca/:splat 301!",
+	"https://minimal-test-theme.netlify.app/* https://minimal-test-theme.demo.wildtechgarden.ca/:splat 301!",
+	"http://minimal-test-theme.wildtechgarden.ca/* https://minimal-test-theme.demo.wildtechgarden.ca/:splat 301!"
+]
 useBaseURL = false
 # Disable if you don't want the test (bare-bones) CSS
 # testStylesInclude = false
-pageCanonical = false
+
+[outputFormats]
+[outputFormats.nredirects]
+baseName = "_redirects"
+isPlainText = true
+mediaType = "text/nredirects"
+
+[mediaTypes]
+[mediaTypes."text/nredirects"]
+suffixes = [""]
+
+[outputs]
+home = ["HTML", "RSS", "nredirects"]
 
 # See https://gohugo.io/content-management/multilingual/
 # and https://www.regisphilibert.com/blog/2018/08/hugo-multilingual-part-1-managing-content-translation/
