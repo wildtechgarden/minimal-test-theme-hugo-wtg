@@ -1,4 +1,24 @@
 <!DOCTYPE html>
+{{- if eq (.Param "addLQIPStyles") true -}}
+	{{- if not (.Page.Store.Get "LQIPs") -}}
+		{{- .Page.Store.Set "LQIPs" (dict) -}}
+	{{- end -}}
+	{{- if not (.Page.Scratch.Get "LQIPStarted") -}}
+		{{- range $styleName, $styleInfo := .Page.Store.Get "LQIPs" -}}
+			{{- if $styleInfo -}}
+				{{- .Page.Store.SetInMap "LQIPs" $styleName (dict "oldStyle" true "style" $styleInfo.style) -}}
+			{{- else -}}
+				{{- .Page.Store.SetInMap "LQIPs" $styleName (dict "oldStyle" true "style" "") -}}
+			{{- end -}}
+		{{- end -}}
+		{{- .Page.Scratch.Set "LQIPStarted" true -}}
+	{{- end -}}
+	{{- if eq (.Page.Scratch.Get "LQIPFinished") nil -}}
+		{{- .Page.Scratch.Set "LQIPFinished" false -}}
+	{{- else -}}
+		{{- .Page.Scratch.Set "LQIPFinished" true -}}
+	{{- end -}}
+{{- end }}
 <html lang="{{ $.Site.Language.Lang }}">
 {{- partial "head.html" . }}
 <body>

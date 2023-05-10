@@ -1,5 +1,6 @@
 Emph
 Hashbang
+LQIP
 Preproc
 Traceback
 Uncategorized
@@ -15,5 +16,6 @@ jmooring
 licenselink
 lntable
 lntd
+plainify
 shortcode
 warnf
