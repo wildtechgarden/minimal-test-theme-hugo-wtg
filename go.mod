@@ -1,4 +1,4 @@
 module github.com/danielfdickinson/minimal-test-theme-hugo-dfd
 
-go 1.17
+go 1.20
 

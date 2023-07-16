@@ -1,0 +1,44 @@
+{
+  "name": "minimal-test-theme-hugo-dfd",
+  "version": "0.5.0-alpha.1",
+  "description": "Minimal theme for Wild Tech 'Garden' demo/sample sites",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "pre-commit run --all-files"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://githug.com/danielfdickinson/minimal-test-theme-hugo-dfd.git"
+  },
+  "keywords": [
+    "computing",
+    "technology",
+    "hugo-theme",
+    "website-theme"
+  ],
+  "author": "Daniel F. Dickinson",
+  "license": "CC-BY-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/issues"
+  },
+  "homepage": "https://minimal-test-theme.demo.wildtechgarden.ca/",
+  "devDependencies": {
+    "@cspell/dict-fr-fr": "^2.2.1",
+    "@cspell/dict-fr-reforme": "^2.2.1",
+    "@netlify/plugin-lighthouse": "^5.0.0",
+    "html-validate": "^7.18.1",
+    "hyperlink": "^5.0.4",
+    "netlify-plugin-html-validate": "^1.1.1",
+    "netlify-plugin-hugo-cache-resources": "^0.2.1",
+    "netlify-plugin-pre-commit": "^0.2.3-alpha.3",
+    "stylelint": "^15.7.0",
+    "stylelint-cli": "^1.3.0",
+    "stylelint-config-standard-scss": "^9.0.0",
+    "stylelint-scss": "^5.0.1",
+    "tap-spot": "^1.1.2",
+    "v8-compile-cache": "^2.3.0"
+  }
+}

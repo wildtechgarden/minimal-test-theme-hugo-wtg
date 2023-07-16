@@ -18,8 +18,8 @@ status](https://results.pre-commit.ci/badge/github/danielfdickinson/minimal-test
 ## Overview
 
 [Daniel F. Dickinson](https://github.com/danielfdickinson), uses this theme for
-demo/test sites for the modules on which he works. For a repository for creating
-minimal reproducible test cases see either [the v0.3 branch of this
+demo/sample sites for the modules on which he works. For a repository for
+creating minimal reproducible test cases see either [the v0.3 branch of this
 repository](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/tree/v0.3)
 or [hugo-testing by jmooring from the Hugo
 forums](https://github.com/jmooring/hugo-testing). That use case was previously
@@ -31,7 +31,7 @@ for permissions on use.
 
 ## Modern hugo only
 
-This minimal theme is built using assumptions that may require Hugo 0.80.0 or
+This minimal theme is built using assumptions that may require Hugo 0.115.3 or
 higher, and in any event those are the only versions on which it has been
 tested.
 

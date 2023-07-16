@@ -1,17 +1,17 @@
-name = "Hugo Minimal Test Theme"
-copyright = "© 2021-2022 Daniel F. Dickinson"
+name = "Hugo minimal test theme"
+copyright = "© 2021-2023 Daniel F. Dickinson"
 license = "MIT"
 licenselink = "https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/blob/main/LICENSE"
 description = "A minimal theme to demo/test Hugo modules."
 homepage = "https://minimal-test-theme.wildtechgarden.ca/"
 tags = ["test","minimal","light","minimalist","fast","demo"]
-features = ["light","fast","debugging tool"]
-min_version = "0.80.0"
+features = ["light","fast","minimal"]
+min_version = "0.115.3"
 extended = false
 summaryLength = "25"
 
 [author]
-name = "Daniel F. Dickinson"
-homepage = "https://wildtechgarden.ca/about/"
-copyright = "© 2021-2022 Daniel F. Dickinson"
+name = "Daniel F. Dickinson for Wild Tech 'Garden'"
+homepage = "https://wildtechgarden.ca/"
+copyright = "© 2021-2023 Wild Tech 'Garden'"
 email = "dfdpublic@wildtechgarden.ca"

@@ -1,36 +1,31 @@
 {
 	"$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
-	"allowCompoundWords": false,
+	"allowCompoundWords": true,
 	"dictionaries": [
 		"project-words",
-		"project-words-fr",
-		"hugo-words",
-		"tech-words",
-		"dfd-words",
-		"dfd-words-fr"
+		"project-words-fr"
 	],
 	"dictionaryDefinitions": [
 		{
 			"addWords": true,
-			"language": "en,en-ca,en-gb",
 			"name": "project-words",
-			"path": "./tests/config/words-project.txt"
+			"path": "./words-project.txt"
 		},
 		{
 			"addWords": true,
-			"language": "fr,fr-ca,fr-90",
 			"name": "project-words-fr",
-			"path": "./tests/config/words-fr-project.txt"
+			"path": "./words-fr-project.txt"
 		}
 	],
-	"globRoot": "../..",
 	"ignorePaths": [
 		"./go.{mod,sum}",
 		"./exampleSite/go.{mod,sum}",
 		"node_modules",
-		"./tests/config/cspell.json",
-		"./tests/config/words-*.txt",
-		"./tests-config/dfd-wordlists/**"
+		"./cspell.json",
+		"./LICENSE",
+		"./tests/scripts",
+		"./words-*.txt",
+		"_vendor"
 	],
 	"ignoreRegExpList": [],
 	"ignoreWords": [],
@@ -64,22 +59,33 @@
 				"html"
 			],
 			"filename": [
-				"./tests/config-action/htmlvalidate*.json"
+				".htmlvalidate*.json"
 			]
 		},
 		{
 			"dictionaries": [
-				"companies"
+				"companies",
+				"project-words-fr"
 			],
 			"filename": [
 				"./config.toml",
+				"./hugo.toml",
 				"./theme.toml",
 				"./i18n/fr.toml",
-				"./exampleSite/config.toml",
+				"./exampleSite/hugo.toml",
 				"./.github/**/*.yml",
 				"./.pre-commit-config.yaml"
 			],
 			"language": "en,en-gb,fr,fr-90"
+		},
+		{
+			"dictionaries": [
+				"python",
+				"project-words"
+			],
+			"filename": [
+				"./requirements.txt"
+			]
 		}
 	],
 	"patterns": [

@@ -30,8 +30,8 @@ SITEROOT="$(pwd)"
 	SITESRC=${SITEROOT}
 #fi
 
-if grep -q baseURL "${SITESRC}"/config.toml; then
-	CROOT="$(grep baseURL "${SITESRC}"/config.toml | \
+if grep -q baseURL "${SITESRC}"/hugo.toml; then
+	CROOT="$(grep baseURL "${SITESRC}"/hugo.toml | \
 	sed -e 's/^[^=]*= *\('\''\|"\)\([^'\''"]*\)\('\''\|"\)\( \|\n\)*$/\2/')"
 fi
 

@@ -4,7 +4,7 @@ description = "Module for DFD's Hugo minimal test theme"
 
 [module]
 [module.hugoVersion]
-min = "0.80.0"
+min = "0.115.3"
 extended = false
 
 # Note that this is no longer used.

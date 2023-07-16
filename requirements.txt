@@ -1,0 +1,9 @@
+argcomplete
+cfgv
+distlib
+filelock
+identify
+nodeenv
+platformdirs
+pre-commit
+virtualenv

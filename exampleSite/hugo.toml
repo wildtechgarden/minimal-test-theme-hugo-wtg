@@ -41,9 +41,11 @@ home = ["HTML", "RSS", "nredirects"]
 [languages]
 [languages.fr]
 title = "Hugo thème du teste minimale"
-description = "Demo site au Hugo thème du teste minimal du Daniel F. Dickinson (DFD)"
 weight = 10
 contentDir = "content/fr"
+
+[languages.fr.params]
+description = "Demo site au Hugo thème du teste minimal du Daniel F. Dickinson (DFD)"
 
 [languages.fr.menu]
 [[languages.fr.menu.main]]
@@ -60,9 +62,11 @@ weight = 20
 
 [languages.en]
 title = "Hugo minimal test theme"
-description = "Demo site for Daniel F. Dickinson's (DFD) Hugo minimal test theme"
 weight = 1
 contentDir = "content/en"
+
+[languages.en.params]
+description = "Demo site for Daniel F. Dickinson's (DFD) Hugo minimal test theme"
 
 [languages.en.menu]
 [[languages.en.menu.main]]
