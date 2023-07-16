@@ -24,11 +24,11 @@ fi
 CROOT="${1:-https://www.example.com/}"
 SITEROOT="$(pwd)"
 
-#if [ -d exampleSite ]; then
-#	SITESRC=exampleSite
-#else
+if [ -d exampleSite ]; then
+	SITESRC="$(pwd)"/exampleSite
+else
 	SITESRC=${SITEROOT}
-#fi
+fi
 
 if grep -q baseURL "${SITESRC}"/hugo.toml; then
 	CROOT="$(grep baseURL "${SITESRC}"/hugo.toml | \
