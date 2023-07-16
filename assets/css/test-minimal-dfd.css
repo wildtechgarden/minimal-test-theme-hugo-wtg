@@ -488,3 +488,52 @@ a:hover {
 	max-width: 100%;
 	width: auto;
 }
+
+.heading-link-wrapper {
+	box-sizing: border-box;
+	display: block;
+}
+
+.heading-link-wrapper > .heading-link {
+	display: inline;
+	text-decoration: none;
+	visibility: hidden;
+}
+
+.heading-link-wrapper:hover > .heading-link {
+	visibility: visible;
+}
+
+.heading-link-wrapper .heading-link-marker {
+	color: #222;
+	display: inline;
+	padding: .1em;
+}
+
+.heading-link-wrapper .heading-link:hover .heading-link-marker {
+	color: #ddd;
+}
+
+.heading-link-wrapper .heading-link-title {
+	display: inline;
+}
+
+.heading2-link-wrapper .heading-link-marker {
+	font-size: 1.5em;
+}
+
+.heading3-link-wrapper .heading-link-marker {
+	font-size: 1.3em;
+}
+
+.heading4-link-wrapper .heading-link-marker {
+	font-size: 1.1em;
+}
+
+.heading5-link-wrapper .heading-link-marker {
+	font-size: 1em;
+}
+
+.heading6-link-wrapper .heading-link-marker {
+	font-size: .9em;
+}
