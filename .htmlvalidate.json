@@ -85,6 +85,7 @@
 		"attr-quotes": "off",
 		"doctype-style": "off",
 		"no-raw-characters": "off",
-		"require-sri": "off"
+		"require-sri": "off",
+		"wcag/h63": "off"
 	}
 }

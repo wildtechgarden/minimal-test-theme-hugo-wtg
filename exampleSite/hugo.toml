@@ -98,6 +98,10 @@ lastmod = [":git", "lastmod", ":fileModTime", "date", "publishDate"]
 guessSyntax = true
 noClasses = false
 
+[markup.goldmark]
+[markup.goldmark.parser]
+autoHeadingIDType = "github-ascii"
+
 [privacy]
 
 [privacy.vimeo]
