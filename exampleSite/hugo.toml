@@ -11,16 +11,18 @@ disableKinds = ["RSS","sitemap"]
 
 [params]
 mainSections = ["post"]
-# Footnotes and TableOfContents don't work properly with a base href set in <head>
+# For demo/sample sites we default to not being canonical
 pageCanonical = false
 redirectsDomains = [
 	"http://minimal-test-theme.netlify.app/* https://minimal-test-theme.demo.wildtechgarden.ca/:splat 301!",
 	"https://minimal-test-theme.netlify.app/* https://minimal-test-theme.demo.wildtechgarden.ca/:splat 301!",
 	"http://minimal-test-theme.wildtechgarden.ca/* https://minimal-test-theme.demo.wildtechgarden.ca/:splat 301!"
 ]
-useBaseURL = false
+staticFallback = false
 # Disable if you don't want the test (bare-bones) CSS
-# testStylesInclude = false
+testStylesInclude = true
+# Footnotes and TableOfContents don't work properly with a base href set in <head>
+useBaseURL = false
 
 [outputFormats]
 [outputFormats.nredirects]

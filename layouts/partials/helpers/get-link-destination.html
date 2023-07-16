@@ -5,6 +5,7 @@
 {{- $absLink := .absLink -}}
 {{- $remoteFallback := .remoteFallback -}}
 {{- $staticFallback := .staticFallback -}}
+{{- $isImageLink := .isImageLink -}}
 {{- $finalDestination := $page.Scratch.Get "nil-value" -}}
 {{- $finalResource := $page.Scratch.Get "nil-value" -}}
 {{- $isPage := false -}}
@@ -41,30 +42,35 @@
 {{- else -}}
 	{{- /* Determine if the link is for a page or some other resource */ -}}
 	{{- $fragment := partial "helpers/get-fragment.html" (dict "destination" $destination) -}}
-	{{- $pageResource := $page.GetPage $destination -}}
-	{{- if $fragment -}}
-		{{- $pageResource = $page.GetPage (strings.TrimSuffix (printf "#%s" $fragment) $destination) -}}
-	{{- end -}}
-	{{- if $pageResource -}}
-		{{- $finalResource = $pageResource -}}
-		{{- $isPage = true -}}
+	{{- if ne $isImageLink true -}}
+		{{- $pageResource := $page.GetPage $destination -}}
 		{{- if $fragment -}}
-			{{- if eq $pageResource.RelPermalink "/" -}}
-				{{- $finalDestination = printf "#%s" $fragment -}}
-			{{- else if not $absLink -}}
-				{{- $finalDestination = printf "%s#%s" $pageResource.RelPermalink $fragment -}}
+			{{- $pageResource = $page.GetPage (strings.TrimSuffix (printf "#%s" $fragment) $destination) -}}
+		{{- end -}}
+		{{- if $pageResource -}}
+			{{- $finalResource = $pageResource -}}
+			{{- $isPage = true -}}
+			{{- if $fragment -}}
+				{{- if eq $pageResource.RelPermalink "/" -}}
+					{{- $finalDestination = printf "#%s" $fragment -}}
+				{{- else if not $absLink -}}
+					{{- $finalDestination = printf "%s#%s" $pageResource.RelPermalink $fragment -}}
+				{{- else -}}
+					{{- $finalDestination = printf "%s#%s" $pageResource.Permalink $fragment -}}
+				{{- end -}}
 			{{- else -}}
-				{{- $finalDestination = printf "%s#%s" $pageResource.Permalink $fragment -}}
+				{{- $finalDestination = $pageResource.RelPermalink -}}
+				{{- if $absLink -}}
+					{{- $finalDestination = $pageResource.Permalink -}}
+				{{- end -}}
 			{{- end -}}
-		{{- else -}}
-			{{- $finalDestination = $pageResource.RelPermalink -}}
+		{{- else if hasPrefix $destination "#" -}}
+			{{- $finalResource = $page -}}
+			{{- $finalDestination = printf "%s%s" $page.RelPermalink $destination -}}
 			{{- if $absLink -}}
-				{{- $finalDestination = $pageResource.Permalink -}}
+				{{- $finalDestination = printf "%s%s" $page.Permalink $destination -}}
 			{{- end -}}
 		{{- end -}}
-	{{- else if hasPrefix $destination "#" -}}
-		{{- $finalResource = $page -}}
-		{{- $finalDestination = printf "%s%s" $page.RelPermalink $destination -}}
 	{{- else -}}
 		{{- $linkResource := $page.Scratch.Get "nil-value" -}}
 		{{- if ge hugo.Version "0.97.0" -}}

@@ -9,8 +9,9 @@
 
 {{- $destMap := partial "helpers/get-link-destination.html" (dict
 	"Destination" $destination
-	"Page" $page "getRemote"
-	false "absLink" $absLink
+	"Page" $page
+	"getRemote" false
+	"absLink" $absLink
 	"remoteFallback" false
 	"staticFallback" $staticFallback)
 -}}

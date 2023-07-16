@@ -1,0 +1,27 @@
+{{- /* Set default values. */}}
+{{- $title := .Title -}}
+{{- $text := .Text -}}
+{{- $plainText := .PlainText -}}
+{{- $destMap := partial "helpers/get-link-destination.html" (dict
+	"Destination" .Destination
+	"Page" .Page
+	"getRemote" false
+	"absLink" false
+	"remoteFallback" false
+	"staticFallback" false
+	"isImageLink" true
+) -}}
+
+{{- if not (templates.Exists "image-handler.html") -}}
+	{{- with $destMap }}
+<img src="{{ .Destination | safeURL }}" {{ with $title}} title="{{ . }}"{{ end }} {{ with $text }}alt="{{ . | safeHTML }}"{{ end }} />
+	{{- end }}
+{{- else -}}
+	{{- partial "image-handler.html" (dict
+		"destMap" $destMap
+		"Title" $title
+		"Text" $text
+		"PlainText" $plainText
+	) -}}
+{{- end -}}
+{{- /* Remove trailing newlines */ -}}
