@@ -62,46 +62,46 @@ adds the page title as an H1 element).
 	of course).
 2. Import the theme in your `config.toml`
 
-   ```ini
-   [module]
-   [[module.imports]]
-   path = "github.com/danielfdickinson/minimal-test-theme-hugo-dfd"
-   ```
+	```ini
+	[module]
+	[[module.imports]]
+	path = "github.com/danielfdickinson/minimal-test-theme-hugo-dfd"
+	```
 
 3. Change back to the site directory
 4. Get the module
 
-   ```sh
-   hugo mod get github.com/danielfdickinson/minimal-test-theme-hugo-dfd
-   ```
+	```sh
+	hugo mod get github.com/danielfdickinson/minimal-test-theme-hugo-dfd
+	```
 
 5. To test the result, run the local Hugo server
 
-   ```sh
-   hugo server -b http://localhost:1313/
-   ```
+	```sh
+	hugo server -b http://localhost:1313/
+	```
 
 ### Using git submodules (unsupported by theme author)
 
 1. Make a themes directory and switch to it.
 
-   ```sh
-   mkdir themes
-   cd themes
-   ```
+	```sh
+	mkdir themes
+	cd themes
+	```
 
 2. In the themes directory, add minimal-test-theme-hugo-dfd as a submodule
 
-   ```sh
-   git submodule add -f https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd.git
-   ```
+	```sh
+	git submodule add -f https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd.git
+	```
 
 3. Change back to the site directory
 4. To test the result, run the local Hugo server
 
-   ```sh
-   hugo server -t hugo-minimal-test -b http://localhost:1313/
-   ```
+	```sh
+	hugo server -t hugo-minimal-test -b http://localhost:1313/
+	```
 
  Enjoy!
 

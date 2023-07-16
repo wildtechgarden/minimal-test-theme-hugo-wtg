@@ -9,12 +9,12 @@ Demo site au Hugo thème du teste minimal du Daniel F. Dickinson (DFD)\
 layout = "single"
 +++
 
-[Daniel F. Dickinson](https://github.com/danielfdickinson) utilise ce thème pour
-les sites de démonstration/test des modules sur lesquels il travaille. Pour un
+[Daniel F. Dickinson](https://github.com/danielfdickinson) utilise ce thème aux
+sites de démonstration/ensample des modules sur lesquels il travaille. Pour un
 référentiel permettant de créer des cas de test reproductibles minimaux, voir
 [la branche v0.3 de ce
 référentiel](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/tree/v0.3)
-ou [hugo-testing par jmooring à partir des forums
+ou [hugo-testing du jmooring à partir des forums
 Hugo](https://github.com/jmooring/hugo-testing). Ce cas d'utilisation était
 auparavant un objectif de ce référentiel, mais ce n'est plus le cas.
 

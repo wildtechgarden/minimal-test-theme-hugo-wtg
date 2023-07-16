@@ -50,14 +50,14 @@ description = "Demo site au Hugo thème du teste minimal du Daniel F. Dickinson 
 [languages.fr.menu]
 [[languages.fr.menu.main]]
 identifier = "about"
-name = "About"
-url = "/readme/" # We can't use pageref because we support 0.80.0
+name = "À propos"
+pageref = "readme"
 weight = 10
 
 [[languages.fr.menu.main]]
 identifier = "l'accessibilité"
 name = "L'accessibilité"
-url = "/fr/accessibility/" # We can't use pageref because we support 0.80.0
+pageref = "accessibility"
 weight = 20
 
 [languages.en]
@@ -72,13 +72,13 @@ description = "Demo site for Daniel F. Dickinson's (DFD) Hugo minimal test theme
 [[languages.en.menu.main]]
 identifier = "about"
 name = "About"
-url = "/readme/" # We can't use pageref because we support 0.80.0
+pageref = "readme"
 weight = 10
 
 [[languages.en.menu.main]]
 identifier = "accessibility"
 name = "Accessibility"
-url = "/accessibility/" # We can't use pageref because we support 0.80.0
+pageref = "accessibility"
 weight = 20
 
 # site.Author(s) is deprecated so this is not longer used
@@ -188,7 +188,7 @@ target = "content/README.md"
 lang = "en"
 
 [[module.imports.mounts]]
-source = "README.md"
+source = "README.fr.md"
 target = "content/README.md"
 lang = "fr"
 

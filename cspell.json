@@ -37,12 +37,13 @@
 	"overrides": [
 		{
 			"filename": [
-				"./exampleSite/**/fr/**/*.md"
+				"./exampleSite/**/fr/**/*.md",
+				"./README.fr.md"
 			],
 			"ignoreRegExpList": [
 				"frontMatter"
 			],
-			"language": "fr"
+			"language": "fr,fr-90"
 		},
 		{
 			"filename": [
