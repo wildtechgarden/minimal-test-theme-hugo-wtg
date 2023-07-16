@@ -26,9 +26,6 @@ NODE_VERSION="lts/*"
 TZ="America/Toronto"
 
 [[plugins]]
-package = "netlify-plugin-pre-commit"
-
-[[plugins]]
 package = "netlify-plugin-hugo-cache-resources"
 
 [plugins.inputs]
