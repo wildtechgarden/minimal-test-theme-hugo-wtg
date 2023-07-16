@@ -14,7 +14,7 @@
 
 {{- if not (templates.Exists "image-handler.html") -}}
 	{{- with $destMap }}
-<img src="{{ .Destination | safeURL }}" {{ with $title}} title="{{ . }}"{{ end }} {{ with $text }}alt="{{ . | safeHTML }}"{{ end }} />
+<img src="{{ .Destination | safeURL }}" {{ with $title}} title="{{ . }}"{{ end }} {{ with $text }}alt="{{ . | safeHTML }}"{{ end }}>
 	{{- end }}
 {{- else -}}
 	{{- partial "image-handler.html" (dict
