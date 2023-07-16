@@ -30,10 +30,8 @@
     "@cspell/dict-fr-reforme": "^2.2.1",
     "@netlify/plugin-lighthouse": "^5.0.0",
     "html-validate": "^7.18.1",
-    "hyperlink": "^5.0.4",
     "netlify-plugin-html-validate": "^1.1.1",
     "netlify-plugin-hugo-cache-resources": "^0.2.1",
-    "netlify-plugin-pre-commit": "^0.2.3-alpha.3",
     "tap-spot": "^1.1.2",
     "v8-compile-cache": "^2.3.0"
   }

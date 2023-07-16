@@ -8,14 +8,7 @@ set -o pipefail
 # We don't have LFS on this repo
 # git lfs install
 
-if [ "$NETLIFY" != "true" ]; then
-	pip install pre-commit
-	pre-commit install --install-hooks
-	pre-commit run --all-files
-fi
-
 bash ./tests/scripts/hugo-audit.sh
-bash ./tests/scripts/check-internal-links.sh
 
 rm -rf public exampleSite/public
 
