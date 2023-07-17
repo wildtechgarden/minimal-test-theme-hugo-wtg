@@ -206,10 +206,6 @@ lang = "fr"
 
 [[module.imports.mounts]]
 source = "LICENSE"
-target = "content/docs/LICENSE"
-
-[[module.imports.mounts]]
-source = "LICENSE"
 target = "content/LICENSE"
 lang = "en"
 
