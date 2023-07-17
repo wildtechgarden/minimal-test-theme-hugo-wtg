@@ -13,11 +13,14 @@
 	"getRemote" false
 	"absLink" $absLink
 	"remoteFallback" false
-	"staticFallback" $staticFallback)
--}}
+	"staticFallback" $staticFallback
+	"isImageLink" false
+) -}}
 
 {{- with $destMap -}}
+	{{- if $destMap.Destination -}}
 <a href="{{ .Destination | safeURL }}"{{ with $title}} title="{{ . }}"{{ end }}>{{ $text | safeHTML }}</a>
+	{{- end -}}
 {{- else -}}
-	{{- errorf "Unable to find destination '%s'" $destination -}}
+	{{- errorf "Unable to find destination '%s' page '%s'" $destination $page.TranslationKey -}}
 {{- end -}}

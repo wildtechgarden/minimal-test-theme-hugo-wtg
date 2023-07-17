@@ -5,7 +5,7 @@
 {{- $absLink := .absLink -}}
 {{- $remoteFallback := .remoteFallback -}}
 {{- $staticFallback := .staticFallback -}}
-{{- $isImageLink := .isImageLink -}}
+{{- $isImageLink := .isImageLink | default false -}}
 {{- $finalDestination := $page.Scratch.Get "nil-value" -}}
 {{- $finalResource := $page.Scratch.Get "nil-value" -}}
 {{- $isPage := false -}}
@@ -40,8 +40,8 @@
 		{{- end -}}
 	{{- end -}}
 {{- else -}}
-	{{- /* Determine if the link is for a page or some other resource */ -}}
-	{{- $fragment := partial "helpers/get-fragment.html" (dict "destination" $destination) -}}
+{{- /* Determine if the link is for a page or some other resource */ -}}
+	{{- $fragment := partial "helpers/get-fragment.html" (dict "Destination" $destination) -}}
 	{{- if ne $isImageLink true -}}
 		{{- $pageResource := $page.GetPage $destination -}}
 		{{- if $fragment -}}
@@ -53,14 +53,14 @@
 			{{- if $fragment -}}
 				{{- if eq $pageResource.RelPermalink "/" -}}
 					{{- $finalDestination = printf "#%s" $fragment -}}
-				{{- else if not $absLink -}}
+				{{- else if ne $absLink true -}}
 					{{- $finalDestination = printf "%s#%s" $pageResource.RelPermalink $fragment -}}
 				{{- else -}}
 					{{- $finalDestination = printf "%s#%s" $pageResource.Permalink $fragment -}}
 				{{- end -}}
 			{{- else -}}
 				{{- $finalDestination = $pageResource.RelPermalink -}}
-				{{- if $absLink -}}
+				{{- if eq $absLink true -}}
 					{{- $finalDestination = $pageResource.Permalink -}}
 				{{- end -}}
 			{{- end -}}
@@ -71,7 +71,8 @@
 				{{- $finalDestination = printf "%s%s" $page.Permalink $destination -}}
 			{{- end -}}
 		{{- end -}}
-	{{- else -}}
+	{{- end -}}
+	{{- if not $finalDestination -}}
 		{{- $linkResource := $page.Scratch.Get "nil-value" -}}
 		{{- if ge hugo.Version "0.97.0" -}}
 			{{- $linkResource = $page.CurrentSection.Resources.Get $destination -}}
