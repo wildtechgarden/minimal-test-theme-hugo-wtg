@@ -9,7 +9,7 @@
 			{{- $count := len $taxonomy -}}
 			{{- with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
 				<li class="list-item-test-min"><a
-					class="link-test-min" href="{{- .Permalink -}}">{{ $taxonomy_term }}<span class="count-test-min"> ({{- $count -}})</span></a></li>
+					class="link-test-min" href="{{- .Permalink -}}">{{ .LinkTitle }}<span class="count-test-min"> ({{- $count -}})</span></a></li>
 			{{- end -}}
 		{{- end }}
 			</ul>
