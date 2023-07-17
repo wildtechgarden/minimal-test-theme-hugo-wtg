@@ -6,6 +6,9 @@ author ="Daniel F. Dickinson"
 description = """\
 Demo site au Hugo thème du teste minimal du Daniel F. Dickinson (DFD)\
 """
+tags = [
+	"homepage"
+]
 layout = "single"
 +++
 

@@ -6,7 +6,7 @@
 {{- if .Data.Terms -}}
 	{{- /* For taxonomy and term pages, show the count beside the taxonomy or term, avoids need for specific taxonomy/term layouts  */ -}}
 	{{- range $key, $value := .Data.Terms }}
-		<li class="list-item-test-min"><a class="link-test-min" href="{{ .Page.RelPermalink }}">{{ $key | default (partial "helpers/page-title" $curPage) }}</a> ({{- .Count -}})</li>
+		<li class="list-item-test-min"><a class="link-test-min" href="{{ .Page.RelPermalink }}">{{ (partial "helpers/page-title" $value.Page ) | default $key }}</a> ({{- .Count -}})</li>
 	{{- end -}}
 {{- else -}}
 	{{- range .Pages }}
