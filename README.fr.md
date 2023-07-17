@@ -186,7 +186,21 @@ Dans/par cette module
 
 | Param                    | Description                                    |
 |--------------------------|------------------------------------------------|
+| absLink                  | Si la valeur est true, rendez tous les liens Markdown absolus |
+| addLQIPStyles            | Si true analyse les styles LQIP des archives |
+| remoteFallback           | Extraire des ressources à partir de la distance si la liaison est distante |
+| staticFallback           | Si ce n’est pas une ressource (statique), utilisez le lien textuellement |
+| isImageLink              | lien sont pour une image pas une URL / site |
+| multipleH1ErrorFix       | Corrigez trop de H1 sur une page; false par défaut |
+| multipleH1ErrorWarn      | Avertir uniquement au lieu d’erreur sur trop de H1 sur une page |
+| multipleH1ErrorIgnore    | Avertissement de suppression sur trop de H1 sur une page |
+| pageCanonical            | Si la page est fausse, la page n’est pas marquée comme canonique |
+| pagesOldestFirst         | Si true répertorie les pages de la plus ancienne à la plus récente au lieu de la plus récente à la plus ancienne |
+| staticFallback           | Si true ne met en garde que sur les cibles de chaînon manquant, en supposant qu’elles sont « statiques |
+| taxCanonical             | S’il faut rendre les taxonomies et les termes canoniques |
 | testStylesInclude        | Si la valeur est `true` ajoute une très petite quantité de CSS pour améliorer la convivialité du thème. |
+| toCanonical              | URL d’une page canonique réelle pour une page donnée |
+| topLevelClass            | Spécifie la ou les classes à appliquer à l’élément `<html>` |
 
 ## Le style CSS aux tester
 
