@@ -37,6 +37,7 @@
 	"overrides": [
 		{
 			"filename": [
+				"./exampleSite/**/fr/*.md",
 				"./exampleSite/**/fr/**/*.md",
 				"./README.fr.md"
 			],
@@ -47,12 +48,14 @@
 		},
 		{
 			"filename": [
-				"./exampleSite/**/fr/**/*.md"
+				"./exampleSite/**/fr/*.md",
+				"./exampleSite/**/fr/**/*.md",
+				"./README.fr.md"
 			],
 			"includeRegExpList": [
 				"frontMatter"
 			],
-			"language": "en,fr"
+			"language": "en,en-gb,fr,fr-90"
 		},
 		{
 			"dictionaries": [
