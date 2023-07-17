@@ -181,7 +181,24 @@ In/via this module
 
 | Param                    | Description                                    |
 |--------------------------|------------------------------------------------|
+| absLink                  | If true make all Markdown links absolute       |
+| addLQIPStyles            | If true parse the LQIP styles from the archives |
+| remoteFallback           | Pull resources from remote if link is remote   |
+| staticFallback           | If not a resource (static) use the link verbatim |
+| isImageLink              | links is for an image not a URL/site           |
+| multipleH1ErrorFix       | Fix too many H1's on a page; default false     |
+| multipleH1ErrorWarn      | Only warn instead of erroring of too many H1's on a
+  page |
+| multipleH1ErrorIgnore    | Surpress warning about too many H1's on a page |
+| pageCanonical            | If false the page is not marked as canonical   |
+| pagesOldestFirst         | If true list pages from oldest to newest instead of
+ newest to oldest |
+| staticFallback           | If true only warn on missing link targets, on the
+  assumption they are 'static' |
+| taxCanonical             | Whether to make taxonomies and terms canonical |
 | testStylesInclude        | If true adds a very small amount of CSS to improve theme usability. |
+| toCanonical              | URL of a the actual canonical page for a give page |
+| topLevelClass            | specifies the class(es) to apply to the `<html>` element |
 
 ## Test CSS styling
 
