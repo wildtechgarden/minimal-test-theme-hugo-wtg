@@ -53,6 +53,76 @@ page](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements
 any H1 elements in the asset are rewritten as H2 elements (because this theme
 adds the page title as an H1 element).
 
+### Heading anchor links
+
+Headings within a page have a link to the header id that can be copied by
+hovering over the header, and copying the link on the hash (`#`) sign that
+appears.
+
+### Built-in link validation
+
+Through the use of the `render-link` and `render-image` hooks, internal links
+and image `src` URLs on the site are validated. If 'static' fallback is allowed
+only a warning is emitted (since the link may be to a resource handled outside
+the Hugo normal content tree), otherwise the build will display an error for
+the offending link.
+
+### Gracefully handles an H1 element in content
+
+If a user decides to put the H1 element in the content file rather than
+specifying a `Title` in the frontmatter, this theme will display the H1
+element as the page title. If there is also a `Title` element specified,
+the duplicate title will be surpressed. If there is more than one H1
+element, or the H1 does not match the page title, then the H1's will be
+converted to H2 elements.
+
+### Provides hooks for more advanced image rendering
+
+Advanced image handling can be done by other modules, if the module
+supplies the 'hook' template that this theme's `render-image` hook
+expects.
+
+### Provides 'code' checking and CI
+
+This repository includes a number of code quality checking and maintenance
+configurations and uses `pre-commit` and other tools for keeping the
+codebase in good order.
+
+### Provides hooks for adding image LQIPs
+
+The hooks allow the top of the page's HTML document to add CSS styles
+based on code in later parts of the document. (This takes some 'magic').
+By doing so we can add things like LQIPs (Low Quality Image Placeholders)
+using CSS only (no JavaScript).
+
+The full effect will only be available with the addition of an appropriate
+image handling module.
+
+### Demonstrates how to supply translations for entire site
+
+It does this by adding a (poor) French translation to the main English version
+of the site. This ensure verifies that providing a translated edition works
+correctly.
+
+### Site navigation bar
+
+Provides 'previous/next section', 'previous/next' page, and up a level buttons
+on every page. This makes navigation easy.
+
+### CSS and JavaScript hooks
+
+Provides hooks for adding CSS and JavaScript that gets minified, and renamed to
+bust cache if the CSS or JavaScript changes.
+
+We divide the CSS into essential and deferrable, but we do not (yet) add
+`rel="preload"` to the styles because `preload` is not supported well enough.
+
+### Basic metadata
+
+We specify pages as non-canonical for pages also on another site (and the
+real canonical link may be specified, if you wish). By default for this
+demo site we make all pages non-canonical.
+
 ## Basic usage (as theme)
 
 ### Hugo module (preferred)
@@ -111,7 +181,6 @@ In/via this module
 
 | Param                    | Description                                    |
 |--------------------------|------------------------------------------------|
-| showTopBar               | If false, do not show top menu bar             |
 | testStylesInclude        | If true adds a very small amount of CSS to improve theme usability. |
 
 ## Test CSS styling

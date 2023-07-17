@@ -26,7 +26,7 @@ ou [hugo-testing par jmooring depuis les Hugo
 forums](https://github.com/jmooring/hugo-testing). Ce cas d'utilisation était
 auparavant une objectif de ce référentiel, mais ce n'est pas vrai, maintenant.
 
-Regardez-vou
+Regardez
 [LICENSE](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/blob/main/LICENSE)
 pour autorisations d'utilisation.
 
@@ -55,6 +55,77 @@ h1, qui est de n’avoir qu’un seul élément h1 par
 page](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#multiple_h1_elements_on_one_page),
 tous les éléments H1 de la ressource sont réécrits en tant qu’éléments H2 (car
 ce thème ajoute le titre de la page en tant qu’élément H1).
+
+### Liens d’ancrage d’en-tête
+
+Les titres d’une page ont un lien vers l’ID d’en-tête qui peut être copié par en
+survolant l’en-tête et en copiant le lien sur le signe dièse (`#`) apparaît.
+
+### Validation de liaison intégrée
+
+Grâce à l’utilisation des `render-link` et `render-imagesrc` crochets, liens
+internes et les URL des images sur le site sont validées. Si la solution de
+secours « statique » est autorisée seulment un avertissement est émis (puisque
+le lien peut être vers une ressource gérée à l’extérieur l’arborescence de
+contenu normale Hugo), sinon la build affichera une erreur pour le lien
+incriminé.
+
+### Gère gracieusement un élément H1 dans le contenu
+
+Si un utilisateur décide de placer l’élément H1 dans le fichier de contenu
+plutôt que en spécifiant un `Title` dans le front, ce thème affichera le H1
+comme titre de page. S’il y a aussi un `Title` élément spécifié, Le titre
+en double sera supprimé. S’il y a plus d’un H1, ou le H1 ne correspond pas au
+titre de la page, alors le H1 sera converti en éléments H2.
+
+### Fournit des crochets pour un rendu d’image plus avancé
+
+La gestion avancée des images peut être effectuée par d’autres modules, si le
+module Fournit le modèle 'hook' que le hook `render-image` de ce thème attend.
+
+### Fournit une vérification du « code » et un CI
+
+Ce référentiel comprend un certain nombre de contrôles de qualité et de
+maintenance du codecConfigurations et utilisations `pre-commit` et autres outils
+pour conserver le codebase en bon ordre.
+
+### Fournit des crochets pour l’ajout de LQIP d’image
+
+Les crochets permettent au haut du document HTML de la page d’ajouter des styles
+CSS basé sur le code des parties ultérieures du document. (Cela prend un peu de
+« magie »). Ce faisant, nous pouvons ajouter des éléments tels que les LQIPs
+(Low Quality Image Placeholders) en utilisant CSS uniquement (pas de
+JavaScript).
+
+Le plein effet ne sera disponible qu’avec l’ajout d’un module de gestion
+d’images.
+
+### Montre comment fournir des traductions pour l’ensemble site
+
+Pour ce faire, il ajoute une (mauvaise) traduction française à la version
+anglaise principale. du site. Cela garantit que la fourniture d’une édition
+traduite fonctionne correctement.
+
+### Barre de navigation du site
+
+Fournit des boutons 'section précédente/suivante', 'précédente/suivante'
+et bouton de niveau supérieur sur chaque page. Cela facilite la navigation.
+
+### Hooks CSS et JavaScript
+
+Fournit des hooks pour ajouter CSS et JavaScript qui sont minifiés et renommés
+en vider le cache si le CSS ou le JavaScript change.
+
+Nous divisons le CSS en essentiel et différable, mais nous n’ajoutons pas
+(encore) `rel="preload"` aux styles car `preload` il n’est pas assez bien
+supporté.
+
+### Métadonnées de base
+
+Nous spécifions les pages comme non canoniques pour les pages également sur un
+autre site (et le un lien canonique réel peut être spécifié, si vous le
+souhaitez). Par défaut pour ce site de démonstration Nous rendons toutes les
+pages non canoniques.
 
 ## Utilisation de base (comme thème)
 
@@ -115,7 +186,6 @@ Dans/par cette module
 
 | Param                    | Description                                    |
 |--------------------------|------------------------------------------------|
-| showTopBar               | Si la valeur est `false`, n’affichez pas la barre de menus supérieure |
 | testStylesInclude        | Si la valeur est `true` ajoute une très petite quantité de CSS pour améliorer la convivialité du thème. |
 
 ## Le style CSS aux tester
