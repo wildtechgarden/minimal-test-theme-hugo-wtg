@@ -33,6 +33,10 @@ pre {
 	tab-size: 3;
 }
 
+table {
+	margin-block-end: .8em;
+}
+
 a, code {
 	overflow-wrap: break-word;
 	word-break: normal;
@@ -209,6 +213,16 @@ a:hover {
 	padding-top: 8px;
 }
 
+.bar-test-min .list-test-min .list-item-test-min .link-test-min {
+	display: block;
+	max-height: 100%;
+	max-width: 100%;
+	min-height: 32px;
+	min-width: 32px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
 
 @media screen and (min-width: 48em) {
 	.bar-test-min {
@@ -227,17 +241,6 @@ a:hover {
 .bar-test-min .list-test-min .list-item-test-min.footer-infobar-test-min:first-child {
 	flex: 8 1 8em;
 	text-align: left;
-}
-
-.bar-test-min .list-test-min .list-item-test-min .link-test-min {
-	display: block;
-	max-height: 100%;
-	max-width: 100%;
-	min-height: 32px;
-	min-width: 32px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
 }
 
 .bar-test-min .list-test-min .list-item-test-min.footer-infobar-test-min:first-child .link-test-min {
@@ -340,55 +343,55 @@ a:hover {
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(1) .link-test-min::before {
-	content: "«";
+	content: "<< ";
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(1) .link-test-min::after {
-	content: "«";
+	content: " >>";
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(2) .link-test-min::before {
-	content: "‹";
+	content: "< ";
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(2) .link-test-min::after {
-	content: "‹";
+	content: " <";
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(3) .link-test-min.link-test-at-top::before {
-	content: "▫";
+	content: "⬚";
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(3) .link-test-min::after {
-	content: "^";
+	content: " ^";
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(3) .link-test-min.link-test-at-top::after {
-	content: "▫";
+	content: "⬚";
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(3) .link-test-min::before {
-	content: "^";
+	content: "^ ";
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(3) .link-test-min::after {
-	content: "^";
+	content: " ^";
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(4) .link-test-min::before {
-	content: "›";
+	content: "> ";
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(4) .link-test-min::after {
-	content: "›";
+	content: " >";
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(5) .link-test-min::before {
-	content: "»";
+	content: ">> ";
 }
 
 .nav-site-page-test-min .list-item-test-min:nth-child(5) .link-test-min::after {
-	content: "»";
+	content: " >>";
 }
 
 .bar-test-min .list-test-min .current-menu-is-test-min {
@@ -536,4 +539,8 @@ a:hover {
 
 .heading6-link-wrapper .heading-link-marker {
 	font-size: .9em;
+}
+
+.heading-link-wrapper {
+	margin-block-start: .4rem
 }
