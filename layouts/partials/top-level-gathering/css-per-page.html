@@ -4,6 +4,6 @@
 	{{- if templates.Exists "partials/helpers/lib/image-handling/add-styles-for-images.html" -}}
 		{{- partial "helpers/lib/image-handling/add-styles-for-images.html" $curPage -}}
 	{{- else -}}
-		{{- warnf "addLQIPStyles defined but require template is missing" -}}
+		{{- warnf "addLQIPStyles defined but required template is missing" -}}
 	{{- end -}}
 {{- end -}}

@@ -20,7 +20,7 @@ html {
 	background-color: #f8f8f8;
 	color: #282828;
 	font-family: 'Trebuchet', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-	font-size: 15pt;
+	font-size: 14pt;
 	line-height: 1.5;
 }
 
@@ -370,55 +370,63 @@ a:hover {
 	padding: .3em .4em;
 }
 
-.heading-link-wrapper {
+.heading-link-title {
+	display: inline-block;
+	margin-block: .4em;
+}
+
+.heading-link {
 	box-sizing: border-box;
-	display: block;
-}
-
-.heading-link-wrapper > .heading-link {
-	display: inline;
+	color: #444;
+	display: inline-block;
 	text-decoration: none;
-	visibility: hidden;
 }
 
-.heading-link-wrapper:hover > .heading-link {
+.heading-link-title + .heading-link + p {
+	margin-block: .1em;
+}
+
+.heading-link-title:active + .heading-link {
 	visibility: visible;
 }
 
-.heading-link-wrapper .heading-link-marker {
-	color: #222;
-	display: inline;
-	padding: .1em;
+.heading-link-title:hover + .heading-link {
+	visibility: visible;
 }
 
-.heading-link-wrapper .heading-link:hover .heading-link-marker {
+.heading-link .heading-link-marker {
+	color: #444;
+	display: inline;
+	padding-inline-start: .1em;
+	padding-inline-end: .2em;
+}
+
+.heading-link:active .heading-link-marker {
 	color: #ddd;
+	visibility: visible;
 }
 
-.heading-link-wrapper .heading-link-title {
-	display: inline;
+.heading-link:hover .heading-link-marker {
+	color: #ddd;
+	visibility: visible;
 }
 
-.heading2-link-wrapper .heading-link-marker {
+.heading2-link .heading-link-marker {
 	font-size: 1.5em;
 }
 
-.heading3-link-wrapper .heading-link-marker {
+.heading3-link .heading-link-marker {
 	font-size: 1.3em;
 }
 
-.heading4-link-wrapper .heading-link-marker {
+.heading4-link .heading-link-marker {
 	font-size: 1.1em;
 }
 
-.heading5-link-wrapper .heading-link-marker {
+.heading5-link .heading-link-marker {
 	font-size: 1em;
 }
 
-.heading6-link-wrapper .heading-link-marker {
+.heading6-link .heading-link-marker {
 	font-size: .9em;
-}
-
-.heading-link-wrapper {
-	margin-block-start: .4rem
 }
