@@ -1,81 +1,4 @@
 {
-	"elements": [
-		"html5",
-		{
-			"th": {
-				"attributes": {
-					"align": {
-						"deprecated": true
-					},
-					"axis": {
-						"deprecated": true
-					},
-					"background": {
-						"deprecated": true
-					},
-					"bgcolor": {
-						"deprecated": true
-					},
-					"char": {
-						"deprecated": true
-					},
-					"charoff": {
-						"deprecated": true
-					},
-					"colspan": {
-						"enum": [
-							"/\\d+/"
-						]
-					},
-					"height": {
-						"deprecated": true
-					},
-					"nowrap": {
-						"deprecated": true
-					},
-					"rowspan": {
-						"enum": [
-							"/\\d+/"
-						]
-					},
-					"scope": {
-						"enum": [
-							"row",
-							"col",
-							"rowgroup",
-							"colgroup",
-							"auto"
-						],
-						"required": false
-					},
-					"valign": {
-						"deprecated": true
-					},
-					"width": {
-						"deprecated": true
-					}
-				},
-				"flow": true,
-				"implicitClosed": [
-					"td",
-					"th"
-				],
-				"permittedContent": [
-					"@flow"
-				],
-				"permittedDescendants": [
-					{
-						"exclude": [
-							"header",
-							"footer",
-							"@sectioning",
-							"@heading"
-						]
-					}
-				]
-			}
-		}
-	],
 	"extends": [
 		"html-validate:recommended",
 		"html-validate:document"
@@ -84,6 +7,7 @@
 	"rules": {
 		"attr-quotes": "off",
 		"doctype-style": "off",
+		"element-permitted-content": "off",
 		"no-raw-characters": "off",
 		"require-sri": "off",
 		"wcag/h63": "off"

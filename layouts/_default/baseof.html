@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{{- if templates.Exists "above-html-setup.html" -}}
+{{- if templates.Exists "partials/above-html-setup.html" -}}
 	{{- partial "above-html-setup.html" . -}}
 {{- end }}
 {{- $topLevelClass := "nojs" -}}
@@ -20,12 +20,18 @@
 <body>
 {{- if templates.Exists "partials/header-wrapped.html" -}}
 	{{- partialCached "header-wrapped.html" . . -}}
-{{- else if templates.Exists "partials/header.html" -}}
-	{{- if ne (.Param "hidePageHeader") true }}
-<header class="header-test-min">
-		{{- partialCached "header" . . }}
-</header>
+{{- else }}
+<div class="body-wrapper">
+	{{- if templates.Exists "partials/css-deferrable-on-all-pages.html" -}}
+		{{- partialCached "css-deferrable-on-all-pages.html" . . -}}
 	{{- end -}}
+	{{- if templates.Exists "partials/header.html" -}}
+		{{- if ne (.Param "hidePageHeader") true }}
+<header class="header-test-min">
+			{{- partialCached "header" . . }}
+</header>
+		{{- end -}}
+	{{- end }}
 {{- end }}
 {{- if templates.Exists "partials/body-after-header.html" -}}
 	{{- partial "partials/body-after-header.html" . -}}
@@ -38,6 +44,9 @@
 {{- partialCached "page-navigation" . . }}
 	</div>
 {{- partialCached "footer" . . }}
+</div>
+{{- end }}
+{{- if not (templates.Exists "partials/header-wrapped.html") }}
 </div>
 {{- end }}
 </body>

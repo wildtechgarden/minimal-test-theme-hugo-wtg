@@ -26,8 +26,5 @@
 	{{- if templates.Exists "partials/head/metadata.html" -}}
 		{{- partial "head/metadata.html" . -}}
 	{{- end -}}
-	{{- if templates.Exists "partials/head/css-deferrable-on-all-pages.html" -}}
-		{{- partialCached "head/css-deferrable-on-all-pages.html" . . -}}
-	{{- end -}}
 {{- end -}}
 {{- /* Remove trailing newlines */ -}}
