@@ -1,39 +1,35 @@
-{{- $curPage := . -}}
-{{- if ne (.Param "hidePageHeader") true }}
-<header class="header-test-min">
-	{{- if ne (.Param "hideTopBarMenu") true }}
-	<nav aria-label="{{ i18n "main_site_menu" }}"
-	class="bar-test-min menubar-test-min test-mainmenu-hugo">
-		{{- /* First button is 'home' (site title) link */}}
-		<ul class="list-test-min">
-			<li class="list-item-test-min{{- if eq $curPage site.Home }} current-menu-is-test-min{{- end -}}">
-				<a class="link-test-min" href="{{- site.Home.RelPermalink -}}">{{- partial "helpers/page-title.html" site.Home -}}</a>
-			</li>
-		{{- /* Next buttons are for translation for multi-language sites */}}
-		{{- if .IsTranslated }}
-			{{- range .Translations }}
-			<li class="lang-item list-item-test-min">
-				<a class="link-test-min" href="{{ .RelPermalink }}">{{ .Lang }}</a>
-			</li>
-			{{- end }}
-		{{- end -}}
-		{{- /* Next buttons are from the main menu (if it is defined) */}}
-		{{- range site.Menus.main }}
-			<li class="list-item-test-min{{- if eq $curPage.RelPermalink .URL }} current-menu-is-test-min{{- end -}}">
-				<a href="{{- .URL -}}" class="link-test-min">{{- .Name -}}</a>
-			</li>
-		{{- end -}}
-		{{- /* Final buttons are the 'mainSections' sections (re-worked in Hugo 0.71) */}}
-		{{- range site.Params.mainSections -}}
-			{{- $page := site.GetPage (printf "/%s" .) -}}
-			{{- with $page }}
-			<li class="list-item-test-min{{- if eq $curPage . }} current-menu-is-test-min{{- end -}}">
-				<a href="{{- .RelPermalink -}}" class="link-test-min">{{- partial "helpers/page-title.html" . -}}</a>
-			</li>
-			{{- end -}}
+{{- $ctx := . -}}
+{{- $curPage := .Page -}}
+{{- if ne (.Param "hideTopBarMenu") true }}
+<nav aria-label="{{ i18n "main_site_menu" }}" class="bar-test-min menubar-test-min test-mainmenu-hugo">
+	{{- /* First button is 'home' (site title) link */}}
+	<ul class="list-test-min">
+		<li class="list-item-test-min{{- if eq $curPage site.Home }} current-menu-is-test-min{{- end -}}">
+			<a class="link-test-min" href="{{- site.Home.RelPermalink -}}">{{- partial "page-title.html" site.Home -}}</a>
+		</li>
+	{{- /* Next buttons are for translation for multi-language sites */}}
+	{{- if .IsTranslated }}
+		{{- range .Translations }}
+		<li class="lang-item list-item-test-min">
+			<a class="link-test-min" href="{{ .RelPermalink }}">{{ .Lang }}</a>
+		</li>
 		{{- end }}
-		</ul>
-	</nav>
+	{{- end -}}
+	{{- /* Next buttons are from the main menu (if it is defined) */}}
+	{{- range site.Menus.main }}
+		<li class="list-item-test-min{{- if eq $curPage.RelPermalink .URL }} current-menu-is-test-min{{- end -}}">
+			<a href="{{- .URL -}}" class="link-test-min">{{- .Name -}}</a>
+		</li>
+	{{- end -}}
+	{{- /* Final buttons are the 'mainSections' sections (re-worked in Hugo 0.71) */}}
+	{{- range site.Params.mainSections -}}
+		{{- $page := site.GetPage (printf "/%s" .) -}}
+		{{- with $page }}
+		<li class="list-item-test-min{{- if eq $curPage . }} current-menu-is-test-min{{- end -}}">
+			<a href="{{- .RelPermalink -}}" class="link-test-min">{{- partial "helpers/page-title.html" . -}}</a>
+		</li>
+		{{- end -}}
 	{{- end }}
-</header>
+	</ul>
+</nav>
 {{- end -}}

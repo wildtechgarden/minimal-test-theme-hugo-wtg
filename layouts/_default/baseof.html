@@ -1,37 +1,45 @@
 <!DOCTYPE html>
-{{- if eq (.Param "addLQIPStyles") true -}}
-	{{- if not (.Page.Store.Get "LQIPs") -}}
-		{{- .Page.Store.Set "LQIPs" (dict) -}}
-	{{- end -}}
-	{{- if not (.Page.Scratch.Get "LQIPStarted") -}}
-		{{- range $styleName, $styleInfo := .Page.Store.Get "LQIPs" -}}
-			{{- if $styleInfo -}}
-				{{- .Page.Store.SetInMap "LQIPs" $styleName (dict "oldStyle" true "style" $styleInfo.style) -}}
-			{{- else -}}
-				{{- .Page.Store.SetInMap "LQIPs" $styleName (dict "oldStyle" true "style" "") -}}
-			{{- end -}}
-		{{- end -}}
-		{{- .Page.Scratch.Set "LQIPStarted" true -}}
-	{{- end -}}
-	{{- if eq (.Page.Scratch.Get "LQIPFinished") nil -}}
-		{{- .Page.Scratch.Set "LQIPFinished" false -}}
-	{{- else -}}
-		{{- .Page.Scratch.Set "LQIPFinished" true -}}
+{{- if templates.Exists "above-html-setup.html" -}}
+	{{- partial "above-html-setup.html" . -}}
+{{- end }}
+{{- $topLevelClass := "nojs" -}}
+{{- if isset site.Params "toplevelclass" -}}
+	{{- $topLevelClass = site.Params.topLevelClass -}}
+	{{- if isset .Page.Params "toplevelclass" -}}
+		{{- $topLevelClass = .Page.Params.topLevelClass -}}
 	{{- end -}}
 {{- end }}
-<html lang="{{ $.Site.Language.Lang }}">
-{{- partial "head.html" . }}
+<html {{ with $topLevelClass }}class="{{ . }}"{{ end }} lang="{{ $.Site.Language.Lang }}" dir="{{ site.Language.LanguageDirection | default "ltr" }}">
+{{- if templates.Exists "partials/head-wrapped.html" -}}
+	{{- partial "head-wrapped.html" . -}}
+{{- else }}
+<head>
+	{{- partial "head-top-level.html" . }}
+</head>
+{{- end }}
 <body>
-{{- partial "header" . }}
+{{- if templates.Exists "partials/header-wrapped.html" -}}
+	{{- partialCached "header-wrapped.html" . . -}}
+{{- else if templates.Exists "partials/header.html" -}}
+	{{- if ne (.Param "hidePageHeader") true }}
+<header class="header-test-min">
+		{{- partialCached "header" . . }}
+</header>
+	{{- end -}}
+{{- end }}
+{{- if templates.Exists "partials/body-after-header.html" -}}
+	{{- partial "partials/body-after-header.html" . -}}
+{{- else }}
 <div class="test-scrollable-min">
-	<h1>{{- partial "helpers/page-title.html" . }}</h1>
-	<div class="main-test-min" id="content">
+	<h1>{{- partialCached "page-title.html" . . }}</h1>
+	<div class="main" id="content">
 {{- block "main" . }}
 {{- end -}}
-{{- partial "page-navigation" . }}
+{{- partialCached "page-navigation" . . }}
 	</div>
-{{- partial "footer" . }}
+{{- partialCached "footer" . . }}
 </div>
+{{- end }}
 </body>
 </html>
 {{- /* Remove trailing newlines */ -}}

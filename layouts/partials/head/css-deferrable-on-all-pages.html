@@ -1,0 +1,32 @@
+{{- $ctx := . -}}
+{{- $curPage := .Page -}}
+{{- $combinedCSS := (slice) -}}
+{{- if ne (.Param "testStylesInclude") false }}
+	{{- $mainCSS := resources.Get "/css/deferrable.css" -}}
+	{{- if not $mainCSS -}}
+		{{- errorf "/css/deferrable.css is missing" -}}
+	{{- end -}}
+	{{- $combinedCSS = $combinedCSS | append $mainCSS -}}
+	{{- $chromaCSS := resources.Get "/css/test-minimal-dfd-chroma.css" -}}
+	{{- if not $chromaCSS -}}
+		{{- errorf "/css/test-minimal-dfd-chroma.css is missing" -}}
+	{{- end -}}
+	{{- $combinedCSS = $combinedCSS | append $chromaCSS -}}
+	{{- $postChromaCSS := resources.Get "/css/test-minimal-dfd-post-chroma.css" -}}
+	{{- if not $postChromaCSS -}}
+		{{- errorf "/css/test-minimal-dfd-post-chroma.css is missing" -}}
+	{{- end -}}
+	{{- $combinedCSS = $combinedCSS | append $postChromaCSS -}}
+{{- end -}}
+{{- $customCSS := resources.Match "/css/custom/*.css" -}}
+{{- if $customCSS -}}
+	{{- $combinedCSS = $combinedCSS | append $customCSS -}}
+{{- end -}}
+{{- if gt (len $combinedCSS) 0 -}}
+	{{- $combinedCSS = $combinedCSS | resources.Concat "/css/deferrable-minimal-dfd.css" -}}
+	{{- if hugo.IsProduction }}
+		{{- $combinedCSS = $combinedCSS | resources.Minify -}}
+		{{- $combinedCSS = $combinedCSS | resources.Fingerprint -}}
+	{{- end }}
+<link rel="stylesheet" href="{{ $combinedCSS.Permalink }}">
+{{- end -}}

@@ -1,0 +1,9 @@
+{{- $ctx := . -}}
+{{- $curPage := .Page -}}
+{{- if eq (.Param "addLQIPStyles") true -}}
+	{{- if templates.Exists "partials/helpers/lib/image-handling/add-styles-for-images.html" -}}
+		{{- partial "helpers/lib/image-handling/add-styles-for-images.html" $curPage -}}
+	{{- else -}}
+		{{- warnf "addLQIPStyles defined but require template is missing" -}}
+	{{- end -}}
+{{- end -}}

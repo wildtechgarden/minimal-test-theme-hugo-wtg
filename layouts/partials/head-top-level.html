@@ -1,0 +1,33 @@
+{{- $ctx := . -}}
+{{- $curPage := .Page }}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ hugo.Generator }}
+{{- if eq (.Param "useBaseURL") true -}}{{- if $.Site.BaseURL }}
+<base href="{{ $.Site.BaseURL }}">{{- end }}{{- end }}
+{{- if templates.Exists "partials/head.html" -}}
+	{{- warnf "partial 'head.html' is not used by this theme; please adjust your partials" -}}
+{{- end -}}
+{{- if templates.Exists "partials/head-main-override.html" -}}
+	{{- partial "head-main-override.html" . -}}
+{{- else -}}
+	{{- if templates.Exists "partials/head/canonical.html" -}}
+		{{- partialCached "head/canonical.html" . . -}}
+	{{- end -}}
+	{{- if templates.Exists "partials/head/css-essential-on-all-pages.html" -}}
+		{{- partialCached "head/css-essential-on-all-pages.html" . . -}}
+	{{- end -}}
+	{{- if templates.Exists "partials/top-level-gathering/css-per-page.html" -}}
+		{{- partial "top-level-gathering/css-per-page.html" . -}}
+	{{- end -}}
+	{{- if templates.Exists "partials/head/feeds.html" -}}
+		{{- partial "head/feeds.html" . -}}
+	{{- end -}}
+	{{- if templates.Exists "partials/head/metadata.html" -}}
+		{{- partial "head/metadata.html" . -}}
+	{{- end -}}
+	{{- if templates.Exists "partials/head/css-deferrable-on-all-pages.html" -}}
+		{{- partialCached "head/css-deferrable-on-all-pages.html" . . -}}
+	{{- end -}}
+{{- end -}}
+{{- /* Remove trailing newlines */ -}}

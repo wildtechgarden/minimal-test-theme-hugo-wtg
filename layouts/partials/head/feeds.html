@@ -1,0 +1,13 @@
+{{- $ctx := . -}}
+{{- $curPage := .Page }}
+{{- if .OutputFormats.Get "RSS" -}}
+{{- with .OutputFormats.Get "RSS" -}}
+	{{- $rssTitle := site.Title -}}
+	{{- $pageTitle := partial "helpers/page-title.html" $curPage -}}
+	{{- if ne $pageTitle $rssTitle -}}
+		{{- $rssTitle = printf "%s | %s" $pageTitle $rssTitle -}}
+	{{- end }}
+<link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $rssTitle }}">
+<link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $rssTitle }}">
+{{- end -}}
+{{- end }}

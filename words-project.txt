@@ -15,10 +15,11 @@ jmooring
 licenselink
 lntable
 lntd
+LQIP
 nodeenv
+nojs
 nredirects
 nvmrc
-LQIP
 pctx
 plainify
 platformdirs
