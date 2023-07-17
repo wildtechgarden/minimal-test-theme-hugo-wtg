@@ -6,7 +6,7 @@
 		{{- range (first 1 $curTitle) -}}
 			{{- $curTitle = replaceRE `(?s)<h1(.*?)id="(.*?)"(.*?)>(.*?)</h1>` `$4` . -}}
 		{{- end -}}
-		{{- if ne $curTitle (partial "helpers/gather-title-page.html" page ) -}}
+		{{- if ne $curTitle (partial "helpers/gather-title-page.html" $ctx ) -}}
 			{{- replaceRE `(?s)<h1(.*?)id="(.*?)"(.*?)>(.*?)</h1>` `<h2 $1 id="$2-831"$3>$4</h2>` . | safeHTML -}}
 		{{- else -}}
 			{{- replaceRE `(?s)<h1(.*?)id="(.*?)"(.*?)>(.*?)</h1>` `` . | safeHTML -}}
