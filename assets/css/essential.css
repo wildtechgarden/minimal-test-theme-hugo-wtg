@@ -131,16 +131,6 @@ a:hover {
 	white-space: nowrap;
 }
 
-@media screen and (min-width: 48em) {
-	.bar-test-min {
-		flex-flow: row nowrap;
-	}
-
-	.bar-test-min .list-test-min {
-		flex-flow: row nowrap;
-	}
-}
-
 .footer-test-min .bar-test-min .list-test-min {
 	justify-content: space-between;
 }

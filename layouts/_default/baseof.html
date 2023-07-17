@@ -22,9 +22,6 @@
 	{{- partialCached "header-wrapped.html" . . -}}
 {{- else }}
 <div class="body-wrapper">
-	{{- if templates.Exists "partials/css-deferrable-on-all-pages.html" -}}
-		{{- partialCached "css-deferrable-on-all-pages.html" . . -}}
-	{{- end -}}
 	{{- if templates.Exists "partials/header.html" -}}
 		{{- if ne (.Param "hidePageHeader") true }}
 <header class="header-test-min">

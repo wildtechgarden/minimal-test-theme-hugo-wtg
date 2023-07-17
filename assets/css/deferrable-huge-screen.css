@@ -1,0 +1,10 @@
+/* @media screen and (min-width: 48em) { */
+	.bar-test-min {
+		flex-flow: row nowrap;
+	}
+
+	.bar-test-min .list-test-min {
+		flex-flow: row nowrap;
+	}
+/* } */
+

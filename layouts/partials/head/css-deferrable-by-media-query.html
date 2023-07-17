@@ -2,23 +2,21 @@
 {{- $curPage := .Page -}}
 {{- $combinedCSS := (slice) -}}
 {{- if ne (.Param "testStylesInclude") false }}
-	{{- $mainCSS := resources.Get "/css/essential.css" -}}
+	{{- $mainCSS := resources.Get "/css/deferrable-huge-screen.css" -}}
 	{{- if not $mainCSS -}}
-		{{- errorf "/css/essential.css is missing" -}}
+		{{- errorf "/css/deferrable-huge-screen.css is missing" -}}
 	{{- end -}}
 	{{- $combinedCSS = $combinedCSS | append $mainCSS -}}
 {{- end -}}
-{{- $customCSS := resources.Match "/css/custom-essential/*.css" -}}
+{{- $customCSS := resources.Match "/css/custom-deferrable-huge/*.css" -}}
 {{- if $customCSS -}}
 	{{- $combinedCSS = $combinedCSS | append $customCSS -}}
 {{- end -}}
 {{- if gt (len $combinedCSS) 0 -}}
-	{{- $combinedCSS = $combinedCSS | resources.Concat "/css/essential-minimal-dfd.css" -}}
+	{{- $combinedCSS = $combinedCSS | resources.Concat "/css/deferrable-huge-minimal-dfd.css" -}}
 	{{- if hugo.IsProduction }}
 		{{- $combinedCSS = $combinedCSS | resources.Minify -}}
 		{{- $combinedCSS = $combinedCSS | resources.Fingerprint -}}
 	{{- end }}
-<style type="text/css">
-{{ $combinedCSS.Content | safeCSS }}
-</style>
+<link rel="stylesheet" href="{{ $combinedCSS.Permalink }}" media="(min-width: 48em)">
 {{- end -}}

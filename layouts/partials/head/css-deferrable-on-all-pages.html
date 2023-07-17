@@ -28,5 +28,5 @@
 		{{- $combinedCSS = $combinedCSS | resources.Minify -}}
 		{{- $combinedCSS = $combinedCSS | resources.Fingerprint -}}
 	{{- end }}
-<link rel="stylesheet" href="{{ $combinedCSS.Permalink }}">
+<link rel="stylesheet" href="{{ $combinedCSS.Permalink }}" media="screen">
 {{- end -}}

@@ -26,5 +26,11 @@
 	{{- if templates.Exists "partials/head/metadata.html" -}}
 		{{- partial "head/metadata.html" . -}}
 	{{- end -}}
+	{{- if templates.Exists "partials/head/css-deferrable-on-all-pages.html" -}}
+		{{- partialCached "head/css-deferrable-on-all-pages.html" . . -}}
+	{{- end -}}
+	{{- if templates.Exists "partials/head/css-deferrable-by-media-query.html" -}}
+		{{- partialCached "head/css-deferrable-by-media-query.html" . . -}}
+	{{- end -}}
 {{- end -}}
 {{- /* Remove trailing newlines */ -}}
