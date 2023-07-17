@@ -12,7 +12,7 @@
 	"isImageLink" true
 ) -}}
 
-{{- if not (templates.Exists "image-handler.html") -}}
+{{- if not (templates.Exists "partials/image-handler.html") -}}
 	{{- with $destMap }}
 <img src="{{ .Destination | safeURL }}" {{ with $title}} title="{{ . }}"{{ end }} {{ with $text }}alt="{{ . | safeHTML }}"{{ end }}>
 	{{- end }}
