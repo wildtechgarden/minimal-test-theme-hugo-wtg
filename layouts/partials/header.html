@@ -26,7 +26,7 @@
 		{{- $page := site.GetPage (printf "/%s" .) -}}
 		{{- with $page }}
 		<li class="list-item-test-min{{- if eq $curPage . }} current-menu-is-test-min{{- end -}}">
-			<a href="{{- .RelPermalink -}}" class="link-test-min">{{- partial "helpers/page-title.html" . -}}</a>
+			<a href="{{- .RelPermalink -}}" class="link-test-min">{{- partial "page-title.html" . -}}</a>
 		</li>
 		{{- end -}}
 	{{- end }}

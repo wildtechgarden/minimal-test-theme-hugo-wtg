@@ -9,6 +9,7 @@
 {{- $finalDestination := $page.Scratch.Get "nil-value" -}}
 {{- $finalResource := $page.Scratch.Get "nil-value" -}}
 {{- $isPage := false -}}
+{{- $isStatic := false -}}
 
 {{- $externalResult := (partial "helpers/is-external-destination.html" (dict "Destination" $destination)) -}}
 {{- if $externalResult.isExternal -}}
@@ -91,10 +92,17 @@
 			{{- $finalResource = $linkResource -}}
 		{{- else if $staticFallback -}}
 			{{- $finalDestination = $destination -}}
+			{{- $isStatic = true -}}
 			{{- warnf "%s is not a page or page resource in page %s's section, using fallback to static link" $destination $page.TranslationKey -}}
 		{{- else -}}
 			{{- errorf "%s is not a page or page resource in page %s's section (%s) and static link fallback is not enabled" $destination $page.TranslationKey $page.CurrentSection.TranslationKey -}}
 		{{- end -}}
 	{{- end -}}
 {{- end -}}
-{{- return (dict "Destination" $finalDestination "Resource" $finalResource "IsPage" $isPage) -}}
+{{- return (dict
+	"Destination" $finalDestination
+	"Resource" $finalResource
+	"IsPage" $isPage
+	"IsExternal" $externalResult.isExternal
+	"IsStatic" $isStatic
+) -}}
