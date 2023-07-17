@@ -28,5 +28,6 @@
 		{{- $combinedCSS = $combinedCSS | resources.Minify -}}
 		{{- $combinedCSS = $combinedCSS | resources.Fingerprint -}}
 	{{- end }}
-<link rel="stylesheet" href="{{ $combinedCSS.Permalink }}" media="screen">
+<link rel="preload" as="style" href="{{ $combinedCSS.Permalink }}" online="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ $combinedCSS.Permalink }}"></noscript>
 {{- end -}}
