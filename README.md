@@ -17,7 +17,7 @@ status](https://results.pre-commit.ci/badge/github/danielfdickinson/minimal-test
 
 ## Overview
 
-[Daniel F. Dickinson](https://github.com/danielfdickinson), uses this theme for
+[Daniel F. Dickinson](https://www.danielfdickinson.ca/), uses this theme for
 demo/sample sites for the modules on which he works. For a repository for
 creating minimal reproducible test cases see either [the v0.3 branch of this
 repository](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/tree/v0.3)

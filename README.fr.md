@@ -17,7 +17,7 @@ statut](https://results.pre-commit.ci/badge/github/danielfdickinson/minimal-test
 
 ## Préface
 
-[Daniel F. Dickinson](https://github.com/danielfdickinson), utilise ce thème
+[Daniel F. Dickinson](https://www.danielfdickinson.ca), utilise ce thème
 pour les sites de démonstration/échantillons des modules qu'ils sont travaillez.
 Pour une référentiel aux créer de cas de test reproductibles minimaux,
 regardez [le v0.3 branche de ce
