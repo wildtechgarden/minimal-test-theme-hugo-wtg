@@ -32,9 +32,6 @@ package = "netlify-plugin-hugo-cache-resources"
 debug = false
 
 [[plugins]]
-package = "netlify-plugin-html-validate"
-
-[[plugins]]
 # Installs the Lighthouse Build Plugin for all deploy contexts
 package = "@netlify/plugin-lighthouse"
 

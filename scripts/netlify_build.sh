@@ -9,6 +9,7 @@ set -o pipefail
 # git lfs install
 
 bash ./tests/scripts/hugo-audit.sh
+bash ./tests/scripts/html-validate.sh
 
 rm -rf public exampleSite/public
 
