@@ -1,0 +1,22 @@
+#ErrorDocument 404 {{ site.BaseURL }}404.html
+RewriteEngine On
+{{- range site.Params.redirectsDomains }}
+RewriteCond %{HTTP_HOST} ^{{ . }}$
+RewriteRule ^(.*)$ {{ site.BaseURL }}$1 [QSA,END,R=301]
+{{- end }}
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [QSA,END,R=301]
+{{- range site.Pages -}}
+	{{- if .Aliases -}}
+		{{- $rTarget := .RelPermalink -}}
+		{{- range .Aliases -}}
+			{{- if strings.HasSuffix . "/" }}
+Redirect 301 {{ strings.TrimSuffix "/" . }} {{ $rTarget }}
+			{{- end }}
+Redirect 301 {{ . }} {{ $rTarget }}
+		{{- end -}}
+	{{- end -}}
+{{- end -}}
+{{- range site.Params.redirectsExtra }}
+Redirect {{ . }}
+{{- end -}}

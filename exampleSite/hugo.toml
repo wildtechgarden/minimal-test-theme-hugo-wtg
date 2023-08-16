@@ -14,9 +14,12 @@ mainSections = ["post"]
 # For demo/sample sites we default to not being canonical
 pageCanonical = false
 redirectsDomains = [
-	"http://minimal-test-theme.netlify.app/* https://minimal-test-theme.demo.wildtechgarden.ca/:splat 301!",
-	"https://minimal-test-theme.netlify.app/* https://minimal-test-theme.demo.wildtechgarden.ca/:splat 301!",
-	"http://minimal-test-theme.wildtechgarden.ca/* https://minimal-test-theme.demo.wildtechgarden.ca/:splat 301!"
+	"minimal-test-theme.demo.wildtechgarden.com",
+	"minimal-test-theme-demo.wildtechgarde.ca",
+	"minimal-test-theme.wtg-demos.com",
+	"www.minimal-test-theme.wtg-demos.com",
+	"minimal-test-theme.wtg-demos.ca",
+	"minimal-test-theme.wildtechgarden.ca"
 ]
 staticFallback = false
 # Disable if you don't want the test (bare-bones) CSS
@@ -25,17 +28,17 @@ testStylesInclude = true
 useBaseURL = false
 
 [outputFormats]
-[outputFormats.nredirects]
-baseName = "_redirects"
+[outputFormats.htaccess]
+baseName = ""
 isPlainText = true
-mediaType = "text/nredirects"
+mediaType = "text/htaccess"
 
 [mediaTypes]
-[mediaTypes."text/nredirects"]
-suffixes = [""]
+[mediaTypes."text/htaccess"]
+suffixes = ["htaccess"]
 
 [outputs]
-home = ["HTML", "RSS", "nredirects"]
+home = ["HTML", "RSS", "htaccess"]
 
 # See https://gohugo.io/content-management/multilingual/
 # and https://www.regisphilibert.com/blog/2018/08/hugo-multilingual-part-1-managing-content-translation/
