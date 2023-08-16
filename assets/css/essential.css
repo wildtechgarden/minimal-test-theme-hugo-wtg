@@ -377,7 +377,7 @@ a:hover {
 
 .heading-link {
 	box-sizing: border-box;
-	color: #444;
+	color: #555;
 	display: inline-block;
 	text-decoration: none;
 }
@@ -412,21 +412,21 @@ a:hover {
 }
 
 .heading2-link .heading-link-marker {
-	font-size: 1.5em;
-}
-
-.heading3-link .heading-link-marker {
-	font-size: 1.3em;
-}
-
-.heading4-link .heading-link-marker {
 	font-size: 1.1em;
 }
 
+.heading3-link .heading-link-marker {
+	font-size: .9em;
+}
+
+.heading4-link .heading-link-marker {
+	font-size: .8em;
+}
+
 .heading5-link .heading-link-marker {
-	font-size: 1em;
+	font-size: .8em;
 }
 
 .heading6-link .heading-link-marker {
-	font-size: .9em;
+	font-size: .8em;
 }
