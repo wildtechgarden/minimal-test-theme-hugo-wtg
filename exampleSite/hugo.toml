@@ -1,6 +1,6 @@
-baseURL = "https://minimal-test-theme.demo.wildtechgarden.ca/"
-copyright = "© 2021-2023 Daniel F. Dickinson"
-homepage = "https://minimal-test-theme.demo.wildtechgarden.ca/"
+baseURL = "https://www.minimal-test-theme.wtg-demos.ca/"
+copyright = "© 2021-2023 Wild Tech 'Garden'"
+homepage = "https://www.minimal-test-theme.wtg-demos.ca/"
 paginate = 3
 languageCode = "en"
 DefaultContentLanguage = "en"
@@ -47,7 +47,7 @@ weight = 10
 contentDir = "content/fr"
 
 [languages.fr.params]
-description = "Demo site au Hugo thème du teste minimal du Daniel F. Dickinson (DFD)"
+description = "Demo site au Hugo thème du teste minimal du Wild Tech 'Garden' (WTG)"
 
 [languages.fr.menu]
 [[languages.fr.menu.main]]
@@ -68,7 +68,7 @@ weight = 1
 contentDir = "content/en"
 
 [languages.en.params]
-description = "Demo site for Daniel F. Dickinson's (DFD) Hugo minimal test theme"
+description = "Demo site for Wild Tech 'Garden's (WTG) Hugo minimal test theme"
 
 [languages.en.menu]
 [[languages.en.menu.main]]
@@ -82,12 +82,6 @@ identifier = "accessibility"
 name = "Accessibility"
 pageref = "accessibility"
 weight = 20
-
-# site.Author(s) is deprecated so this is not longer used
-[[ author.authors ]]
-name = "Daniel F. Dickinson"
-homepage = "https://www.danielfdickinson.ca/"
-email = "dfdpublic@wildtechgarden.ca"
 
 [taxonomies]
 tag = "tags"
@@ -121,7 +115,7 @@ disabled = true
 [module]
 # For the example site, we need the _current_ theme module from the same repo (path is relative to themes directory)
 # See https://gohugo.io/hugo-modules/configuration/#module-config-top-level (replacements)
-replacements = "github.com/danielfdickinson/minimal-test-theme-hugo-dfd -> ../.."
+replacements = "github.com/wildtechgarden/minimal-test-theme-hugo-wtg -> ../.."
 
 [[module.mounts]]
 source = "static"
@@ -158,7 +152,7 @@ target = "content"
 lang = "fr"
 
 [[module.imports]]
-path = "github.com/danielfdickinson/minimal-test-theme-hugo-dfd"
+path = "github.com/wildtechgarden/minimal-test-theme-hugo-wtg"
 
 [[module.imports.mounts]]
 source = "static"

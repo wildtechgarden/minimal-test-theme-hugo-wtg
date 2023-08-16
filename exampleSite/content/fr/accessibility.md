@@ -8,10 +8,10 @@ pageCanonical = false
 
 ## Déclaration
 
-[Daniel F. Dickinson](https://www.wildtechgarden.ca/about/) fait de son mieux
+[Wild Tech 'Garden'](https://www.wildtechgarden.ca/about/) fait de leur mieux
 pour garder ce site accessible et inclusif. Si vous trouvez quelque chose qui
 n'atteint pas cet objectif, veuillez utiliser  [formulaire de contact aux
-son site principal](https://www.wildtechgarden.ca/about/contact/) à ce lui
+leur site principal](https://www.wildtechgarden.ca/about/contact/) à ce lui
 raconter.
 
 ## Objectifs

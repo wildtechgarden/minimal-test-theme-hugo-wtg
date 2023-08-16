@@ -10,5 +10,5 @@ can, create a Pull Request as mentioned in the paragraph above.
 
 Adding and improving documentation is always welcomed, as well.
 
-[issues]: https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/issues?q=is%3Aissue
-[open-issues]: https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/issues?q=is%3Aissue+is%3Aopen
+[issues]: https://github.com/wildtechgarden/minimal-test-theme-hugo-wtg/issues?q=is%3Aissue
+[open-issues]: https://github.com/wildtechgarden/minimal-test-theme-hugo-wtg/issues?q=is%3Aissue+is%3Aopen

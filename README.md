@@ -1,32 +1,30 @@
-# DFD Hugo minimal test theme
+# WTG Hugo minimal test theme
 
 ## Status
 
-[![Netlify
-Status](https://api.netlify.com/api/v1/badges/6be917c6-f8af-441e-8dc1-a5caf7110dcc/deploy-status)](https://app.netlify.com/sites/minimal-test-theme/deploys)
 [![pre-commit.ci
-status](https://results.pre-commit.ci/badge/github/danielfdickinson/minimal-test-theme-hugo-dfd/main.svg)](https://results.pre-commit.ci/latest/github/danielfdickinson/minimal-test-theme-hugo-dfd/main)
+status](https://results.pre-commit.ci/badge/github/wildtechgarden/minimal-test-theme-hugo-wtg/main.svg)](https://results.pre-commit.ci/latest/github/wildtechgarden/minimal-test-theme-hugo-wtg/main)
 
 ## Demo/sample website
 
-<https://minimal-test-theme.demo.wildtechgarden.ca/>
+<https://www.minimal-test-theme.wtg-demos.ca/>
 
 ## Repository URL
 
-<https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd>
+<https://github.com/wildtechgarden/minimal-test-theme-hugo-wtg>
 
 ## Overview
 
-[Daniel F. Dickinson](https://www.danielfdickinson.ca/), uses this theme for
-demo/sample sites for the modules on which he works. For a repository for
+[Wild Tech 'Garden'](https://www.wildtechgarden.ca/about/), uses this theme for
+demo/sample sites for the modules on which they work. For a repository for
 creating minimal reproducible test cases see either [the v0.3 branch of this
-repository](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/tree/v0.3)
+repository](https://github.com/wildtechgarden/minimal-test-theme-hugo-wtg/tree/v0.3)
 or [hugo-testing by jmooring from the Hugo
 forums](https://github.com/jmooring/hugo-testing). That use case was previously
 a goal of this repository, but such is no longer true.
 
 See
-[LICENSE](https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/blob/main/LICENSE)
+[LICENSE](https://github.com/wildtechgarden/minimal-test-theme-hugo-wtg/blob/main/LICENSE)
 for permissions on use.
 
 ## Modern hugo only
@@ -135,14 +133,14 @@ demo site we make all pages non-canonical.
 	```ini
 	[module]
 	[[module.imports]]
-	path = "github.com/danielfdickinson/minimal-test-theme-hugo-dfd"
+	path = "github.com/wildtechgarden/minimal-test-theme-hugo-wtg"
 	```
 
 3. Change back to the site directory
 4. Get the module
 
 	```sh
-	hugo mod get github.com/danielfdickinson/minimal-test-theme-hugo-dfd
+	hugo mod get github.com/wildtechgarden/minimal-test-theme-hugo-wtg
 	```
 
 5. To test the result, run the local Hugo server
@@ -160,10 +158,10 @@ demo site we make all pages non-canonical.
 	cd themes
 	```
 
-2. In the themes directory, add minimal-test-theme-hugo-dfd as a submodule
+2. In the themes directory, add minimal-test-theme-hugo-wtg as a submodule
 
 	```sh
-	git submodule add -f https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd.git
+	git submodule add -f https://github.com/wildtechgarden/minimal-test-theme-hugo-wtg.git
 	```
 
 3. Change back to the site directory

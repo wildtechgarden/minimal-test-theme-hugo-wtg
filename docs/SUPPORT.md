@@ -9,6 +9,6 @@ address][dfdmail]
 
 --------
 
-[discussions]: https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/discussions
+[discussions]: https://github.com/wildtechgarden/minimal-test-theme-hugo-wtg/discussions
 [dfdmail]: mailto:dfdpublic@wildtechgarden.ca
-[issues]: https://github.com/danielfdickinson/minimal-test-theme-hugo-dfd/issues?q=is%3Aissue
+[issues]: https://github.com/wildtechgarden/minimal-test-theme-hugo-wtg/issues?q=is%3Aissue

@@ -1,6 +1,6 @@
 name = "DFD Hugo Minimal Test"
-copyright = "© 2021-2023 Daniel F. Dickinson"
-description = "Module for DFD's Hugo minimal test theme"
+copyright = "© 2021-2023 Wild Tech 'Garden'"
+description = "Module for WTG's Hugo minimal test theme"
 
 [module]
 [module.hugoVersion]
@@ -9,7 +9,7 @@ extended = false
 
 # Note that this is no longer used.
 [author]
-name = "Daniel F. Dickinson"
-homepage = "https://www.danielfdickinson.ca/"
-copyright = "© 2021-2023 Daniel F. Dickinson"
+name = "Daniel F. Dickinson for Wild Tech 'Garden'"
+homepage = "https://www.wildtechgarden.ca/"
+copyright = "© 2021-2023 Wild Tech 'Garden'"
 email = "dfdpublic@wildtechgarden.ca"

@@ -1,4 +1,4 @@
-module github.com/danielfdickinson/minimal-test-theme-hugo-dfd
+module github.com/wildtechgarden/minimal-test-theme-hugo-wtg
 
 go 1.20
 

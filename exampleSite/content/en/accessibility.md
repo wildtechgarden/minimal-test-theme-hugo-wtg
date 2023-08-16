@@ -9,9 +9,9 @@ toCanonical = "https://www.wildtechgarden.ca/about/accessibility/"
 
 ## Statement
 
-[Daniel F. Dickinson](https://www.wildtechgarden.ca/about/) makes his best
+[Wild Tech 'Garden'](https://www.wildtechgarden.ca/about/) makes their best
 effort to keep this site accessible and inclusive. If you find something that
-does not meet that goal, please use the [contact form on his main
+does not meet that goal, please use the [contact form on their main
 site](https://www.wildtechgarden.ca/about/contact/) to let him know.
 
 ## Goals
