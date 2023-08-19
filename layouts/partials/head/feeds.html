@@ -3,7 +3,7 @@
 {{- if .OutputFormats.Get "RSS" -}}
 {{- with .OutputFormats.Get "RSS" -}}
 	{{- $rssTitle := site.Title -}}
-	{{- $pageTitle := partial "helpers/page-title.html" $curPage -}}
+	{{- $pageTitle := partial "page-title.html" $curPage -}}
 	{{- if ne $pageTitle $rssTitle -}}
 		{{- $rssTitle = printf "%s | %s" $pageTitle $rssTitle -}}
 	{{- end }}
