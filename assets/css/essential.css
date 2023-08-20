@@ -24,6 +24,15 @@ html {
 	line-height: 1.5;
 }
 
+p {
+	margin-block-end: .6em;
+	margin-block-start: .4em;
+}
+
+h1 {
+	margin-block-end: .4em;
+}
+
 li {
 	line-height: 1.75;
 }
@@ -372,7 +381,8 @@ a:hover {
 
 .heading-link-title {
 	display: inline-block;
-	margin-block: .4em;
+	margin-block-end: .2em;
+	margin-block-start: .4em;
 }
 
 .heading-link {
