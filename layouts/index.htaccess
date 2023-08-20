@@ -1,4 +1,4 @@
-#ErrorDocument 404 {{ site.BaseURL }}404.html
+#ErrorDocument 404 /404.html
 RewriteEngine On
 {{- range site.Params.redirectsDomains }}
 RewriteCond %{HTTP_HOST} ^{{ . }}$
