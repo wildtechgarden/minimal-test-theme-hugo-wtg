@@ -50,7 +50,7 @@ référentiel sur une page du site
 
 Afin d’être conforme aux [meilleures pratiques HTML actuelles pour les éléments
 h1, qui est de n’avoir qu’un seul élément h1 par
-page](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#multiple_h1_elements_on_one_page),
+page](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Heading_Elements#%C3%A9viter_davoir_plusieurs_%C3%A9l%C3%A9ments_h1_sur_une_page),
 tous les éléments H1 de la ressource sont réécrits en tant qu’éléments H2 (car
 ce thème ajoute le titre de la page en tant qu’élément H1).
 

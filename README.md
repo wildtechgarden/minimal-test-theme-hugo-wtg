@@ -47,7 +47,7 @@ is currently used to render this repo's README.md on a page in the exampleSite.
 
 In order to be compliant with [current HTML best practise for h1 elements, which
 is to have only one h1 element per
-page](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#multiple_h1_elements_on_one_page),
+page](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#avoid_using_multiple_h1_elements_on_one_page),
 any H1 elements in the asset are rewritten as H2 elements (because this theme
 adds the page title as an H1 element).
 
