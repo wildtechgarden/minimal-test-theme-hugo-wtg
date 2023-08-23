@@ -5,7 +5,7 @@ set -o pipefail
 
 SITEROOT="$(pwd)"
 
-HUGO_RESOURCEDIR="$(pwd)"/resources systemd-run --unit=hugo-serve --user hugo serve --source "$(pwd)"/exampleSite --environment "production" --config "$(pwd)"/exampleSite/hugo.toml --port 1313 --bind 127.0.0.1
+systemd-run -E PATH="${PATH}" -E HUGO_RESOURCEDIR="$(pwd)"/resources --unit=hugo-serve --user hugo serve --source "$(pwd)"/exampleSite --environment "production" --config "$(pwd)"/exampleSite/hugo.toml --port 1313 --bind 127.0.0.1
 
 sleep 2
 
