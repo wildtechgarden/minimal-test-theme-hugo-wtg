@@ -29,10 +29,6 @@
 	],
 	"ignoreRegExpList": [],
 	"ignoreWords": [],
-	"import": [
-		"@cspell/dict-fr-fr/cspell-ext.json",
-		"@cspell/dict-fr-reforme/cspell-ext.json"
-	],
 	"language": "en,en-gb,en-us",
 	"overrides": [
 		{
