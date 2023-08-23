@@ -18,7 +18,7 @@
 		{{- $combinedCSS = $combinedCSS | resources.Minify -}}
 		{{- $combinedCSS = $combinedCSS | resources.Fingerprint -}}
 	{{- end }}
-<style type="text/css">
+<style>
 {{ $combinedCSS.Content | safeCSS }}
 </style>
 {{- end -}}

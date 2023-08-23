@@ -5,7 +5,7 @@
 }
 
 .main-test-min pre {
-	background-color: revert;
+	background-color: inherit;
 	min-width: min-content;
 	padding: 0;
 }

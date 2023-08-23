@@ -25,12 +25,12 @@ html {
 }
 
 p {
-	margin-block-end: .6em;
-	margin-block-start: .4em;
+	margin-bottom: .6em;
+	margin-top: .4em;
 }
 
 h1 {
-	margin-block-end: .4em;
+	margin-bottom: .4em;
 }
 
 li {
@@ -381,8 +381,8 @@ a:hover {
 
 .heading-link-title {
 	display: inline-block;
-	margin-block-end: .2em;
-	margin-block-start: .4em;
+	margin-bottom: .2em;
+	margin-top: .4em;
 }
 
 .heading-link {
@@ -393,7 +393,8 @@ a:hover {
 }
 
 .heading-link-title + .heading-link + p {
-	margin-block: .1em;
+	margin-bottom: .1em;
+	margin-top: .1em;
 }
 
 .heading-link-title:active + .heading-link {
@@ -407,8 +408,8 @@ a:hover {
 .heading-link .heading-link-marker {
 	color: #444;
 	display: inline;
-	padding-inline-start: .1em;
-	padding-inline-end: .2em;
+	padding-left: .1em;
+	padding-right: .2em;
 }
 
 .heading-link:active .heading-link-marker {
