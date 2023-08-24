@@ -114,6 +114,7 @@ repos:
   hooks:
   - id: cspell
     additional_dependencies:
+    - "@cspell/dict-en-ca"
     - "@cspell/dict-fr-fr"
     - "@cspell/dict-fr-reforme"
     args:

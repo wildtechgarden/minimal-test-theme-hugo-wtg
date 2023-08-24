@@ -33,7 +33,7 @@
 		"@cspell/dict-fr-fr/cspell-ext.json",
 		"@cspell/dict-fr-reforme/cspell-ext.json"
 	],
-	"language": "en,en-gb,en-us",
+	"language": "en,en-ca,en-gb,en-us",
 	"overrides": [
 		{
 			"filename": [
@@ -55,7 +55,7 @@
 			"includeRegExpList": [
 				"frontMatter"
 			],
-			"language": "en,en-gb,fr,fr-90"
+			"language": "en,en-ca,en-gb,fr,fr-90"
 		},
 		{
 			"dictionaries": [
@@ -80,7 +80,7 @@
 				"./.github/**/*.yml",
 				"./.pre-commit-config.yaml"
 			],
-			"language": "en,en-gb,fr,fr-90"
+			"language": "en,en-ca,en-gb,fr,fr-90"
 		},
 		{
 			"dictionaries": [
