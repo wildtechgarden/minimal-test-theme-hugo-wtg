@@ -28,7 +28,7 @@ Regardez
 [LICENSE](https://github.com/wildtechgarden/minimal-test-theme-hugo-wtg/blob/main/LICENSE)
 pour autorisations d'utilisation.
 
-## Hugo moderne seulment
+## Hugo moderne seulement
 
 Ce thème minimal est construit à l'aide d'hypothèses qui peuvent nécessiter
 Hugo 0.115.3 ou supérieur, et en tout cas ce sont les seules version sur
@@ -63,7 +63,7 @@ survolant l’en-tête et en copiant le lien sur le signe dièse (`#`) apparaît
 
 Grâce à l’utilisation des `render-link` et `render-imagesrc` crochets, liens
 internes et les URL des images sur le site sont validées. Si la solution de
-secours « statique » est autorisée seulment un avertissement est émis (puisque
+secours « statique » est autorisée seulement un avertissement est émis (puisque
 le lien peut être vers une ressource gérée à l’extérieur l’arborescence de
 contenu normale Hugo), sinon la build affichera une erreur pour le lien
 incriminé.
@@ -114,7 +114,7 @@ et bouton de niveau supérieur sur chaque page. Cela facilite la navigation.
 Fournit des hooks pour ajouter CSS et JavaScript qui sont minifiés et renommés
 en vider le cache si le CSS ou le JavaScript change.
 
-Nous divisons le CSS en essentiel et différable, mais nous n’ajoutons pas
+Nous divisons le CSS en essentiel et peut déferrez, mais nous n’ajoutons pas
 (encore) `rel="preload"` aux styles car `preload` il n’est pas assez bien
 supporté.
 
@@ -223,6 +223,6 @@ Dans `config.toml` ajouter
 
 ## Colophon
 
-* [Droit d'auteur et license](LICENSE)
+* [Droit d'auteur et license](https://github.com/wildtechgarden/minimal-test-theme-hugo-wtg/blob/main/LICENSE)
 * [Inspirations, informations, et matériel source](docs/ACKNOWLEDGEMENTS.md)
 * [Notes](docs/README-NOTES.md)

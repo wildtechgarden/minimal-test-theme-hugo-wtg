@@ -70,7 +70,7 @@ the offending link.
 If a user decides to put the H1 element in the content file rather than
 specifying a `Title` in the frontmatter, this theme will display the H1
 element as the page title. If there is also a `Title` element specified,
-the duplicate title will be surpressed. If there is more than one H1
+the duplicate title will be suppress. If there is more than one H1
 element, or the H1 does not match the page title, then the H1's will be
 converted to H2 elements.
 
@@ -186,7 +186,7 @@ In/via this module
 | isImageLink              | links is for an image not a URL/site           |
 | multipleH1ErrorFix       | Fix too many H1's on a page; default false     |
 | multipleH1ErrorWarn      | Only warn instead of erroring of too many H1's on a page |
-| multipleH1ErrorIgnore    | Surpress warning about too many H1's on a page |
+| multipleH1ErrorIgnore    | Suppress warning about too many H1's on a page |
 | pageCanonical            | If false the page is not marked as canonical   |
 | pagesOldestFirst         | If true list pages from oldest to newest instead of newest to oldest |
 | staticFallback           | If true only warn on missing link targets, on the assumption they are 'static' |
@@ -218,6 +218,7 @@ In `config.toml` add
 
 ## Colophon
 
-* [Copyright and licensing](LICENSE)
+* [Copyright and licensing](https://github.com/wildtechgarden/minimal-test-theme-hugo-wtg/blob/main/LICENSE)
+
 * [Inspirations, information, and source material](docs/ACKNOWLEDGEMENTS.md)
 * [Notes](docs/README-NOTES.md)

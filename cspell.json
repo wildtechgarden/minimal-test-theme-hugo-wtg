@@ -1,6 +1,5 @@
 {
 	"$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
-	"allowCompoundWords": true,
 	"dictionaries": [
 		"project-words",
 		"project-words-fr"
@@ -19,52 +18,153 @@
 	],
 	"ignorePaths": [
 		"./go.{mod,sum}",
-		"./exampleSite/go.{mod,sum}",
 		"node_modules",
 		"./cspell.json",
 		"./LICENSE",
-		"./tests/scripts",
+		"./package.json",
+		"./package-lock.json",
+		"./.pre-commit-config.yaml",
+		"./scripts",
+		"./tests",
 		"./words-*.txt",
 		"_vendor"
 	],
 	"ignoreRegExpList": [],
 	"ignoreWords": [],
 	"import": [
+		"@cspell/dict-en-ca/cspell-ext.json",
 		"@cspell/dict-fr-fr/cspell-ext.json",
 		"@cspell/dict-fr-reforme/cspell-ext.json"
 	],
 	"language": "en,en-ca,en-gb,en-us",
 	"overrides": [
 		{
+			"dictionaries": [
+				"companies",
+				"html",
+				"css",
+				"softwareTerms",
+				"misc"
+			],
 			"filename": [
-				"./exampleSite/**/fr/*.md",
-				"./exampleSite/**/fr/**/*.md",
-				"./README.fr.md"
+				"**/layouts/**/*.html",
+				"config.toml",
+				"hugo.toml",
+				"theme.toml"
+			],
+			"language": "en,en-ca,en-gb,en-us,fr,fr-90"
+		},
+		{
+			"dictionaries": [
+				"companies",
+				"html",
+				"css",
+				"softwareTerms",
+				"misc"
+			],
+			"filename": [
+				"**/assets/**/*.{css,scss}",
+				"**/assets/*.{css,scss}"
+			]
+		},
+		{
+			"dictionaries": [
+				"companies",
+				"softwareTerms",
+				"misc"
+			],
+			"filename": [
+				"**/content/fr/**/*.md",
+				"**/docs/*.fr.md",
+				"**/README.fr.md"
 			],
 			"ignoreRegExpList": [
-				"frontMatter"
+				"frontMatter",
+				"hugoShortcode"
+			],
+			"includeRegExpList": [
+				".*"
 			],
 			"language": "fr,fr-90"
 		},
 		{
+			"dictionaries": [
+				"companies",
+				"css",
+				"html",
+				"softwareTerms",
+				"misc"
+			],
 			"filename": [
-				"./exampleSite/**/fr/*.md",
-				"./exampleSite/**/fr/**/*.md",
-				"./README.fr.md"
+				"**/content/fr/**/*.html"
+			],
+			"ignoreRegExpList": [
+				"frontMatter",
+				"hugoShortcode"
 			],
 			"includeRegExpList": [
-				"frontMatter"
+				".*"
 			],
-			"language": "en,en-ca,en-gb,fr,fr-90"
+			"language": "fr,fr-90"
 		},
 		{
 			"dictionaries": [
-				"css",
-				"html"
+				"companies",
+				"softwareTerms",
+				"misc"
 			],
 			"filename": [
-				".htmlvalidate*.json"
-			]
+				"**/content/en/**/*.md",
+				"**/README.md"
+			],
+			"ignoreRegExpList": [
+				"frontMatter",
+				"hugoShortcode"
+			],
+			"includeRegExpList": [
+				".*"
+			],
+			"language": "en,en-ca,en-gb"
+		},
+		{
+			"dictionaries": [
+				"companies",
+				"css",
+				"html",
+				"softwareTerms",
+				"misc"
+			],
+			"filename": [
+				"**/content/en/**/*.html"
+			],
+			"ignoreRegExpList": [
+				"frontMatter",
+				"hugoShortcode"
+			],
+			"includeRegExpList": [
+				".*"
+			],
+			"language": "en,en-ca,en-gb"
+		},
+		{
+			"dictionaries": [
+				"bash",
+				"softwareTerms"
+			],
+			"filename": [
+				"**/tests/scripts/*.sh"
+			],
+			"language": "en,en-gb"
+		},
+		{
+			"dictionaries": [
+				"powershell",
+				"softwareTerms"
+			],
+			"filename": [
+				"**/tests/scripts/*.ps1"
+			],
+			"language": "en,en-ca,en-gb"
 		},
 		{
 			"dictionaries": [
@@ -72,13 +172,8 @@
 				"project-words-fr"
 			],
 			"filename": [
-				"./config.toml",
-				"./hugo.toml",
-				"./theme.toml",
-				"./i18n/fr.toml",
-				"./exampleSite/hugo.toml",
-				"./.github/**/*.yml",
-				"./.pre-commit-config.yaml"
+				"**/i18n/fr.toml",
+				"**/.pre-commit-config.yaml"
 			],
 			"language": "en,en-ca,en-gb,fr,fr-90"
 		},
@@ -88,7 +183,7 @@
 				"project-words"
 			],
 			"filename": [
-				"./requirements.txt"
+				"**/requirements.txt"
 			]
 		}
 	],

@@ -8,7 +8,7 @@ pageCanonical = false
 
 ## Déclaration
 
-[Wild Tech 'Garden'](https://www.wildtechgarden.ca/about/) fait de leur mieux
+[Wild Tech «Garden»](https://www.wildtechgarden.ca/about/) fait de leur mieux
 pour garder ce site accessible et inclusif. Si vous trouvez quelque chose qui
 n'atteint pas cet objectif, veuillez utiliser  [formulaire de contact aux
 leur site principal](https://www.wildtechgarden.ca/about/contact/) à ce lui
@@ -26,7 +26,7 @@ sont souvent pas bien écrites en raison de l'effet 'loin des yeux, loin du
 cœur'. En tant que tels, de bonnes légende créent une meilleure expérience pour
 tous, contrairement à ces balises « alt ».
 
-Évidemment, il y a beaucoup de travail à faire en cet régard, à cette site.
+Évidemment, il y a beaucoup de travail à faire en cet regarde, à cette site.
 
 Un défi plus difficile est d'utiliser un langage moins complexe, tout en
 disant tout ce que je veux dire. C'est un projet à plus long terme.

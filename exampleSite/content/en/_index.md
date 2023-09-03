@@ -10,6 +10,7 @@ description = """\
 Demo site for Wild Tech 'Garden's (WTG) Hugo minimal test theme\
 """
 layout = "single"
+staticFallback = true
 +++
 
 [Wild Tech 'Garden'](https://www.wildtechgarden.ca/about/) uses this theme for
@@ -20,5 +21,5 @@ or [hugo-testing by jmooring from the Hugo
 forums](https://github.com/jmooring/hugo-testing). That use case was previously
 a goal of this repository, but such is no longer the case.
 
-See [README](README) for more information, and
-[LICENSE](LICENSE) for permissions on use.
+See [README](/doc/minimal-theme/readme/) for more information, and
+[LICENSE](/doc/minimal-theme/LICENSE) for permissions on use.

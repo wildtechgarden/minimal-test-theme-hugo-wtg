@@ -15,13 +15,12 @@ mainSections = ["post"]
 pageCanonical = false
 redirectsDomains = [
 	"minimal-test-theme.demo.wildtechgarden.com",
-	"minimal-test-theme-demo.wildtechgarde.ca",
+	"minimal-test-theme-demo.wildtechgarden.ca",
 	"minimal-test-theme.wtg-demos.com",
 	"www.minimal-test-theme.wtg-demos.com",
 	"minimal-test-theme.wtg-demos.ca",
 	"minimal-test-theme.wildtechgarden.ca"
 ]
-staticFallback = false
 # Disable if you don't want the test (bare-bones) CSS
 testStylesInclude = true
 # Footnotes and TableOfContents don't work properly with a base href set in <head>
@@ -38,7 +37,7 @@ mediaType = "text/htaccess"
 suffixes = ["htaccess"]
 
 [outputs]
-home = ["HTML", "RSS", "htaccess"]
+home = ["HTML", "htaccess"]
 
 # See https://gohugo.io/content-management/multilingual/
 # and https://www.regisphilibert.com/blog/2018/08/hugo-multilingual-part-1-managing-content-translation/
@@ -56,7 +55,7 @@ description = "Demo site au Hugo thème du teste minimal du Wild Tech 'Garden' (
 [[languages.fr.menu.main]]
 identifier = "about"
 name = "À propos"
-pageref = "readme"
+pageref = "/doc/readme/"
 weight = 10
 
 [[languages.fr.menu.main]]
@@ -77,7 +76,7 @@ description = "Demo site for Wild Tech 'Garden's (WTG) Hugo minimal test theme"
 [[languages.en.menu.main]]
 identifier = "about"
 name = "About"
-pageref = "readme"
+pageref = "/doc/readme/"
 weight = 10
 
 [[languages.en.menu.main]]
@@ -183,30 +182,30 @@ target = "archetypes"
 
 [[module.imports.mounts]]
 source = "README.md"
-target = "content/README.md"
+target = "content/doc/minimal-test/README.md"
 lang = "en"
 
 [[module.imports.mounts]]
 source = "README.fr.md"
-target = "content/README.md"
+target = "content/doc/minimal-test/README.md"
 lang = "fr"
 
 [[module.imports.mounts]]
 source = "docs"
-target = "content/docs"
+target = "content/doc/minimal-test/docs"
 lang = "en"
 
 [[module.imports.mounts]]
 source = "docs"
-target = "content/docs"
+target = "content/doc/minimal-test/docs"
 lang = "fr"
 
 [[module.imports.mounts]]
 source = "LICENSE"
-target = "content/LICENSE"
+target = "content/doc/minimal-test/LICENSE"
 lang = "en"
 
 [[module.imports.mounts]]
 source = "LICENSE"
-target = "content/LICENSE"
+target = "content/doc/minimal-test/LICENSE"
 lang = "fr"

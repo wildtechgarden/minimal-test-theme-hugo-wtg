@@ -42,7 +42,7 @@ repos:
   - id: detect-private-key
   # - detects the presence of private keys.
   - id: file-contents-sorter
-    files: ^(tests/config/words-.*.txt$)
+    files: ^(words-.*.txt$)
     args: [--unique]
   - id: fix-byte-order-marker
   # - removes utf-8 byte order marker
